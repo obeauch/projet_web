@@ -1,0 +1,437 @@
+$orange: #ef8354;
+$jaune: #e4b363;
+$gris-blanc: #eff6e0;
+$verdatre-pale: #aec3b0;
+$gris-bleu: #598392;
+$bleu-fonce: #124559;
+$bleu-noir: #01161e;
+$font-anton: 'Anton', sans-serif;
+$font-noticia: 'Noticia Text', serif;
+
+
+body {
+    box-sizing: border-box;
+    margin: 0px;
+    
+    // background-image: url("");
+    
+    .boutons {
+        background-color: $orange;
+        border-bottom: 2px solid $jaune;
+        border-right: 1px solid $jaune;
+        border-left: 1px solid $jaune;
+        border-radius: 3px;
+        box-shadow: 0px -1.5px 4px $bleu-fonce;
+        max-height: 40px;
+        margin: 20px 30px;
+        padding: 5px;
+        transition: all 0.3s;
+        max-width: 250px;
+        min-width: 100px;
+        width: 200px;
+        text-align: center;
+
+        a {
+            color: $gris-blanc;
+            font-family: $font-anton;
+            font-size: 24px;
+            letter-spacing: 2px;   
+            padding: 7px 30px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+    }
+
+    .boutons:hover {
+        background-color: $jaune;
+        box-shadow: 0px 0px 0px $bleu-fonce;
+        transform: translateY(-2px);
+
+        a {
+            color: $bleu-fonce;
+        }
+    }
+
+    header {
+        
+        position: relative;
+        width: 100%;
+        height: 260px;
+        overflow: hidden;
+        
+        nav {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            height: 100px; 
+            z-index: 2;
+            overflow: hidden;
+
+
+
+            .boutons-gauche {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: start;
+                z-index: 10;
+            }
+
+            .logo-nav {
+                margin-top: 20px;
+                z-index: 10;
+            }
+
+            img {
+                height: 60px;
+            }
+
+            .boutons-droit {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                z-index: 10;
+
+                .bouton-transparent {
+                    width: 310px;
+                }
+            }
+        }
+
+        .montagne2 {
+            position: absolute;
+            top: 60px;
+            left: 0px;
+            height: 200px;
+            width: 100vw;
+            z-index: 3;
+        }
+
+        .montagne1 {
+            position: absolute;
+            top: 160px;
+            left: 0px;
+            height: 100px;
+            width: 100vw;
+            z-index: 4;
+        }
+
+        .gradient {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 260px;
+            background: linear-gradient(0deg, rgba(239,131,84,1) 0%, rgba(228,179,99,1) 36%, rgba(239,246,224,1) 83%, rgba(174,195,176,1) 100%);
+            z-index: 1;
+        }
+
+    }
+
+    &.accueil {
+        background-color: $bleu-noir;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .conteneur {
+
+            margin: 0px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: left;
+            width: 100%;
+
+            .section-haut {
+                background-image: url("../images/image-accueil-projet-web.jpg");
+                background-position: right;
+                background-repeat: no-repeat;
+                background-size: contain;
+                // width: 100%;
+                margin-left: 10vw;
+                
+
+                .titre {
+    
+                    h1 {
+                        margin-top: 100px;
+                        margin-bottom: 0px;
+                        color: $gris-blanc;
+                        font-family: $font-anton;
+                        font-size: 64px;
+                        letter-spacing: 2px;
+                        width: 60%;
+                    }
+                }
+    
+                .sous-titre {
+                    
+                    h3 {
+                        text-align: left;
+                        color: $gris-blanc;
+                        font-family: $font-noticia;
+                        font-style: italic;
+                        font-size: 30px;
+                        letter-spacing: 1px;
+                        transform: scale(1, 1.1);
+                        width: 60%;
+                    }
+                }
+    
+                .texte {
+    
+                    p {
+                        color: $gris-blanc;
+                        font-family: $font-noticia;
+                        font-size: 24px;
+                        margin-bottom: 30px;
+                        text-align: justify;
+                        width: 60%;
+                    }
+                }
+    
+                .logos-commanditaires {
+    
+                    img {
+                        height: 60px;
+                        margin: 30px 60px 0px 0px;
+                    }
+                }
+
+            }
+
+            .section-bas {
+                margin-top: 150px;
+                width: 100%;
+
+                .encadres {
+                    align-items: flex-end;
+                    background-color: $bleu-fonce;
+                    border: 2px solid $jaune;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    height: 20vh;
+                    margin: 40px auto;
+                    width: 70%;
+                    overflow: auto;
+
+
+                    .image-episode {
+                        margin: 10px;
+
+                        img {
+                            min-height: 145px;
+                            max-height: 200px;
+
+                        }
+                    }
+
+                    .details-episodes {
+                        margin-right: 40px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        text-align: justify;
+                        width: 50%;
+                        height: 100%;
+                        max-height: 200px;
+
+                        .titre-episode {
+                            h2 {
+                                color: $gris-blanc;
+                                font-family: $font-anton;
+                                font-size: 40px;
+                                letter-spacing: 2px;
+                                margin: 0px;
+                            }
+                        }
+
+                        .chaque-episode {
+                            margin-bottom: 10px;
+                            align-items: baseline;
+                            display: flex;
+                            justify-content: start;
+                            flex-wrap: wrap;
+                            
+                            
+                            .numero-episode {
+                                color: $jaune;
+                                font-family: $font-anton;
+                                font-size: 16px;
+                                letter-spacing: 2px;
+                                margin-right: 20px;
+                            }
+
+                            .date-episode {
+                                margin-right: 20px;
+                                color: $jaune;
+                                font-family: $font-noticia;
+                                font-size: 16px;
+                            }
+
+                            .temps-episode {
+                                margin-right: 20px;
+                                color: $jaune;
+                                font-family: $font-noticia;
+                                font-size: 16px;
+                            }
+                        }
+
+                        .description-episode {
+                            color: $gris-blanc;
+                            font-family: $font-noticia;
+                            font-size: 14px;
+                            margin-bottom: 10px;
+
+                            p {
+                                margin-top: 0px;
+                            }
+                        }
+
+                        
+                    }
+                    
+                    .bouton-play {
+
+                        box-shadow: 0px -1.5px 4px $bleu-noir;
+                        min-height: 70px;
+                        margin: 20px 30px;
+                        // padding: 5px;
+                        transition: all 0.3s;
+                        max-width: 80px;
+                        min-width: 60px;   
+                    
+                        a {
+                            font-size: 44px;
+                            padding: 8px 25px;
+                            
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+    }
+    
+    &.connexion-admin {
+        background-color: $bleu-noir;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+
+        .conteneur {
+            margin: 0px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: left;
+            width: 100%;
+        }
+        .login-form {
+            form {
+                padding: 20px;
+                border: 2px solid $jaune;
+                border-radius: 10px;
+                
+                label {
+                    display: block;
+                    margin: 5px;
+                    
+                    span {
+                        display: inline-block;
+                        font-size: 18px;
+                        width: 100px;
+                        color: $jaune;
+                    }
+                }
+            }
+        }
+        
+        .login{
+            margin: 40px;
+            input,
+            select {
+                // min-width: 320px;
+                font-size: 16px;
+                padding: 6px;
+                border-radius: 5px;
+                border: 2px solid $jaune;
+            }
+            input[type=submit] {
+                background-color: $jaune;
+                border: 2px solid $jaune;
+                margin: 0px auto;
+                margin-top: 30px;
+                padding: 6px 20px;
+                cursor: pointer;
+                transition: all 0.2s;
+                
+                
+                &:hover {
+                    background-color: $jaune;
+                }
+            }
+            
+            .soum {
+                text-align: center;
+            }
+            
+        }
+    }
+
+    footer {
+        margin-top: 60px;
+        background-color: $bleu-fonce;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    
+        .logos-commanditaires {
+            img {
+                height: 30px;
+                margin: 10px 30px;
+            }
+        }
+    
+        .bouton-admin {
+            background-color: $gris-bleu;
+            border-radius: 5px;
+            height: 30px;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 15%;
+    
+            a {
+                color: $bleu-noir;
+                font-family: $font-anton;
+                font-size: 24px;
+                letter-spacing: 2px;   
+                padding-top: 5px;
+                text-decoration: none;
+                width: 80%;
+                transition: all 0.3s;
+            }
+    
+            a:hover {
+                color: $gris-blanc;
+            }
+        }
+    
+        .logos-reseaux {
+            // width: 20%;
+            img {
+                height: 40px;
+                margin: 10px 15px;
+            }
+        }
+    }
+}

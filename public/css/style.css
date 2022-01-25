@@ -1,0 +1,471 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+}
+
+body .boutons {
+  background-color: #ef8354;
+  border-bottom: 2px solid #e4b363;
+  border-right: 1px solid #e4b363;
+  border-left: 1px solid #e4b363;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px -1.5px 4px #124559;
+          box-shadow: 0px -1.5px 4px #124559;
+  max-height: 40px;
+  margin: 20px 30px;
+  padding: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  max-width: 250px;
+  min-width: 100px;
+  width: 200px;
+  text-align: center;
+}
+
+body .boutons a {
+  color: #eff6e0;
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  padding: 7px 30px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+body .boutons:hover {
+  background-color: #e4b363;
+  -webkit-box-shadow: 0px 0px 0px #124559;
+          box-shadow: 0px 0px 0px #124559;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+body .boutons:hover a {
+  color: #124559;
+}
+
+body header {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+body header nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+body header nav .boutons-gauche {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  z-index: 10;
+}
+
+body header nav .logo-nav {
+  margin-top: 20px;
+  z-index: 10;
+}
+
+body header nav img {
+  height: 60px;
+}
+
+body header nav .boutons-droit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  z-index: 10;
+}
+
+body header nav .boutons-droit .bouton-transparent {
+  width: 310px;
+}
+
+body header .montagne2 {
+  position: absolute;
+  top: 60px;
+  left: 0px;
+  height: 200px;
+  width: 100vw;
+  z-index: 3;
+}
+
+body header .montagne1 {
+  position: absolute;
+  top: 160px;
+  left: 0px;
+  height: 100px;
+  width: 100vw;
+  z-index: 4;
+}
+
+body header .gradient {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 260px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ef8354), color-stop(36%, #e4b363), color-stop(83%, #eff6e0), to(#aec3b0));
+  background: linear-gradient(0deg, #ef8354 0%, #e4b363 36%, #eff6e0 83%, #aec3b0 100%);
+  z-index: 1;
+}
+
+body.accueil {
+  background-color: #01161e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body.accueil .conteneur {
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 100%;
+}
+
+body.accueil .conteneur .section-haut {
+  background-image: url("../images/image-accueil-projet-web.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 10vw;
+}
+
+body.accueil .conteneur .section-haut .titre h1 {
+  margin-top: 100px;
+  margin-bottom: 0px;
+  color: #eff6e0;
+  font-family: "Anton", sans-serif;
+  font-size: 64px;
+  letter-spacing: 2px;
+  width: 60%;
+}
+
+body.accueil .conteneur .section-haut .sous-titre h3 {
+  text-align: left;
+  color: #eff6e0;
+  font-family: "Noticia Text", serif;
+  font-style: italic;
+  font-size: 30px;
+  letter-spacing: 1px;
+  -webkit-transform: scale(1, 1.1);
+          transform: scale(1, 1.1);
+  width: 60%;
+}
+
+body.accueil .conteneur .section-haut .texte p {
+  color: #eff6e0;
+  font-family: "Noticia Text", serif;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: justify;
+  width: 60%;
+}
+
+body.accueil .conteneur .section-haut .logos-commanditaires img {
+  height: 60px;
+  margin: 30px 60px 0px 0px;
+}
+
+body.accueil .conteneur .section-bas {
+  margin-top: 150px;
+  width: 100%;
+}
+
+body.accueil .conteneur .section-bas .encadres {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: #124559;
+  border: 2px solid #e4b363;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 20vh;
+  margin: 40px auto;
+  width: 70%;
+  overflow: auto;
+}
+
+body.accueil .conteneur .section-bas .encadres .image-episode {
+  margin: 10px;
+}
+
+body.accueil .conteneur .section-bas .encadres .image-episode img {
+  min-height: 145px;
+  max-height: 200px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes {
+  margin-right: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: justify;
+  width: 50%;
+  height: 100%;
+  max-height: 200px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .titre-episode h2 {
+  color: #eff6e0;
+  font-family: "Anton", sans-serif;
+  font-size: 40px;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .chaque-episode {
+  margin-bottom: 10px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .chaque-episode .numero-episode {
+  color: #e4b363;
+  font-family: "Anton", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-right: 20px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .chaque-episode .date-episode {
+  margin-right: 20px;
+  color: #e4b363;
+  font-family: "Noticia Text", serif;
+  font-size: 16px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .chaque-episode .temps-episode {
+  margin-right: 20px;
+  color: #e4b363;
+  font-family: "Noticia Text", serif;
+  font-size: 16px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .description-episode {
+  color: #eff6e0;
+  font-family: "Noticia Text", serif;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+body.accueil .conteneur .section-bas .encadres .details-episodes .description-episode p {
+  margin-top: 0px;
+}
+
+body.accueil .conteneur .section-bas .encadres .bouton-play {
+  -webkit-box-shadow: 0px -1.5px 4px #01161e;
+          box-shadow: 0px -1.5px 4px #01161e;
+  min-height: 70px;
+  margin: 20px 30px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  max-width: 80px;
+  min-width: 60px;
+}
+
+body.accueil .conteneur .section-bas .encadres .bouton-play a {
+  font-size: 44px;
+  padding: 8px 25px;
+}
+
+body.connexion-admin {
+  background-color: #01161e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body.connexion-admin .conteneur {
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 100%;
+}
+
+body.connexion-admin .login-form form {
+  padding: 20px;
+  border: 2px solid #e4b363;
+  border-radius: 10px;
+}
+
+body.connexion-admin .login-form form label {
+  display: block;
+  margin: 5px;
+}
+
+body.connexion-admin .login-form form label span {
+  display: inline-block;
+  font-size: 18px;
+  width: 100px;
+  color: #e4b363;
+}
+
+body.connexion-admin .login {
+  margin: 40px;
+}
+
+body.connexion-admin .login input,
+body.connexion-admin .login select {
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 2px solid #e4b363;
+}
+
+body.connexion-admin .login input[type=submit] {
+  background-color: #e4b363;
+  border: 2px solid #e4b363;
+  margin: 0px auto;
+  margin-top: 30px;
+  padding: 6px 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+body.connexion-admin .login input[type=submit]:hover {
+  background-color: #e4b363;
+}
+
+body.connexion-admin .login .soum {
+  text-align: center;
+}
+
+body footer {
+  margin-top: 60px;
+  background-color: #124559;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+body footer .logos-commanditaires img {
+  height: 30px;
+  margin: 10px 30px;
+}
+
+body footer .bouton-admin {
+  background-color: #598392;
+  border-radius: 5px;
+  height: 30px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 15%;
+}
+
+body footer .bouton-admin a {
+  color: #01161e;
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
+  letter-spacing: 2px;
+  padding-top: 5px;
+  text-decoration: none;
+  width: 80%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+body footer .bouton-admin a:hover {
+  color: #eff6e0;
+}
+
+body footer .logos-reseaux img {
+  height: 40px;
+  margin: 10px 15px;
+}
+/*# sourceMappingURL=style.css.map */

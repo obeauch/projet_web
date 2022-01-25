@@ -1,0 +1,16 @@
+<?php
+
+require_once "bases/BaseController.php";
+
+class SiteController extends BaseController
+{
+    public function accueil()
+    {
+        include "views/accueil.view.php";
+    }
+
+    public function login()
+    {
+        include "views/login.view.php";
+    }
+}
