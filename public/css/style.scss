@@ -16,10 +16,20 @@ body {
     h1 {
         color: $gris-blanc;
         font-family: $font-anton;
-        font-size: 28px;
+        font-size: 32px;
+        letter-spacing: 2px;
+        // margin: 30px auto;
+        // text-align: center;
+        width: 60%;
+    }
+
+    h2 {
+        color: $gris-blanc;
+        font-family: $font-anton;
+        font-size: 24px;
         letter-spacing: 2px;
         margin: 30px auto;
-        text-align: center;
+        // text-align: center;
         width: 60%;
     }
     
@@ -148,12 +158,12 @@ body {
         justify-content: space-between;
         
         .conteneur {
-
-            margin: 0px auto;
+            align-items: left;
             display: flex;
             flex-direction: column;
             justify-content: start;
-            align-items: left;
+            margin: 0px auto;
+            margin-bottom: 60px;
             width: 100%;
 
             .section-haut {
@@ -169,8 +179,6 @@ body {
                     h1 {
                         margin-top: 100px;
                         margin-bottom: 0px;
-                        color: $gris-blanc;
-                        font-family: $font-anton;
                         font-size: 64px;
                         letter-spacing: 2px;
                         width: 60%;
@@ -226,6 +234,7 @@ body {
                     justify-content: space-between;
                     height: 20vh;
                     margin: 40px auto;
+                    max-width: 1300px;
                     width: 70%;
                     overflow: auto;
 
@@ -299,9 +308,7 @@ body {
                             p {
                                 margin-top: 0px;
                             }
-                        }
-
-                        
+                        }  
                     }
                     
                     .bouton-play {
@@ -334,14 +341,25 @@ body {
         height: 100vh;
         justify-content: space-between;
 
+        header {
+            height: 110px;
+        }
+
         .conteneur {
+
             align-items: center;
             display: flex;
             flex-direction: column;
+            height: 100%;
             justify-content: start;
             margin: 0px auto;
-            margin-bottom: 300px;
+            padding-top: 100px;
             width: 100%;
+
+            h1 {
+                margin: 30px auto;
+                text-align: center;
+            }
 
             .login-form {
                 align-items: center;
@@ -383,6 +401,7 @@ body {
         
         .login{
             margin: 40px;
+
             input,
             select {
                 background-color: $gris-bleu;
@@ -396,6 +415,7 @@ body {
                 text-align: center;
                 width: 70%;
             }
+
             input[type=submit] {
                 background-color: $jaune;
                 border: 2px solid $jaune;
@@ -420,8 +440,6 @@ body {
                 opacity: 1;
                 }
             
-
-            
         }
     }
 
@@ -432,116 +450,121 @@ body {
         height: 100vh;
         justify-content: space-between;
 
-        .encadres {
-            align-items: flex-end;
-            background-color: $bleu-fonce;
-            border: 2px solid $jaune;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            height: 20vh;
-            margin: 40px auto;
-            width: 70%;
-            overflow: auto;
+        
+        header {
+            height: 110px;
+        }
 
+        .conteneur {
+            height: 100%;
+            background-image: url("../images/logo-cinema-fait-maison-fond2.svg");
+            background-attachment: fixed;
+            background-position: 20% 30%;
+            background-repeat: no-repeat;
+            background-size: 75%;
+            padding-top: 100px;
 
-            .image-episode {
-                margin: 10px;
-
-                img {
-                    min-height: 145px;
-                    max-height: 200px;
-                }
+  
+            h1 {
+                margin: 30px auto;
+                text-align: center;
             }
 
-            .details-episodes {
-                margin-right: 40px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                text-align: justify;
-                width: 50%;
-                height: 100%;
-                max-height: 200px;
+            .texte-a-propos {
+                padding: 20px;
 
-                .titre-episode {
-                    h2 {
-                        color: $gris-blanc;
-                        font-family: $font-anton;
-                        font-size: 40px;
-                        letter-spacing: 2px;
-                        margin: 0px;
-                    }
-                }
-
-                .chaque-episode {
-                    margin-bottom: 10px;
-                    align-items: baseline;
-                    display: flex;
-                    justify-content: start;
-                    flex-wrap: wrap;
-                    
-                    
-                    .numero-episode {
-                        color: $jaune;
-                        font-family: $font-anton;
-                        font-size: 16px;
-                        letter-spacing: 2px;
-                        margin-right: 20px;
-                    }
-
-                    .date-episode {
-                        margin-right: 20px;
-                        color: $jaune;
-                        font-family: $font-noticia;
-                        font-size: 16px;
-                    }
-
-                    .temps-episode {
-                        margin-right: 20px;
-                        color: $jaune;
-                        font-family: $font-noticia;
-                        font-size: 16px;
-                    }
-                }
-
-                .description-episode {
+                p {
                     color: $gris-blanc;
                     font-family: $font-noticia;
-                    font-size: 14px;
-                    margin-bottom: 10px;
+                    font-size: 20px;
+                    text-align: justify;
+                    margin: 0px 40px;
+                }
+            }
 
-                    p {
-                        margin-top: 0px;
+            h2 {
+                margin: 30px auto;
+                text-align: center;
+            }
+
+            .encadres {
+                align-items: start;
+                background-color: $bleu-fonce;
+                border: 2px solid $jaune;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                max-height: 210px;
+                margin: 40px auto;
+                margin-bottom: 100px;
+                min-width: 800px;
+                max-width: 1300px;
+                padding: 20px;
+                width: 70%;
+                overflow: auto;
+    
+    
+                .photo {
+                    margin: 0px 40px;
+    
+                    img {
+                        min-height: 145px;
+                        max-height: 200px;
                     }
                 }
-
+    
+                .nom-titre {
                 
-            }
-            
-            .bouton-play {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: start;
+                    margin: 0px;
+                    width: 100%;
 
-                box-shadow: 0px -1.5px 4px $bleu-noir;
-                min-height: 70px;
-                margin: 20px 30px;
-                // padding: 5px;
-                transition: all 0.3s;
-                max-width: 80px;
-                min-width: 60px;   
-            
-                a {
-                    font-size: 44px;
-                    padding: 8px 25px;
-                    
+                    .nom-membres {
+
+                        h3 {
+                            color: $gris-blanc;
+                            font-family: $font-anton;
+                            font-size: 28px;
+                            letter-spacing: 2px;
+                            margin: 0px;
+                        }
+                    }
+    
+                    .titre-membres {
+                        margin: 5px 0px;
+                        
+                        p {
+                            color: $jaune;
+                            font-family: $font-anton;
+                            font-size: 18px;
+                            letter-spacing: 1px;
+                        }
+                    }
+    
                 }
 
-            }
+                .description-membres {
 
+                    // width: 50%;
+                    
+                    p {
+                        color: $gris-blanc;
+                        font-family: $font-noticia;
+                        font-size: 18px;
+                        margin: 0px 40px;
+                        text-align: justify;
+                    }
+                }
+    
+            }
         }
+
     }
 
     footer {
-        margin-top: 60px;
+        // margin-top: 60px;
         background-color: $bleu-fonce;
         display: flex;
         justify-content: space-between;
@@ -580,7 +603,7 @@ body {
         }
     
         .logos-reseaux {
-            // width: 20%;
+            margin-right: 30px;
             img {
                 height: 40px;
                 margin: 10px 15px;

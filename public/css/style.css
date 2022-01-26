@@ -7,10 +7,17 @@ body {
 body h1 {
   color: #eff6e0;
   font-family: "Anton", sans-serif;
-  font-size: 28px;
+  font-size: 32px;
+  letter-spacing: 2px;
+  width: 60%;
+}
+
+body h2 {
+  color: #eff6e0;
+  font-family: "Anton", sans-serif;
+  font-size: 24px;
   letter-spacing: 2px;
   margin: 30px auto;
-  text-align: center;
   width: 60%;
 }
 
@@ -166,7 +173,9 @@ body.accueil {
 }
 
 body.accueil .conteneur {
-  margin: 0px auto;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,9 +186,8 @@ body.accueil .conteneur {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
+  margin: 0px auto;
+  margin-bottom: 60px;
   width: 100%;
 }
 
@@ -194,8 +202,6 @@ body.accueil .conteneur .section-haut {
 body.accueil .conteneur .section-haut .titre h1 {
   margin-top: 100px;
   margin-bottom: 0px;
-  color: #eff6e0;
-  font-family: "Anton", sans-serif;
   font-size: 64px;
   letter-spacing: 2px;
   width: 60%;
@@ -250,6 +256,7 @@ body.accueil .conteneur .section-bas .encadres {
           justify-content: space-between;
   height: 20vh;
   margin: 40px auto;
+  max-width: 1300px;
   width: 70%;
   overflow: auto;
 }
@@ -368,6 +375,10 @@ body.connexion-admin {
           justify-content: space-between;
 }
 
+body.connexion-admin header {
+  height: 110px;
+}
+
 body.connexion-admin .conteneur {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -379,12 +390,18 @@ body.connexion-admin .conteneur {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
   margin: 0px auto;
-  margin-bottom: 300px;
+  padding-top: 100px;
   width: 100%;
+}
+
+body.connexion-admin .conteneur h1 {
+  margin: 30px auto;
+  text-align: center;
 }
 
 body.connexion-admin .conteneur .login-form {
@@ -514,10 +531,46 @@ body.a-propos {
           justify-content: space-between;
 }
 
-body.a-propos .encadres {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+body.a-propos header {
+  height: 110px;
+}
+
+body.a-propos .conteneur {
+  height: 100%;
+  background-image: url("../images/logo-cinema-fait-maison-fond2.svg");
+  background-attachment: fixed;
+  background-position: 20% 30%;
+  background-repeat: no-repeat;
+  background-size: 75%;
+  padding-top: 100px;
+}
+
+body.a-propos .conteneur h1 {
+  margin: 30px auto;
+  text-align: center;
+}
+
+body.a-propos .conteneur .texte-a-propos {
+  padding: 20px;
+}
+
+body.a-propos .conteneur .texte-a-propos p {
+  color: #eff6e0;
+  font-family: "Noticia Text", serif;
+  font-size: 20px;
+  text-align: justify;
+  margin: 0px 40px;
+}
+
+body.a-propos .conteneur h2 {
+  margin: 30px auto;
+  text-align: center;
+}
+
+body.a-propos .conteneur .encadres {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
   background-color: #124559;
   border: 2px solid #e4b363;
   display: -webkit-box;
@@ -530,23 +583,26 @@ body.a-propos .encadres {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 20vh;
+  max-height: 210px;
   margin: 40px auto;
+  margin-bottom: 100px;
+  min-width: 800px;
+  max-width: 1300px;
+  padding: 20px;
   width: 70%;
   overflow: auto;
 }
 
-body.a-propos .encadres .image-episode {
-  margin: 10px;
+body.a-propos .conteneur .encadres .photo {
+  margin: 0px 40px;
 }
 
-body.a-propos .encadres .image-episode img {
+body.a-propos .conteneur .encadres .photo img {
   min-height: 145px;
   max-height: 200px;
 }
 
-body.a-propos .encadres .details-episodes {
-  margin-right: 40px;
+body.a-propos .conteneur .encadres .nom-titre {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -554,89 +610,41 @@ body.a-propos .encadres .details-episodes {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-align: justify;
-  width: 50%;
-  height: 100%;
-  max-height: 200px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin: 0px;
+  width: 100%;
 }
 
-body.a-propos .encadres .details-episodes .titre-episode h2 {
+body.a-propos .conteneur .encadres .nom-titre .nom-membres h3 {
   color: #eff6e0;
   font-family: "Anton", sans-serif;
-  font-size: 40px;
+  font-size: 28px;
   letter-spacing: 2px;
   margin: 0px;
 }
 
-body.a-propos .encadres .details-episodes .chaque-episode {
-  margin-bottom: 10px;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+body.a-propos .conteneur .encadres .nom-titre .titre-membres {
+  margin: 5px 0px;
 }
 
-body.a-propos .encadres .details-episodes .chaque-episode .numero-episode {
+body.a-propos .conteneur .encadres .nom-titre .titre-membres p {
   color: #e4b363;
   font-family: "Anton", sans-serif;
-  font-size: 16px;
-  letter-spacing: 2px;
-  margin-right: 20px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
-body.a-propos .encadres .details-episodes .chaque-episode .date-episode {
-  margin-right: 20px;
-  color: #e4b363;
-  font-family: "Noticia Text", serif;
-  font-size: 16px;
-}
-
-body.a-propos .encadres .details-episodes .chaque-episode .temps-episode {
-  margin-right: 20px;
-  color: #e4b363;
-  font-family: "Noticia Text", serif;
-  font-size: 16px;
-}
-
-body.a-propos .encadres .details-episodes .description-episode {
+body.a-propos .conteneur .encadres .description-membres p {
   color: #eff6e0;
   font-family: "Noticia Text", serif;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-body.a-propos .encadres .details-episodes .description-episode p {
-  margin-top: 0px;
-}
-
-body.a-propos .encadres .bouton-play {
-  -webkit-box-shadow: 0px -1.5px 4px #01161e;
-          box-shadow: 0px -1.5px 4px #01161e;
-  min-height: 70px;
-  margin: 20px 30px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  max-width: 80px;
-  min-width: 60px;
-}
-
-body.a-propos .encadres .bouton-play a {
-  font-size: 44px;
-  padding: 8px 25px;
+  font-size: 18px;
+  margin: 0px 40px;
+  text-align: justify;
 }
 
 body footer {
-  margin-top: 60px;
   background-color: #124559;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -676,6 +684,10 @@ body footer .bouton-admin a {
 
 body footer .bouton-admin a:hover {
   color: #eff6e0;
+}
+
+body footer .logos-reseaux {
+  margin-right: 30px;
 }
 
 body footer .logos-reseaux img {

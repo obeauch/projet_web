@@ -39,28 +39,30 @@
         <main class="conteneur">
             <h1>À propos de Cinéma fait maison</h1>
 
+            <div class="texte-a-propos encadres">
+                <p>
+                Depuis maintenant 20 ans, Cinéma fait maison contribue au développement culturel du Québec en faisant la production de Maecenas vitae nunc in lorem vehicula vulputate. Sed placerat tellus sed tortor elementum, eget placerat nunc suscipit. Aenean eget tortor at turpis pellentesque egestas. Nulla mauris leo, elementum id purus facilisis, imperdiet fringilla velit. Nam eu dignissim quam. In sit amet arcu tortor. Duis ligula purus, hendrerit vitae massa nec, sollicitudin tristique odio. Curabitur malesuada consectetur ultricies.
+                </p>
+            </div>
+
+            <h2>Membres de l’équipe de production</h2>
+
             <div class="encadres">
-                    <div class="image-episode">
+                    <div class="photo">
                         <img src="public/images/episode1.jpg" alt="">
                     </div>
-                    <div class="details-episodes">
-                        <div class="titre-episode">
-                            <h2>Le choc</h2>
+                    <div class="nom-titre">
+                        <div class="nom-membres">
+                            <h3>Alain Thériault</h3>
                         </div>
-                        <div class="chaque-episode">
-                            <div class="numero-episode">Épisode 1</div>
-                            <div class="date-episode">7 février 2022</div>
-                            <div class="temps-episode">9 mins</div>
+                        <div class="titre-membres">
+                            <p>Producteur / Réalisateur</p>
                         </div>
-                        <div class="description-episode">
-                            <p>Le mariage est ruiné par l’annonce du gouvernement morbi rutrum id enim ac mattis. Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
-                        </div>
-
                     </div>
-                    <div class="boutons bouton-play">
-                        <a href="#">▶</a>
-
+                    <div class="description-membres">
+                        <p>Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
                     </div>
+
                 </div>
         </main>
 
@@ -71,7 +73,7 @@
                 <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
             </div>
             <div class="bouton-admin">
-                <a href="#">Connexion Admin</a>
+                <a href="login">Connexion Admin</a>
             </div>
             <div class="logos-reseaux">
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
