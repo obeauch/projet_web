@@ -13,7 +13,15 @@ body {
     box-sizing: border-box;
     margin: 0px;
     
-    // background-image: url("");
+    h1 {
+        color: $gris-blanc;
+        font-family: $font-anton;
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin: 30px auto;
+        text-align: center;
+        width: 60%;
+    }
     
     .boutons {
         background-color: $orange;
@@ -67,7 +75,7 @@ body {
             flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
-            height: 100px; 
+            height: 90px; 
             z-index: 2;
             overflow: hidden;
 
@@ -101,24 +109,6 @@ body {
             }
         }
 
-        .montagne2 {
-            position: absolute;
-            top: 60px;
-            left: 0px;
-            height: 200px;
-            width: 100vw;
-            z-index: 3;
-        }
-
-        .montagne1 {
-            position: absolute;
-            top: 160px;
-            left: 0px;
-            height: 100px;
-            width: 100vw;
-            z-index: 4;
-        }
-
         .gradient {
             position: absolute;
             top: 0px;
@@ -128,6 +118,26 @@ body {
             background: linear-gradient(0deg, rgba(239,131,84,1) 0%, rgba(228,179,99,1) 36%, rgba(239,246,224,1) 83%, rgba(174,195,176,1) 100%);
             z-index: 1;
         }
+        .montagne2 {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 75%;
+            object-fit: cover;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .montagne1 {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            height: 45%;
+            object-fit: cover;
+            width: 100%;
+            z-index: 4;
+        }
+
 
     }
 
@@ -151,7 +161,6 @@ body {
                 background-position: right;
                 background-repeat: no-repeat;
                 background-size: contain;
-                // width: 100%;
                 margin-left: 10vw;
                 
 
@@ -227,7 +236,6 @@ body {
                         img {
                             min-height: 145px;
                             max-height: 200px;
-
                         }
                     }
 
@@ -301,7 +309,6 @@ body {
                         box-shadow: 0px -1.5px 4px $bleu-noir;
                         min-height: 70px;
                         margin: 20px 30px;
-                        // padding: 5px;
                         transition: all 0.3s;
                         max-width: 80px;
                         min-width: 60px;   
@@ -328,28 +335,47 @@ body {
         justify-content: space-between;
 
         .conteneur {
-            margin: 0px auto;
+            align-items: center;
             display: flex;
             flex-direction: column;
             justify-content: start;
-            align-items: left;
+            margin: 0px auto;
+            margin-bottom: 300px;
             width: 100%;
-        }
-        .login-form {
-            form {
-                padding: 20px;
-                border: 2px solid $jaune;
-                border-radius: 10px;
+
+            .login-form {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                margin: 0px auto;
+                width: 50%;
                 
-                label {
-                    display: block;
-                    margin: 5px;
+                form {
+                    align-items: center;
+                    background-color: $bleu-fonce;
+                    border: 2px solid $jaune;
+                    display: flex;
+                    flex-direction: column;
+                    height: 400px;
+                    justify-content: start;
+                    margin: 0px auto;
+                    max-width: 600px;
+                    min-width: 300px;
+                    padding: 20px;
+                    width: 100%;
                     
-                    span {
-                        display: inline-block;
-                        font-size: 18px;
-                        width: 100px;
-                        color: $jaune;
+                    
+                    label {
+                        display: block;
+                        margin: 5px;
+                        
+                        span {
+                            color: $jaune;
+                            display: inline-block;
+                            font-size: 18px;
+                            width: 100px;
+                        }
                     }
                 }
             }
@@ -359,31 +385,158 @@ body {
             margin: 40px;
             input,
             select {
-                // min-width: 320px;
-                font-size: 16px;
-                padding: 6px;
-                border-radius: 5px;
+                background-color: $gris-bleu;
                 border: 2px solid $jaune;
+                font-family: $font-noticia;
+                font-size: 24px;
+                font-weight: bold;
+                margin: 20px;
+                min-width: 200px;
+                padding: 15px;
+                text-align: center;
+                width: 70%;
             }
             input[type=submit] {
                 background-color: $jaune;
                 border: 2px solid $jaune;
-                margin: 0px auto;
-                margin-top: 30px;
-                padding: 6px 20px;
+                border-radius: 5px;
+                color: $bleu-fonce;
                 cursor: pointer;
-                transition: all 0.2s;
-                
-                
-                &:hover {
-                    background-color: $jaune;
+                font-family: $font-anton;
+                letter-spacing: 2px;
+                margin: 60px auto;
+                padding: 6px 0px;
+                text-align: center;
+                transition: all 0.3s;
+                width: 40%;              
+            }
+
+            input[type=submit]:hover {
+                background-color: $orange;
+            }
+
+            input::placeholder {
+                color: $bleu-noir;
+                opacity: 1;
+                }
+            
+
+            
+        }
+    }
+
+    &.a-propos {
+        background-color: $bleu-noir;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-between;
+
+        .encadres {
+            align-items: flex-end;
+            background-color: $bleu-fonce;
+            border: 2px solid $jaune;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 20vh;
+            margin: 40px auto;
+            width: 70%;
+            overflow: auto;
+
+
+            .image-episode {
+                margin: 10px;
+
+                img {
+                    min-height: 145px;
+                    max-height: 200px;
                 }
             }
-            
-            .soum {
-                text-align: center;
+
+            .details-episodes {
+                margin-right: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: justify;
+                width: 50%;
+                height: 100%;
+                max-height: 200px;
+
+                .titre-episode {
+                    h2 {
+                        color: $gris-blanc;
+                        font-family: $font-anton;
+                        font-size: 40px;
+                        letter-spacing: 2px;
+                        margin: 0px;
+                    }
+                }
+
+                .chaque-episode {
+                    margin-bottom: 10px;
+                    align-items: baseline;
+                    display: flex;
+                    justify-content: start;
+                    flex-wrap: wrap;
+                    
+                    
+                    .numero-episode {
+                        color: $jaune;
+                        font-family: $font-anton;
+                        font-size: 16px;
+                        letter-spacing: 2px;
+                        margin-right: 20px;
+                    }
+
+                    .date-episode {
+                        margin-right: 20px;
+                        color: $jaune;
+                        font-family: $font-noticia;
+                        font-size: 16px;
+                    }
+
+                    .temps-episode {
+                        margin-right: 20px;
+                        color: $jaune;
+                        font-family: $font-noticia;
+                        font-size: 16px;
+                    }
+                }
+
+                .description-episode {
+                    color: $gris-blanc;
+                    font-family: $font-noticia;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+
+                    p {
+                        margin-top: 0px;
+                    }
+                }
+
+                
             }
             
+            .bouton-play {
+
+                box-shadow: 0px -1.5px 4px $bleu-noir;
+                min-height: 70px;
+                margin: 20px 30px;
+                // padding: 5px;
+                transition: all 0.3s;
+                max-width: 80px;
+                min-width: 60px;   
+            
+                a {
+                    font-size: 44px;
+                    padding: 8px 25px;
+                    
+                }
+
+            }
+
         }
     }
 

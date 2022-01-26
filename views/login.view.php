@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
-        <title>Accueil</title>
+        <title>Login</title>
     </head>
     <body class="connexion-admin">
 
@@ -20,7 +20,7 @@
                         <a href="accueil">Accueil</a>
                     </div>
                     <div class="boutons bouton-a-propos">
-                        <a href="#">À propos</a>
+                        <a href="a-propos">À propos</a>
                     </div>
                 </div>
                 <div class="logo-nav">
@@ -37,11 +37,12 @@
         </header>
 
         <main class="conteneur">
+            <h1>Connectez-vous à votre compte administrateur</h1>
             <div class="login login-form">
                 <form action="login-submit" method="POST">
                     <input type="text" name="courriel" placeholder="Courriel">
                     <input type="password" name="mot_de_passe" placeholder="Mot de passe">
-                    <input type="submit" name="submit" value="Se connecter">
+                    <input type="submit" name="submit" value="Connexion">
                 </form>
             </div>
         </main>

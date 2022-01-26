@@ -9,9 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
-        <title>Accueil</title>
+        <title>À propos</title>
     </head>
-    <body class="accueil">
+    <body class="a-propos">
 
         <header>
             <nav>
@@ -20,7 +20,7 @@
                         <a href="accueil">Accueil</a>
                     </div>
                     <div class="boutons bouton-a-propos">
-                        <a href="a-propos">À propos</a>
+                        <a href="#">À propos</a>
                     </div>
                 </div>
                 <div class="logo-nav">
@@ -34,36 +34,12 @@
                 </div>
                 <div class="gradient"></div>
             </nav>
-            <div class="montagne2">
-                <img src="public/images/montagne-pale.svg" alt="">
-            </div>
-            <div class="montagne1">
-                <img src="public/images/montagne-fonce.svg" alt="">
-            </div>
-
-            <div class="gradient"></div>
         </header>
 
         <main class="conteneur">
-            <div class="section-haut">
-                <div class="titre">
-                    <h1>La vie entre quatres murs</h1>
-                </div>
-                <div class="sous-titre">
-                    <h3>SUIVEZ LES MÉSAVENTURES DES TREMBLAY EN PLEIN CONFINEMENT</h3>
-                </div>
-                <div class="texte">
-                    <p>En pleine période de confinement, les Tremblay, une famille de cinq, vestibulum commodo iaculis consequat. Pellentesque rhoncus quam eu ipsum bibendum, et finibus leo laoreet. Nullam placerat velit quis mi ultrices ullamcorper. In faucibus auctor massa sed cursus. Fusce eget enim quis sem tempor pretium. Duis at congue elit. Duis rhoncus mauris velit, quis dapibus orci pulvinar in. Proin ullamcorper sapien lorem, id varius sem dapibus eget. Phasellus faucibus ipsum vel sapien pulvinar, ut posuere dui porta. Duis vel dignissim enim, vel venenatis est.</p>
-                </div>
-                <div class="logos-commanditaires">
-                    <img src="public/images/logo-ssr-bleu.svg" alt="">
-                    <img src="public/images/logo-banque-bleu.svg" alt="">
-                    <img src="public/images/logo-home-bleu.svg" alt="">
-                </div>
-            </div>
+            <h1>À propos de Cinéma fait maison</h1>
 
-            <div class="section-bas">
-                <div class="encadres">
+            <div class="encadres">
                     <div class="image-episode">
                         <img src="public/images/episode1.jpg" alt="">
                     </div>
@@ -86,7 +62,6 @@
 
                     </div>
                 </div>
-            </div>
         </main>
 
         <footer>
@@ -96,7 +71,7 @@
                 <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
             </div>
             <div class="bouton-admin">
-                <a href="login">Connexion Admin</a>
+                <a href="#">Connexion Admin</a>
             </div>
             <div class="logos-reseaux">
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>

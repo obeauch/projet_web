@@ -13,4 +13,9 @@ class SiteController extends BaseController
     {
         include "views/login.view.php";
     }
+
+    public function aPropos()
+    {
+        include "views/aPropos.view.php";
+    }
 }
