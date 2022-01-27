@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
-        <title>Login</title>
+        <title>Ajout membre équipe</title>
     </head>
     <body class="formulaire">
 
@@ -29,7 +29,7 @@
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
                     <div class="boutons bouton-infolettre">
-                        <a href="infolettre">Infolettre</a>
+                        <a href="infolettre">infolettre</a>
                     </div>
                 </div>
                 <div class="gradient"></div>
@@ -37,12 +37,13 @@
         </header>
 
         <main class="conteneur">
-            <h1>Connectez-vous à votre compte administrateur</h1>
+            <h1>Ajouter un membre à l'équipe</h1>
             <div class="login login-form">
                 <form action="#" method="POST">
+                    <input type="text" name="prenom" placeholder="Prénom">
+                    <input type="text" name="nom" placeholder="Nom">
                     <input type="text" name="courriel" placeholder="Courriel">
-                    <input type="password" name="mot_de_passe" placeholder="Mot de passe">
-                    <input type="submit" name="submit" value="Connexion">
+                    <input type="submit" name="submit" value="Inscription">
                 </form>
             </div>
         </main>

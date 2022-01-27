@@ -18,4 +18,9 @@ class SiteController extends BaseController
     {
         include "views/aPropos.view.php";
     }
+
+    public function infolettre()
+    {
+        include "views/infolettre.view.php";
+    }
 }

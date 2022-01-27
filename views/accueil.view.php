@@ -29,7 +29,7 @@
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
                     <div class="boutons bouton-infolettre">
-                        <a href="#">Infolettre</a>
+                        <a href="infolettre">Infolettre</a>
                     </div>
                 </div>
                 <div class="gradient"></div>

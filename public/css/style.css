@@ -360,7 +360,7 @@ body.accueil .conteneur .section-bas .encadres .bouton-play a {
   padding: 8px 25px;
 }
 
-body.connexion-admin {
+body.formulaire {
   background-color: #01161e;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -375,11 +375,11 @@ body.connexion-admin {
           justify-content: space-between;
 }
 
-body.connexion-admin header {
+body.formulaire header {
   height: 110px;
 }
 
-body.connexion-admin .conteneur {
+body.formulaire .conteneur {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -399,12 +399,12 @@ body.connexion-admin .conteneur {
   width: 100%;
 }
 
-body.connexion-admin .conteneur h1 {
+body.formulaire .conteneur h1 {
   margin: 30px auto;
   text-align: center;
 }
 
-body.connexion-admin .conteneur .login-form {
+body.formulaire .conteneur .login-form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -422,7 +422,7 @@ body.connexion-admin .conteneur .login-form {
   width: 50%;
 }
 
-body.connexion-admin .conteneur .login-form form {
+body.formulaire .conteneur .login-form form {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -435,7 +435,7 @@ body.connexion-admin .conteneur .login-form form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 400px;
+  min-height: 400px;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -446,24 +446,24 @@ body.connexion-admin .conteneur .login-form form {
   width: 100%;
 }
 
-body.connexion-admin .conteneur .login-form form label {
+body.formulaire .conteneur .login-form form label {
   display: block;
   margin: 5px;
 }
 
-body.connexion-admin .conteneur .login-form form label span {
+body.formulaire .conteneur .login-form form label span {
   color: #e4b363;
   display: inline-block;
   font-size: 18px;
   width: 100px;
 }
 
-body.connexion-admin .login {
+body.formulaire .login {
   margin: 40px;
 }
 
-body.connexion-admin .login input,
-body.connexion-admin .login select {
+body.formulaire .login input,
+body.formulaire .login select {
   background-color: #598392;
   border: 2px solid #e4b363;
   font-family: "Noticia Text", serif;
@@ -476,7 +476,7 @@ body.connexion-admin .login select {
   width: 70%;
 }
 
-body.connexion-admin .login input[type=submit] {
+body.formulaire .login input[type=submit] {
   background-color: #e4b363;
   border: 2px solid #e4b363;
   border-radius: 5px;
@@ -492,26 +492,26 @@ body.connexion-admin .login input[type=submit] {
   width: 40%;
 }
 
-body.connexion-admin .login input[type=submit]:hover {
+body.formulaire .login input[type=submit]:hover {
   background-color: #ef8354;
 }
 
-body.connexion-admin .login input::-webkit-input-placeholder {
+body.formulaire .login input::-webkit-input-placeholder {
   color: #01161e;
   opacity: 1;
 }
 
-body.connexion-admin .login input:-ms-input-placeholder {
+body.formulaire .login input:-ms-input-placeholder {
   color: #01161e;
   opacity: 1;
 }
 
-body.connexion-admin .login input::-ms-input-placeholder {
+body.formulaire .login input::-ms-input-placeholder {
   color: #01161e;
   opacity: 1;
 }
 
-body.connexion-admin .login input::placeholder {
+body.formulaire .login input::placeholder {
   color: #01161e;
   opacity: 1;
 }

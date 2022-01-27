@@ -334,7 +334,7 @@ body {
 
     }
     
-    &.connexion-admin {
+    &.formulaire {
         background-color: $bleu-noir;
         display: flex;
         flex-direction: column;
@@ -346,7 +346,6 @@ body {
         }
 
         .conteneur {
-
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -375,7 +374,7 @@ body {
                     border: 2px solid $jaune;
                     display: flex;
                     flex-direction: column;
-                    height: 400px;
+                    min-height: 400px;
                     justify-content: start;
                     margin: 0px auto;
                     max-width: 600px;
