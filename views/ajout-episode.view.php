@@ -9,18 +9,21 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
-        <title>Infolettre</title>
+        <title>Ajout d'un épisode</title>
     </head>
-    <body class="formulaire">
+    <body class="formulaire-admin admin">
 
         <header>
             <nav>
                 <div class="boutons-gauche">
                     <div class="boutons bouton-gauche1">
-                        <a href="accueil">Accueil</a>
+                        <a href="ajout-utilisateur">Utilisateurs</a>
                     </div>
                     <div class="boutons bouton-gauche2">
-                        <a href="a-propos">À propos</a>
+                        <a href="ajout-membre">Membres</a>
+                    </div>
+                    <div class="boutons bouton-gauche3">
+                        <a href="ajout-episode">Épisodes</a>
                     </div>
                 </div>
                 <div class="logo-nav">
@@ -29,7 +32,7 @@
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
                     <div class="boutons bouton-droit1">
-                        <a href="infolettre">Infolettre</a>
+                        <a href="accueil">deconnexion</a>
                     </div>
                 </div>
                 <div class="gradient"></div>
@@ -37,12 +40,13 @@
         </header>
 
         <main class="conteneur">
-            <h1>Inscrivez-vous à notre infolettre</h1>
-            <div class="login login-form">
+            <h1>Ajouter un épisode à la série</h1>
+            <div class="login ajout-form">
                 <form action="#" method="POST">
                     <input type="text" name="prenom" placeholder="Prénom">
                     <input type="text" name="nom" placeholder="Nom">
                     <input type="text" name="courriel" placeholder="Courriel">
+                    <input type="text" name="mot_de_passe" placeholder="Mot de passe">
                     <input type="submit" name="submit" value="Inscription">
                 </form>
             </div>

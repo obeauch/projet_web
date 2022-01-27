@@ -9,9 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
-        <title>Ajout d'un utilisateur</title>
+        <title>Accueil-admin</title>
     </head>
-    <body class="formulaire-admin admin">
+    <body class="accueil admin formulaire-admin">
 
         <header>
             <nav>
@@ -40,19 +40,51 @@
         </header>
 
         <main class="conteneur">
-            <h1>Ajouter un utilisateur</h1>
+            <h1>Épisodes</h1>
+            <h2>Ajouter un épisode à la série</h2>
             <div class="login ajout-form">
-                <form action="#" method="POST">
-                    <input type="text" name="prenom" placeholder="Prénom">
-                    <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="courriel" placeholder="Courriel">
-                    <input type="text" name="mot_de_passe" placeholder="Mot de passe">
-                    <input type="submit" name="submit" value="Inscription">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <input type="text" name="titre" placeholder="Titre">
+                    <textarea type="text" name="description" placeholder="Courte description"></textarea>
+                    <input type="text" name="numero_episode" placeholder="Numéro d'épisode">
+                    <input type="text" name="date_publication" placeholder="Date de publication">
+                    <input type="text" name="duree_episode" placeholder="Durée de l'épisode">
+                    <input type="file" name="image">
+                    <input type="submit" name="submit" value="Ajouter">
                 </form>
             </div>
+
+
+            <div class="section-bas">
+                <h2>Liste des épisodes</h2>
+                <div class="encadres">
+                    <div class="image-episode">
+                        <img src="public/images/episode1.jpg" alt="">
+                    </div>
+                    <div class="details-episodes">
+                        <div class="titre-episode">
+                            <h3>Le choc</h3>
+                        </div>
+                        <div class="chaque-episode">
+                            <div class="numero-episode">Épisode 1</div>
+                            <div class="date-episode">7 février 2022</div>
+                            <div class="temps-episode">9 mins</div>
+                        </div>
+                        <div class="description-episode">
+                            <p>Le mariage est ruiné par l’annonce du gouvernement morbi rutrum id enim ac mattis. Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
+                        </div>
+
+                    </div>
+                    <div class="boutons bouton-modifier">
+                        <a href="#">Modifier</a>
+
+                    </div>
+                </div>
+            </div>
+
         </main>
 
-        <footer>
+        <!-- <footer>
             <div class="logos-commanditaires">
                 <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
                 <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
@@ -65,6 +97,6 @@
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
                 <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
             </div>
-        </footer>
+        </footer> -->
     </body>
 </html>

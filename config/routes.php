@@ -13,7 +13,9 @@ $routes = [
     "login" => "login",
     "login-submit" => "loginSubmit",
     "admin" => "admin",
+    "ajout-membre" => "ajoutMembre",
     "ajout-episode" => "ajoutEpisode",
+    "ajout-utilisateur" => "ajoutUtilisateur",
     "ajout-episode-submit" => "ajoutEpisodeSubmit",
     "supprimer-episode" => "supprimerEpisode",
 ];

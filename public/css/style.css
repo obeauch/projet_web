@@ -1,6 +1,9 @@
-body {
+* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
   margin: 0px;
 }
 
@@ -31,9 +34,9 @@ body .boutons {
           box-shadow: 0px -1.5px 4px #124559;
   max-height: 40px;
   margin: 20px 30px;
-  padding: 5px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  padding: 3px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   max-width: 250px;
   min-width: 100px;
   width: 200px;
@@ -43,9 +46,9 @@ body .boutons {
 body .boutons a {
   color: #eff6e0;
   font-family: "Anton", sans-serif;
-  font-size: 24px;
-  letter-spacing: 2px;
-  padding: 7px 30px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
   text-decoration: none;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -158,6 +161,32 @@ body header .montagne1 {
   z-index: 4;
 }
 
+body .encadres {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-color: #124559;
+  border: 2px solid #e4b363;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 20vh;
+  margin: 40px auto;
+  max-height: 300px;
+  min-width: 800px;
+  max-width: 1300px;
+  padding: 20px;
+  width: 70%;
+  overflow: auto;
+}
+
 body.accueil {
   background-color: #01161e;
   display: -webkit-box;
@@ -238,40 +267,16 @@ body.accueil .conteneur .section-bas {
   width: 100%;
 }
 
-body.accueil .conteneur .section-bas .encadres {
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  background-color: #124559;
-  border: 2px solid #e4b363;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 20vh;
-  margin: 40px auto;
-  max-width: 1300px;
-  width: 70%;
-  overflow: auto;
-}
-
 body.accueil .conteneur .section-bas .encadres .image-episode {
-  margin: 10px;
+  margin: 0px 40px;
 }
 
 body.accueil .conteneur .section-bas .encadres .image-episode img {
   min-height: 145px;
-  max-height: 200px;
+  max-height: 180px;
 }
 
 body.accueil .conteneur .section-bas .encadres .details-episodes {
-  margin-right: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -283,7 +288,9 @@ body.accueil .conteneur .section-bas .encadres .details-episodes {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: justify;
-  width: 50%;
+  width: 70%;
+  max-width: 700px;
+  min-width: 250px;
   height: 100%;
   max-height: 200px;
 }
@@ -336,7 +343,7 @@ body.accueil .conteneur .section-bas .encadres .details-episodes .chaque-episode
 body.accueil .conteneur .section-bas .encadres .details-episodes .description-episode {
   color: #eff6e0;
   font-family: "Noticia Text", serif;
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
@@ -348,9 +355,8 @@ body.accueil .conteneur .section-bas .encadres .bouton-play {
   -webkit-box-shadow: 0px -1.5px 4px #01161e;
           box-shadow: 0px -1.5px 4px #01161e;
   min-height: 70px;
-  margin: 20px 30px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   max-width: 80px;
   min-width: 60px;
 }
@@ -358,6 +364,11 @@ body.accueil .conteneur .section-bas .encadres .bouton-play {
 body.accueil .conteneur .section-bas .encadres .bouton-play a {
   font-size: 44px;
   padding: 8px 25px;
+}
+
+body.accueil .conteneur .section-bas .encadres .bouton-play:hover {
+  -webkit-box-shadow: 0px 0px 0px #01161e;
+          box-shadow: 0px 0px 0px #01161e;
 }
 
 body.formulaire {
@@ -458,12 +469,12 @@ body.formulaire .conteneur .login-form form label span {
   width: 100px;
 }
 
-body.formulaire .login {
+body.formulaire .conteneur .login {
   margin: 40px;
 }
 
-body.formulaire .login input,
-body.formulaire .login select {
+body.formulaire .conteneur .login input,
+body.formulaire .conteneur .login select {
   background-color: #598392;
   border: 2px solid #e4b363;
   font-family: "Noticia Text", serif;
@@ -476,7 +487,7 @@ body.formulaire .login select {
   width: 70%;
 }
 
-body.formulaire .login input[type=submit] {
+body.formulaire .conteneur .login input[type=submit] {
   background-color: #e4b363;
   border: 2px solid #e4b363;
   border-radius: 5px;
@@ -492,26 +503,26 @@ body.formulaire .login input[type=submit] {
   width: 40%;
 }
 
-body.formulaire .login input[type=submit]:hover {
+body.formulaire .conteneur .login input[type=submit]:hover {
   background-color: #ef8354;
 }
 
-body.formulaire .login input::-webkit-input-placeholder {
+body.formulaire .conteneur .login input::-webkit-input-placeholder {
   color: #01161e;
   opacity: 1;
 }
 
-body.formulaire .login input:-ms-input-placeholder {
+body.formulaire .conteneur .login input:-ms-input-placeholder {
   color: #01161e;
   opacity: 1;
 }
 
-body.formulaire .login input::-ms-input-placeholder {
+body.formulaire .conteneur .login input::-ms-input-placeholder {
   color: #01161e;
   opacity: 1;
 }
 
-body.formulaire .login input::placeholder {
+body.formulaire .conteneur .login input::placeholder {
   color: #01161e;
   opacity: 1;
 }
@@ -571,26 +582,7 @@ body.a-propos .conteneur .encadres {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  background-color: #124559;
-  border: 2px solid #e4b363;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  max-height: 210px;
-  margin: 40px auto;
   margin-bottom: 100px;
-  min-width: 800px;
-  max-width: 1300px;
-  padding: 20px;
-  width: 70%;
-  overflow: auto;
 }
 
 body.a-propos .conteneur .encadres .photo {
@@ -599,7 +591,7 @@ body.a-propos .conteneur .encadres .photo {
 
 body.a-propos .conteneur .encadres .photo img {
   min-height: 145px;
-  max-height: 200px;
+  max-height: 180px;
 }
 
 body.a-propos .conteneur .encadres .nom-titre {
@@ -642,6 +634,243 @@ body.a-propos .conteneur .encadres .description-membres p {
   font-size: 18px;
   margin: 0px 40px;
   text-align: justify;
+}
+
+body.admin header {
+  height: 110px;
+}
+
+body.admin .boutons {
+  background-color: #598392;
+  border-bottom: 1px solid #aec3b0;
+  border-right: 0.5px solid #aec3b0;
+  border-left: 0.5px solid #aec3b0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+body.admin .boutons:hover {
+  background-color: #01161e;
+  border-bottom: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  -webkit-box-shadow: 0px 0px 0px #124559;
+          box-shadow: 0px 0px 0px #124559;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+body.admin .boutons:hover a {
+  color: #598392;
+}
+
+body.admin .section-bas {
+  margin-top: 40px;
+}
+
+body.admin .section-bas .encadres {
+  border: 2px solid #aec3b0;
+}
+
+body.admin .section-bas .encadres h3 {
+  color: #eff6e0;
+  font-family: "Anton", sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+
+body.admin .section-bas .encadres .details-episodes .chaque-episode .temps-episode {
+  color: #aec3b0;
+}
+
+body.admin .section-bas .encadres .details-episodes .chaque-episode .date-episode {
+  color: #aec3b0;
+}
+
+body.admin .section-bas .encadres .details-episodes .chaque-episode .numero-episode {
+  color: #aec3b0;
+}
+
+body.admin .section-bas .encadres .details-episodes .description-episode {
+  max-height: 100px;
+  overflow: auto;
+}
+
+body.admin .section-bas .bouton-modifier {
+  min-width: 120px;
+  -webkit-box-shadow: 0px -1.5px 4px #01161e;
+          box-shadow: 0px -1.5px 4px #01161e;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+body.admin .section-bas .bouton-modifier:hover {
+  -webkit-box-shadow: 0px 0px 0px #01161e;
+          box-shadow: 0px 0px 0px #01161e;
+}
+
+body.formulaire-admin {
+  background-color: #01161e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body.formulaire-admin header {
+  height: 110px;
+}
+
+body.formulaire-admin .conteneur {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin: 0px auto;
+  padding-top: 100px;
+  width: 100%;
+}
+
+body.formulaire-admin .conteneur h1 {
+  margin: 30px auto;
+  text-align: center;
+}
+
+body.formulaire-admin .conteneur h2 {
+  margin: 30px auto;
+  text-align: center;
+}
+
+body.formulaire-admin .conteneur .ajout-form {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin: 0px auto;
+  width: 50%;
+}
+
+body.formulaire-admin .conteneur .ajout-form form {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #124559;
+  border: 2px solid #aec3b0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 400px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin: 0px auto;
+  max-width: 800px;
+  min-width: 300px;
+  padding: 20px;
+  width: 100%;
+}
+
+body.formulaire-admin .conteneur .ajout-form form label {
+  display: block;
+  margin: 5px;
+}
+
+body.formulaire-admin .conteneur .ajout-form form label span {
+  color: #e4b363;
+  display: inline-block;
+  font-size: 18px;
+  width: 100px;
+}
+
+body.formulaire-admin .conteneur .login input,
+body.formulaire-admin .conteneur .login select,
+body.formulaire-admin .conteneur .login textarea {
+  background-color: #598392;
+  border: 2px solid #aec3b0;
+  font-family: "Noticia Text", serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+  min-width: 200px;
+  padding: 15px;
+  text-align: center;
+  width: 70%;
+}
+
+body.formulaire-admin .conteneur .login input[type=submit] {
+  background-color: #aec3b0;
+  border: 2px solid #aec3b0;
+  border-radius: 5px;
+  color: #124559;
+  cursor: pointer;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 2px;
+  margin: 60px auto;
+  padding: 6px 0px;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 40%;
+}
+
+body.formulaire-admin .conteneur .login input[type=submit]:hover {
+  background-color: #01161e;
+  color: #aec3b0;
+}
+
+body.formulaire-admin .conteneur .login input::-webkit-input-placeholder,
+body.formulaire-admin .conteneur .login textarea::-webkit-input-placeholder {
+  color: #01161e;
+  opacity: 1;
+}
+
+body.formulaire-admin .conteneur .login input:-ms-input-placeholder,
+body.formulaire-admin .conteneur .login textarea:-ms-input-placeholder {
+  color: #01161e;
+  opacity: 1;
+}
+
+body.formulaire-admin .conteneur .login input::-ms-input-placeholder,
+body.formulaire-admin .conteneur .login textarea::-ms-input-placeholder {
+  color: #01161e;
+  opacity: 1;
+}
+
+body.formulaire-admin .conteneur .login input::placeholder,
+body.formulaire-admin .conteneur .login textarea::placeholder {
+  color: #01161e;
+  opacity: 1;
 }
 
 body footer {

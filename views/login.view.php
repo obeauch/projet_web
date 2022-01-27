@@ -16,10 +16,10 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <div class="boutons bouton-accueil">
+                    <div class="boutons bouton-gauche1">
                         <a href="accueil">Accueil</a>
                     </div>
-                    <div class="boutons bouton-a-propos">
+                    <div class="boutons bouton-gauche2">
                         <a href="a-propos">À propos</a>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <div class="boutons bouton-infolettre">
+                    <div class="boutons bouton-droit1">
                         <a href="infolettre">Infolettre</a>
                     </div>
                 </div>
