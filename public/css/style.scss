@@ -34,6 +34,23 @@ body {
         margin: 30px auto;
         width: 60%;
     }
+
+    p {
+        color: $gris-blanc;
+        font-family: $font-noticia;
+        font-size: 20px;
+    }
+
+    a {
+        color: $gris-blanc;
+        font-family: $font-anton;
+        font-size: 20px;
+        letter-spacing: 1px;   
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
     
     //styles des boutons sur chaque page
     .boutons {
@@ -51,18 +68,6 @@ body {
         min-width: 100px;
         width: 200px;
         text-align: center;
-
-        //<a> de chaque boutons oranges
-        a {
-            color: $gris-blanc;
-            font-family: $font-anton;
-            font-size: 20px;
-            letter-spacing: 1px;   
-            // padding: 7px 30px;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
     }
 
     //styles des hovers sur chaque page
@@ -70,10 +75,6 @@ body {
         background-color: $jaune;
         box-shadow: 0px 0px 0px $bleu-fonce;
         transform: translateY(-2px);
-
-        a {
-            color: $bleu-fonce;
-        }
     }
 
     //header style principal et général
@@ -135,21 +136,21 @@ body {
         }
         .montagne2 {
             position: absolute;
-            bottom: 0px;
+            bottom: -10px;
             left: 0px;
             height: 75%;
-            object-fit: cover;
-            width: 100%;
+            // object-fit: cover; (appliquer à img)
+            width: 110%;
             z-index: 3;
         }
 
         .montagne1 {
             position: absolute;
-            bottom: 0px;
+            bottom: -20px;
             left: 0px;
             height: 45%;
-            object-fit: cover;
-            width: 100%;
+            // object-fit: cover; (appliquer à img)
+            width: 110%;
             z-index: 4;
         }
 
@@ -164,7 +165,7 @@ body {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        height: 20vh;
+        // height: 20vh;
         margin: 40px auto;
         max-height: 300px;
         min-width: 800px;
@@ -180,6 +181,11 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        min-height: 100vh;
+
+        a:hover {
+            color: $bleu-fonce;
+        }
         
         .conteneur {
             align-items: left;
@@ -205,6 +211,7 @@ body {
                         margin-bottom: 0px;
                         font-size: 64px;
                         letter-spacing: 2px;
+                        min-width: 600px;
                         width: 60%;
                     }
                 }
@@ -218,6 +225,7 @@ body {
                         font-style: italic;
                         font-size: 30px;
                         letter-spacing: 1px;
+                        min-width: 600px;
                         transform: scale(1, 1.1);
                         width: 60%;
                     }
@@ -226,10 +234,9 @@ body {
                 .texte {
     
                     p {
-                        color: $gris-blanc;
-                        font-family: $font-noticia;
                         font-size: 24px;
                         margin-bottom: 30px;
+                        min-width: 600px;
                         text-align: justify;
                         width: 60%;
                     }
@@ -246,6 +253,7 @@ body {
             }
 
             .section-bas {
+                margin-bottom: 60px;
                 margin-top: 150px;
                 width: 100%;
 
@@ -331,11 +339,9 @@ body {
                         transition: all 0.2s;
                         max-width: 80px;
                         min-width: 60px;   
+                        font-size: 44px;
+                        padding: 0px 25px;
                     
-                        a {
-                            font-size: 44px;
-                            padding: 8px 25px;
-                        }
                     }
 
                     .bouton-play:hover {
@@ -354,7 +360,7 @@ body {
         background-color: $bleu-noir;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
         justify-content: space-between;
 
         header {
@@ -368,7 +374,7 @@ body {
             height: 100%;
             justify-content: start;
             margin: 0px auto;
-            padding-top: 100px;
+            padding-bottom: 100px;
             width: 100%;
 
             h1 {
@@ -394,7 +400,7 @@ body {
                     justify-content: start;
                     margin: 0px auto;
                     max-width: 600px;
-                    min-width: 300px;
+                    min-width: 400px;
                     padding: 20px;
                     width: 100%;
                     
@@ -422,7 +428,7 @@ body {
                     font-family: $font-noticia;
                     font-size: 24px;
                     font-weight: bold;
-                    margin: 20px;
+                    margin: 10px;
                     min-width: 200px;
                     padding: 15px;
                     text-align: center;
@@ -463,7 +469,7 @@ body {
         background-color: $bleu-noir;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
         justify-content: space-between;
 
         
@@ -490,9 +496,6 @@ body {
                 padding: 20px;
 
                 p {
-                    color: $gris-blanc;
-                    font-family: $font-noticia;
-                    font-size: 20px;
                     text-align: justify;
                     margin: 0px 40px;
                 }
@@ -540,7 +543,6 @@ body {
                         
                         p {
                             color: $jaune;
-                            font-family: $font-anton;
                             font-size: 18px;
                             letter-spacing: 1px;
                         }
@@ -553,8 +555,6 @@ body {
                     // width: 50%;
                     
                     p {
-                        color: $gris-blanc;
-                        font-family: $font-noticia;
                         font-size: 18px;
                         margin: 0px 40px;
                         text-align: justify;
@@ -568,6 +568,10 @@ body {
 
     //Boutons et encadrés de toutes les pages de la section admin
     &.admin {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
 
         header {
             height: 110px;
@@ -590,55 +594,73 @@ body {
             box-shadow: 0px 0px 0px $bleu-fonce;
             transform: translateY(-2px);
     
-            a {
-                color: $gris-bleu;
-            }
         }
 
-        .section-bas {
-            margin-top: 40px;
+        a:hover {
+            color: $verdatre-pale;
+        }
 
-            .encadres {
-                border: 2px solid $verdatre-pale;
+        .conteneur {
+            justify-content: space-between;
+            .section-bas {
+                // margin-top: 40px;
     
-                h3 {
-                    color: $gris-blanc;
-                    font-family: $font-anton;
-                    font-size: 28px;
-                    letter-spacing: 2px;
-                    margin: 0px;
-                }
-    
-                .details-episodes {
-    
-                    .chaque-episode {
-     
-                        .temps-episode {
-                            color: $verdatre-pale;
+                .encadres {
+                    border: 2px solid $verdatre-pale;
+                    align-items: start;
+        
+                    h3 {
+                        color: $gris-blanc;
+                        font-family: $font-anton;
+                        font-size: 28px;
+                        letter-spacing: 2px;
+                        margin: 0px;
+                    }
+        
+                    // page admin.view.php
+                    .details-episodes {
+        
+                        .chaque-episode {
+         
+                            .temps-episode {
+                                color: $verdatre-pale;
+                            }
+                            .date-episode {
+                                color: $verdatre-pale;
+                            }
+                            .numero-episode {
+                                color: $verdatre-pale;
+                            }
                         }
-                        .date-episode {
-                            color: $verdatre-pale;
-                        }
-                        .numero-episode {
-                            color: $verdatre-pale;
+        
+                        .description-episode {
+                            max-height: 100px;
+                            overflow: auto;
+                        }  
+                    }
+
+                    //page ajout-utilisateur.view.php
+                    .utilisateur {
+
+                        .courriel-utilisateur {
+                           p {
+                               color: $verdatre-pale;
+                           }
                         }
                     }
-    
-                    .description-episode {
-                        max-height: 100px;
-                        overflow: auto;
-                    }  
+
                 }
-            }
-     
-            .bouton-modifier {
-                min-width: 120px;
-                box-shadow: 0px -1.5px 4px $bleu-noir;
-                transition: all 0.2s;
-            }
-    
-            .bouton-modifier:hover {
-                box-shadow: 0px 0px 0px $bleu-noir;
+         
+                .bouton-modifier,
+                .bouton-supprimer {
+                    // min-width: 150px;
+                    box-shadow: 0px -1.5px 4px $bleu-noir;
+                    transition: all 0.2s;
+                }
+        
+                .bouton-modifier:hover {
+                    box-shadow: 0px 0px 0px $bleu-noir;
+                }
             }
         }
     }
@@ -649,7 +671,7 @@ body {
         background-color: $bleu-noir;
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
         justify-content: space-between;
 
         header {
@@ -661,18 +683,19 @@ body {
             display: flex;
             flex-direction: column;
             height: 100%;
-            justify-content: start;
             margin: 0px auto;
-            padding-top: 100px;
+            padding-bottom: 100px;
             width: 100%;
 
             h1 {
                 margin: 30px auto;
+                min-width: 350px;
                 text-align: center;
             }
 
             h2 {
                 margin: 30px auto;
+                min-width: 350px;
                 text-align: center;
             }
 
@@ -694,7 +717,7 @@ body {
                     justify-content: start;
                     margin: 0px auto;
                     max-width: 800px;
-                    min-width: 300px;
+                    min-width: 400px;
                     padding: 20px;
                     width: 100%;
                     
@@ -723,7 +746,7 @@ body {
                     font-family: $font-noticia;
                     font-size: 24px;
                     font-weight: bold;
-                    margin: 20px;
+                    margin: 10px;
                     min-width: 200px;
                     padding: 15px;
                     text-align: center;
@@ -764,10 +787,10 @@ body {
 
     //footer des pages de la section client
     footer {
-        // margin-top: 60px;
         background-color: $bleu-fonce;
         display: flex;
         justify-content: space-between;
+        min-width: 820px;
         width: 100%;
     
         .logos-commanditaires {
@@ -780,11 +803,9 @@ body {
         .bouton-admin {
             background-color: $gris-bleu;
             border-radius: 5px;
-            height: 30px;
             margin: 10px;
             padding: 10px;
             text-align: center;
-            width: 15%;
     
             a {
                 color: $bleu-noir;

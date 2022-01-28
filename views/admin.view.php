@@ -16,24 +16,16 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <div class="boutons bouton-gauche3">
-                        <a href="admin">Épisodes</a>
-                    </div>
-                    <div class="boutons bouton-gauche1">
-                        <a href="ajout-utilisateur">Utilisateurs</a>
-                    </div>
-                    <div class="boutons bouton-gauche2">
-                        <a href="ajout-membre">Membres</a>
-                    </div>
+                    <a href="admin" class="boutons bouton-gauche1">Épisodes</a>
+                    <a href="ajout-utilisateur" class="boutons bouton-gauche2">Utilisateurs</a>
+                    <a href="ajout-membre" class="boutons bouton-gauche3">Membres</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
                 </div>
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <div class="boutons bouton-droit1">
-                        <a href="accueil">déconnexion</a>
-                    </div>
+                    <a href="accueil" class="boutons bouton-droit1">déconnexion</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -73,18 +65,14 @@
                         <div class="description-episode">
                             <p>Le mariage est ruiné par l’annonce du gouvernement morbi rutrum id enim ac mattis. Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
                         </div>
-
                     </div>
-                    <div class="boutons bouton-modifier">
-                        <a href="#">Modifier</a>
-
-                    </div>
+                    <a href="#" class="boutons bouton-modifier">Modifier</a>
                 </div>
             </div>
 
         </main>
 
-        <!-- <footer>
+        <footer>
             <div class="logos-commanditaires">
                 <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
                 <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
@@ -97,6 +85,6 @@
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
                 <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
             </div>
-        </footer> -->
+        </footer>
     </body>
 </html>

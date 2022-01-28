@@ -11,29 +11,21 @@
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
         <title>Ajout membre équipe</title>
     </head>
-    <body class="formulaire-admin admin">
+    <body class="a-propos admin formulaire-admin">
 
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <div class="boutons bouton-gauche3">
-                        <a href="admin">Épisodes</a>
-                    </div>
-                    <div class="boutons bouton-gauche1">
-                        <a href="ajout-utilisateur">Utilisateurs</a>
-                    </div>
-                    <div class="boutons bouton-gauche2">
-                        <a href="ajout-membre">Membres</a>
-                    </div>
+                    <a href="admin" class="boutons bouton-gauche1">Épisodes</a>
+                    <a href="ajout-utilisateur" class="boutons bouton-gauche2">Utilisateurs</a>
+                    <a href="ajout-membre" class="boutons bouton-gauche3">Membres</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
                 </div>
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <div class="boutons bouton-droit1">
-                        <a href="accueil">déconnexion</a>
-                    </div>
+                    <a href="accueil" class="boutons bouton-droit1">déconnexion</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -49,6 +41,27 @@
                     <input type="text" name="mot_de_passe" placeholder="Mot de passe">
                     <input type="submit" name="submit" value="Inscription">
                 </form>
+            </div>
+
+            <div class="encadres">
+                <div class="photo">
+                    <img src="public/images/episode1.jpg" alt="">
+                </div>
+                <div class="nom-titre">
+                    <div class="nom-membres">
+                        <h3>Alain Thériault</h3>
+                    </div>
+                    <div class="titre-membres">
+                        <p>Producteur / Réalisateur</p>
+                    </div>
+                </div>
+                <div class="description-membres">
+                    <p>Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
+                </div>
+                <div class="boutons-encadres">
+                        <a href="#" class="boutons bouton-modifier">Modifier</a>
+                        <a href="#" class="boutons bouton-supprimer">Supprimer</a>
+                    </div>
             </div>
         </main>
 

@@ -24,6 +24,23 @@ body h2 {
   width: 60%;
 }
 
+body p {
+  color: #eff6e0;
+  font-family: "Noticia Text", serif;
+  font-size: 20px;
+}
+
+body a {
+  color: #eff6e0;
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 body .boutons {
   background-color: #ef8354;
   border-bottom: 2px solid #e4b363;
@@ -43,27 +60,12 @@ body .boutons {
   text-align: center;
 }
 
-body .boutons a {
-  color: #eff6e0;
-  font-family: "Anton", sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-  text-align: center;
-  text-decoration: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 body .boutons:hover {
   background-color: #e4b363;
   -webkit-box-shadow: 0px 0px 0px #124559;
           box-shadow: 0px 0px 0px #124559;
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
-}
-
-body .boutons:hover a {
-  color: #124559;
 }
 
 body header {
@@ -141,23 +143,19 @@ body header .gradient {
 
 body header .montagne2 {
   position: absolute;
-  bottom: 0px;
+  bottom: -10px;
   left: 0px;
   height: 75%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
+  width: 110%;
   z-index: 3;
 }
 
 body header .montagne1 {
   position: absolute;
-  bottom: 0px;
+  bottom: -20px;
   left: 0px;
   height: 45%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
+  width: 110%;
   z-index: 4;
 }
 
@@ -177,7 +175,6 @@ body .encadres {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 20vh;
   margin: 40px auto;
   max-height: 300px;
   min-width: 800px;
@@ -199,6 +196,11 @@ body.accueil {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-height: 100vh;
+}
+
+body.accueil a:hover {
+  color: #124559;
 }
 
 body.accueil .conteneur {
@@ -233,6 +235,7 @@ body.accueil .conteneur .section-haut .titre h1 {
   margin-bottom: 0px;
   font-size: 64px;
   letter-spacing: 2px;
+  min-width: 600px;
   width: 60%;
 }
 
@@ -243,16 +246,16 @@ body.accueil .conteneur .section-haut .sous-titre h3 {
   font-style: italic;
   font-size: 30px;
   letter-spacing: 1px;
+  min-width: 600px;
   -webkit-transform: scale(1, 1.1);
           transform: scale(1, 1.1);
   width: 60%;
 }
 
 body.accueil .conteneur .section-haut .texte p {
-  color: #eff6e0;
-  font-family: "Noticia Text", serif;
   font-size: 24px;
   margin-bottom: 30px;
+  min-width: 600px;
   text-align: justify;
   width: 60%;
 }
@@ -263,6 +266,7 @@ body.accueil .conteneur .section-haut .logos-commanditaires img {
 }
 
 body.accueil .conteneur .section-bas {
+  margin-bottom: 60px;
   margin-top: 150px;
   width: 100%;
 }
@@ -359,11 +363,8 @@ body.accueil .conteneur .section-bas .encadres .bouton-play {
   transition: all 0.2s;
   max-width: 80px;
   min-width: 60px;
-}
-
-body.accueil .conteneur .section-bas .encadres .bouton-play a {
   font-size: 44px;
-  padding: 8px 25px;
+  padding: 0px 25px;
 }
 
 body.accueil .conteneur .section-bas .encadres .bouton-play:hover {
@@ -380,7 +381,7 @@ body.formulaire {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -406,7 +407,7 @@ body.formulaire .conteneur {
       -ms-flex-pack: start;
           justify-content: start;
   margin: 0px auto;
-  padding-top: 100px;
+  padding-bottom: 100px;
   width: 100%;
 }
 
@@ -452,7 +453,7 @@ body.formulaire .conteneur .login-form form {
           justify-content: start;
   margin: 0px auto;
   max-width: 600px;
-  min-width: 300px;
+  min-width: 400px;
   padding: 20px;
   width: 100%;
 }
@@ -480,7 +481,7 @@ body.formulaire .conteneur .login select {
   font-family: "Noticia Text", serif;
   font-size: 24px;
   font-weight: bold;
-  margin: 20px;
+  margin: 10px;
   min-width: 200px;
   padding: 15px;
   text-align: center;
@@ -536,7 +537,7 @@ body.a-propos {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -566,9 +567,6 @@ body.a-propos .conteneur .texte-a-propos {
 }
 
 body.a-propos .conteneur .texte-a-propos p {
-  color: #eff6e0;
-  font-family: "Noticia Text", serif;
-  font-size: 20px;
   text-align: justify;
   margin: 0px 40px;
 }
@@ -623,17 +621,28 @@ body.a-propos .conteneur .encadres .nom-titre .titre-membres {
 
 body.a-propos .conteneur .encadres .nom-titre .titre-membres p {
   color: #e4b363;
-  font-family: "Anton", sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
 }
 
 body.a-propos .conteneur .encadres .description-membres p {
-  color: #eff6e0;
-  font-family: "Noticia Text", serif;
   font-size: 18px;
   margin: 0px 40px;
   text-align: justify;
+}
+
+body.admin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
 }
 
 body.admin header {
@@ -660,19 +669,24 @@ body.admin .boutons:hover {
           transform: translateY(-2px);
 }
 
-body.admin .boutons:hover a {
-  color: #598392;
+body.admin a:hover {
+  color: #aec3b0;
 }
 
-body.admin .section-bas {
-  margin-top: 40px;
+body.admin .conteneur {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-body.admin .section-bas .encadres {
+body.admin .conteneur .section-bas .encadres {
   border: 2px solid #aec3b0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 
-body.admin .section-bas .encadres h3 {
+body.admin .conteneur .section-bas .encadres h3 {
   color: #eff6e0;
   font-family: "Anton", sans-serif;
   font-size: 28px;
@@ -680,32 +694,36 @@ body.admin .section-bas .encadres h3 {
   margin: 0px;
 }
 
-body.admin .section-bas .encadres .details-episodes .chaque-episode .temps-episode {
+body.admin .conteneur .section-bas .encadres .details-episodes .chaque-episode .temps-episode {
   color: #aec3b0;
 }
 
-body.admin .section-bas .encadres .details-episodes .chaque-episode .date-episode {
+body.admin .conteneur .section-bas .encadres .details-episodes .chaque-episode .date-episode {
   color: #aec3b0;
 }
 
-body.admin .section-bas .encadres .details-episodes .chaque-episode .numero-episode {
+body.admin .conteneur .section-bas .encadres .details-episodes .chaque-episode .numero-episode {
   color: #aec3b0;
 }
 
-body.admin .section-bas .encadres .details-episodes .description-episode {
+body.admin .conteneur .section-bas .encadres .details-episodes .description-episode {
   max-height: 100px;
   overflow: auto;
 }
 
-body.admin .section-bas .bouton-modifier {
-  min-width: 120px;
+body.admin .conteneur .section-bas .encadres .utilisateur .courriel-utilisateur p {
+  color: #aec3b0;
+}
+
+body.admin .conteneur .section-bas .bouton-modifier,
+body.admin .conteneur .section-bas .bouton-supprimer {
   -webkit-box-shadow: 0px -1.5px 4px #01161e;
           box-shadow: 0px -1.5px 4px #01161e;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
-body.admin .section-bas .bouton-modifier:hover {
+body.admin .conteneur .section-bas .bouton-modifier:hover {
   -webkit-box-shadow: 0px 0px 0px #01161e;
           box-shadow: 0px 0px 0px #01161e;
 }
@@ -719,7 +737,7 @@ body.formulaire-admin {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -741,21 +759,20 @@ body.formulaire-admin .conteneur {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
   margin: 0px auto;
-  padding-top: 100px;
+  padding-bottom: 100px;
   width: 100%;
 }
 
 body.formulaire-admin .conteneur h1 {
   margin: 30px auto;
+  min-width: 350px;
   text-align: center;
 }
 
 body.formulaire-admin .conteneur h2 {
   margin: 30px auto;
+  min-width: 350px;
   text-align: center;
 }
 
@@ -796,7 +813,7 @@ body.formulaire-admin .conteneur .ajout-form form {
           justify-content: start;
   margin: 0px auto;
   max-width: 800px;
-  min-width: 300px;
+  min-width: 400px;
   padding: 20px;
   width: 100%;
 }
@@ -821,7 +838,7 @@ body.formulaire-admin .conteneur .login textarea {
   font-family: "Noticia Text", serif;
   font-size: 24px;
   font-weight: bold;
-  margin: 20px;
+  margin: 10px;
   min-width: 200px;
   padding: 15px;
   text-align: center;
@@ -881,6 +898,7 @@ body footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  min-width: 820px;
   width: 100%;
 }
 
@@ -892,11 +910,9 @@ body footer .logos-commanditaires img {
 body footer .bouton-admin {
   background-color: #598392;
   border-radius: 5px;
-  height: 30px;
   margin: 10px;
   padding: 10px;
   text-align: center;
-  width: 15%;
 }
 
 body footer .bouton-admin a {

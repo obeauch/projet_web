@@ -11,36 +11,29 @@
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
         <title>Ajout d'un utilisateur</title>
     </head>
-    <body class="formulaire-admin admin">
+    <body class="accueil admin formulaire-admin">
 
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <div class="boutons bouton-gauche3">
-                        <a href="admin">Épisodes</a>
-                    </div>
-                    <div class="boutons bouton-gauche1">
-                        <a href="ajout-utilisateur">Utilisateurs</a>
-                    </div>
-                    <div class="boutons bouton-gauche2">
-                        <a href="ajout-membre">Membres</a>
-                    </div>
+                    <a href="admin" class="boutons bouton-gauche1">Épisodes</a>
+                    <a href="ajout-utilisateur" class="boutons bouton-gauche2">Utilisateurs</a>
+                    <a href="ajout-membre" class="boutons bouton-gauche3">Membres</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
                 </div>
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <div class="boutons bouton-droit1">
-                        <a href="accueil">déconnexion</a>
-                    </div>
+                    <a href="accueil" class="boutons bouton-droit1">déconnexion</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
         </header>
 
         <main class="conteneur">
-            <h1>Ajouter un utilisateur</h1>
+            <h1>Utilisateurs</h1>
+            <h2>Ajouter un utilisateur</h2>
             <div class="login ajout-form">
                 <form action="#" method="POST">
                     <input type="text" name="prenom" placeholder="Prénom">
@@ -49,6 +42,24 @@
                     <input type="text" name="mot_de_passe" placeholder="Mot de passe">
                     <input type="submit" name="submit" value="Inscription">
                 </form>
+            </div>
+
+            <div class="section-bas">
+                <h2>Liste des utilisateurs</h2>
+                <div class="encadres">
+                    <div class="utilisateur">
+                        <div class="nom-utilisateur">
+                            <h3>Caliméro La Coquille</h3>
+                        </div>
+                        <div class="courriel-utilisateur">
+                            <p>calimero@yahoo.com</p>
+                        </div>
+                    </div>
+                    <div class="boutons-encadres">
+                        <a href="#" class="boutons bouton-modifier">Modifier</a>
+                        <a href="#" class="boutons bouton-supprimer">Supprimer</a>
+                    </div>
+                </div>
             </div>
         </main>
 

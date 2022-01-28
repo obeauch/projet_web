@@ -16,21 +16,17 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <div class="boutons bouton-gauche1">
-                        <a href="accueil">Accueil</a>
-                    </div>
-                    <div class="boutons bouton-gauche2">
-                        <a href="a-propos">À propos</a>
-                    </div>
+                    <a href="accueil" class="boutons bouton-gauche1">Accueil</a>
+                    <a href="a-propos" class="boutons bouton-gauche2">À propos</a>
                 </div>
+
                 <div class="logo-nav">
-                    <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
+                    <a href="accueil"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
                 </div>
+
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <div class="boutons bouton-droit1">
-                        <a href="infolettre">Infolettre</a>
-                    </div>
+                    <a href="infolettre" class="boutons bouton-droit1">Infolettre</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
