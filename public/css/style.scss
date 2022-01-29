@@ -51,6 +51,10 @@ body {
         transition: all 0.3s;
     }
 
+    a:hover {
+        color: $bleu-fonce;
+    }
+
     
     //styles des boutons sur chaque page
     .boutons {
@@ -90,7 +94,7 @@ body {
             top: 0px;
             left: 0px;
             display: flex;
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
             height: 90px; 
@@ -99,7 +103,7 @@ body {
 
             .boutons-gauche {
                 display: flex;
-                flex-wrap: wrap;
+                // flex-wrap: wrap;
                 justify-content: start;
                 z-index: 10;
             }
@@ -125,6 +129,7 @@ body {
             }
         }
 
+        //gradient large page accueil
         .gradient {
             position: absolute;
             top: 0px;
@@ -134,45 +139,59 @@ body {
             background: linear-gradient(0deg, rgba(239,131,84,1) 0%, rgba(228,179,99,1) 36%, rgba(239,246,224,1) 83%, rgba(174,195,176,1) 100%);
             z-index: 1;
         }
+
+        //images de montagne arrière plan avec paralax
         .montagne2 {
             position: absolute;
-            bottom: -10px;
+            top: 70px;
             left: 0px;
-            height: 75%;
-            // object-fit: cover; (appliquer à img)
-            width: 110%;
+            min-width: 1200px;
             z-index: 3;
+
+            img {
+                object-fit: cover;
+                height: 25%;
+                width: 110%;
+            }
         }
 
+        //images de montagne avant plan avec paralax
         .montagne1 {
             position: absolute;
-            bottom: -20px;
+            top: 170px;
             left: 0px;
-            height: 45%;
-            // object-fit: cover; (appliquer à img)
-            width: 110%;
+            min-width: 1200px;    
             z-index: 4;
+
+            img {
+                object-fit: cover;
+                height: 35%;
+                width: 110%;
+                // max-width: 2300px;
+            }
         }
-
-
     }
 
     //encadrés style général
     .encadres {
+        box-shadow: 10px 10px 30px #050e11;
         align-items: flex-end;
         background-color: $bleu-fonce;
         border: 2px solid $jaune;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        // height: 20vh;
         margin: 40px auto;
-        max-height: 300px;
+        max-height: 250px;
         min-width: 800px;
         max-width: 1300px;
         padding: 20px;
         width: 70%;
         overflow: auto;
+    }
+
+    form {
+        box-shadow: 10px 10px 30px #050e11;
     }
 
     // page accueil.view et admin.view
@@ -182,10 +201,6 @@ body {
         flex-direction: column;
         justify-content: space-between;
         min-height: 100vh;
-
-        a:hover {
-            color: $bleu-fonce;
-        }
         
         .conteneur {
             align-items: left;
@@ -198,10 +213,10 @@ body {
 
             .section-haut {
                 background-image: url("../images/image-accueil-projet-web.jpg");
-                background-position: right;
+                background-position: 70% 100%;
                 background-repeat: no-repeat;
                 background-size: contain;
-                margin-left: 10vw;
+                margin-left: 15vw;
                 
 
                 .titre {
@@ -259,7 +274,7 @@ body {
 
                 .encadres {
 
-                    .image-episode {
+                    .image {
                         margin: 0px 40px;
 
                         img {
@@ -325,6 +340,7 @@ body {
                             font-family: $font-noticia;
                             font-size: 18px;
                             margin-bottom: 10px;
+                            overflow: auto;
 
                             p {
                                 margin-top: 0px;
@@ -379,6 +395,7 @@ body {
 
             h1 {
                 margin: 30px auto;
+                min-width: 570;
                 text-align: center;
             }
 
@@ -400,7 +417,7 @@ body {
                     justify-content: start;
                     margin: 0px auto;
                     max-width: 600px;
-                    min-width: 400px;
+                    min-width: 474px;
                     padding: 20px;
                     width: 100%;
                     
@@ -492,15 +509,6 @@ body {
                 text-align: center;
             }
 
-            .texte-a-propos {
-                padding: 20px;
-
-                p {
-                    text-align: justify;
-                    margin: 0px 40px;
-                }
-            }
-
             h2 {
                 margin: 30px auto;
                 text-align: center;
@@ -510,7 +518,7 @@ body {
                 align-items: start;
                 margin-bottom: 100px;
 
-                .photo {
+                .image {
                     margin: 0px 40px;
     
                     img {
@@ -543,6 +551,7 @@ body {
                         
                         p {
                             color: $jaune;
+                            font-family: $font-anton;
                             font-size: 18px;
                             letter-spacing: 1px;
                         }
@@ -552,15 +561,26 @@ body {
 
                 .description-membres {
 
+                    max-height: 200px;
+                    overflow: auto;
                     // width: 50%;
                     
                     p {
                         font-size: 18px;
                         margin: 0px 40px;
-                        text-align: justify;
+                        // text-align: justify;
                     }
                 }
     
+            }
+      
+            .texte-a-propos {
+                max-height: 600px;
+
+                p {
+                    text-align: justify;
+                    margin: 0px 40px;
+                }
             }
         }
 
@@ -616,6 +636,17 @@ body {
                         letter-spacing: 2px;
                         margin: 0px;
                     }
+
+                    .boutons-encadres {
+                        align-items: flex-end;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        margin: 10px 0px;
+                        
+
+
+                    }
         
                     // page admin.view.php
                     .details-episodes {
@@ -649,13 +680,34 @@ body {
                         }
                     }
 
+                    //page ajout-membre.view.php
+                    .nom-titre {
+                        width: 100%;
+    
+                        .titre-membres {
+   
+                            p {
+                                font-family: $font-anton;
+                                color: $verdatre-pale;
+                            }
+                        }   
+                    }
+    
+                    .description-membres {
+                        margin: 0px 40px;
+                        max-height: 200px;
+                        min-width: 200px;
+                        max-width: 400px;
+                        overflow: auto;
+                    }
+
                 }
          
                 .bouton-modifier,
                 .bouton-supprimer {
-                    // min-width: 150px;
                     box-shadow: 0px -1.5px 4px $bleu-noir;
                     transition: all 0.2s;
+                    margin: 10px;
                 }
         
                 .bouton-modifier:hover {

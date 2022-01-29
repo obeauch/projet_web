@@ -9,9 +9,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
-        <title>Ajout membre équipe</title>
+        <title>Membre de l'équipe</title>
     </head>
-    <body class="a-propos admin formulaire-admin">
+    <body class="accueil admin formulaire-admin">
 
         <header>
             <nav>
@@ -32,7 +32,8 @@
         </header>
 
         <main class="conteneur">
-            <h1>Ajouter un membre à l'équipe</h1>
+            <h1>Membres</h1>
+            <h2>Ajouter un membre à l'équipe</h2>
             <div class="login ajout-form">
                 <form action="#" method="POST">
                     <input type="text" name="prenom" placeholder="Prénom">
@@ -43,25 +44,29 @@
                 </form>
             </div>
 
-            <div class="encadres">
-                <div class="photo">
-                    <img src="public/images/episode1.jpg" alt="">
-                </div>
-                <div class="nom-titre">
-                    <div class="nom-membres">
-                        <h3>Alain Thériault</h3>
+            <div class="section-bas">
+                <h2>Membres de l’équipe de production</h2>
+                <div class="encadres">
+                    <div class="image">
+                        <img src="public/images/episode1.jpg" alt="">
                     </div>
-                    <div class="titre-membres">
-                        <p>Producteur / Réalisateur</p>
+                    <div class="nom-titre">
+                        <div class="nom-membres">
+                            <h3>Alain Thériault</h3>
+                        </div>
+                        <div class="titre-membres">
+                            <p>Producteur / Réalisateur</p>
+                        </div>
                     </div>
-                </div>
-                <div class="description-membres">
-                    <p>Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
-                </div>
-                <div class="boutons-encadres">
+                    <div class="description-membres">
+                        <p>Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
+                    </div>
+                    <div class="boutons-encadres">
                         <a href="#" class="boutons bouton-modifier">Modifier</a>
                         <a href="#" class="boutons bouton-supprimer">Supprimer</a>
                     </div>
+                </div>
+
             </div>
         </main>
 

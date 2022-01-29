@@ -31,10 +31,10 @@
                 <div class="gradient"></div>
             </nav>
             <div class="montagne2">
-                <img src="public/images/montagne-pale.svg" alt="">
+                <img src="public/images/montagne-pale.png" alt="">
             </div>
             <div class="montagne1">
-                <img src="public/images/montagne-fonce.svg" alt="">
+                <img src="public/images/montagne-fonce.png" alt="">
             </div>
 
             <div class="gradient"></div>
@@ -60,7 +60,7 @@
 
             <div class="section-bas">
                 <div class="encadres">
-                    <div class="image-episode">
+                    <div class="image">
                         <img src="public/images/episode1.jpg" alt="">
                     </div>
                     <div class="details-episodes">

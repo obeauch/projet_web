@@ -41,6 +41,10 @@ body a {
   transition: all 0.3s;
 }
 
+body a:hover {
+  color: #124559;
+}
+
 body .boutons {
   background-color: #ef8354;
   border-bottom: 2px solid #e4b363;
@@ -82,8 +86,6 @@ body header nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -97,8 +99,6 @@ body header nav .boutons-gauche {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -143,23 +143,37 @@ body header .gradient {
 
 body header .montagne2 {
   position: absolute;
-  bottom: -10px;
+  top: 70px;
   left: 0px;
-  height: 75%;
-  width: 110%;
+  min-width: 1200px;
   z-index: 3;
+}
+
+body header .montagne2 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 25%;
+  width: 110%;
 }
 
 body header .montagne1 {
   position: absolute;
-  bottom: -20px;
+  top: 170px;
   left: 0px;
-  height: 45%;
-  width: 110%;
+  min-width: 1200px;
   z-index: 4;
 }
 
+body header .montagne1 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 35%;
+  width: 110%;
+}
+
 body .encadres {
+  -webkit-box-shadow: 10px 10px 30px #050e11;
+          box-shadow: 10px 10px 30px #050e11;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
@@ -176,12 +190,17 @@ body .encadres {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 40px auto;
-  max-height: 300px;
+  max-height: 250px;
   min-width: 800px;
   max-width: 1300px;
   padding: 20px;
   width: 70%;
   overflow: auto;
+}
+
+body form {
+  -webkit-box-shadow: 10px 10px 30px #050e11;
+          box-shadow: 10px 10px 30px #050e11;
 }
 
 body.accueil {
@@ -197,10 +216,6 @@ body.accueil {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 100vh;
-}
-
-body.accueil a:hover {
-  color: #124559;
 }
 
 body.accueil .conteneur {
@@ -224,10 +239,10 @@ body.accueil .conteneur {
 
 body.accueil .conteneur .section-haut {
   background-image: url("../images/image-accueil-projet-web.jpg");
-  background-position: right;
+  background-position: 70% 100%;
   background-repeat: no-repeat;
   background-size: contain;
-  margin-left: 10vw;
+  margin-left: 15vw;
 }
 
 body.accueil .conteneur .section-haut .titre h1 {
@@ -271,11 +286,11 @@ body.accueil .conteneur .section-bas {
   width: 100%;
 }
 
-body.accueil .conteneur .section-bas .encadres .image-episode {
+body.accueil .conteneur .section-bas .encadres .image {
   margin: 0px 40px;
 }
 
-body.accueil .conteneur .section-bas .encadres .image-episode img {
+body.accueil .conteneur .section-bas .encadres .image img {
   min-height: 145px;
   max-height: 180px;
 }
@@ -349,6 +364,7 @@ body.accueil .conteneur .section-bas .encadres .details-episodes .description-ep
   font-family: "Noticia Text", serif;
   font-size: 18px;
   margin-bottom: 10px;
+  overflow: auto;
 }
 
 body.accueil .conteneur .section-bas .encadres .details-episodes .description-episode p {
@@ -413,6 +429,7 @@ body.formulaire .conteneur {
 
 body.formulaire .conteneur h1 {
   margin: 30px auto;
+  min-width: 570;
   text-align: center;
 }
 
@@ -453,7 +470,7 @@ body.formulaire .conteneur .login-form form {
           justify-content: start;
   margin: 0px auto;
   max-width: 600px;
-  min-width: 400px;
+  min-width: 474px;
   padding: 20px;
   width: 100%;
 }
@@ -562,15 +579,6 @@ body.a-propos .conteneur h1 {
   text-align: center;
 }
 
-body.a-propos .conteneur .texte-a-propos {
-  padding: 20px;
-}
-
-body.a-propos .conteneur .texte-a-propos p {
-  text-align: justify;
-  margin: 0px 40px;
-}
-
 body.a-propos .conteneur h2 {
   margin: 30px auto;
   text-align: center;
@@ -583,11 +591,11 @@ body.a-propos .conteneur .encadres {
   margin-bottom: 100px;
 }
 
-body.a-propos .conteneur .encadres .photo {
+body.a-propos .conteneur .encadres .image {
   margin: 0px 40px;
 }
 
-body.a-propos .conteneur .encadres .photo img {
+body.a-propos .conteneur .encadres .image img {
   min-height: 145px;
   max-height: 180px;
 }
@@ -621,14 +629,28 @@ body.a-propos .conteneur .encadres .nom-titre .titre-membres {
 
 body.a-propos .conteneur .encadres .nom-titre .titre-membres p {
   color: #e4b363;
+  font-family: "Anton", sans-serif;
   font-size: 18px;
   letter-spacing: 1px;
+}
+
+body.a-propos .conteneur .encadres .description-membres {
+  max-height: 200px;
+  overflow: auto;
 }
 
 body.a-propos .conteneur .encadres .description-membres p {
   font-size: 18px;
   margin: 0px 40px;
+}
+
+body.a-propos .conteneur .texte-a-propos {
+  max-height: 600px;
+}
+
+body.a-propos .conteneur .texte-a-propos p {
   text-align: justify;
+  margin: 0px 40px;
 }
 
 body.admin {
@@ -694,6 +716,23 @@ body.admin .conteneur .section-bas .encadres h3 {
   margin: 0px;
 }
 
+body.admin .conteneur .section-bas .encadres .boutons-encadres {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0px;
+}
+
 body.admin .conteneur .section-bas .encadres .details-episodes .chaque-episode .temps-episode {
   color: #aec3b0;
 }
@@ -715,12 +754,30 @@ body.admin .conteneur .section-bas .encadres .utilisateur .courriel-utilisateur 
   color: #aec3b0;
 }
 
+body.admin .conteneur .section-bas .encadres .nom-titre {
+  width: 100%;
+}
+
+body.admin .conteneur .section-bas .encadres .nom-titre .titre-membres p {
+  font-family: "Anton", sans-serif;
+  color: #aec3b0;
+}
+
+body.admin .conteneur .section-bas .encadres .description-membres {
+  margin: 0px 40px;
+  max-height: 200px;
+  min-width: 200px;
+  max-width: 400px;
+  overflow: auto;
+}
+
 body.admin .conteneur .section-bas .bouton-modifier,
 body.admin .conteneur .section-bas .bouton-supprimer {
   -webkit-box-shadow: 0px -1.5px 4px #01161e;
           box-shadow: 0px -1.5px 4px #01161e;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  margin: 10px;
 }
 
 body.admin .conteneur .section-bas .bouton-modifier:hover {

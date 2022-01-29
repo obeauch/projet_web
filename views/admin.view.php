@@ -50,7 +50,7 @@
             <div class="section-bas">
                 <h2>Liste des épisodes</h2>
                 <div class="encadres">
-                    <div class="image-episode">
+                    <div class="image">
                         <img src="public/images/episode1.jpg" alt="">
                     </div>
                     <div class="details-episodes">
