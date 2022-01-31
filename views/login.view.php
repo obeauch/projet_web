@@ -35,7 +35,7 @@
         <main class="conteneur">
             <h1>Connectez-vous à votre compte administrateur</h1>
             <div class="login login-form">
-                <form action="#" method="POST">
+                <form action="admin" method="POST">
                     <input type="text" name="courriel" placeholder="Courriel">
                     <input type="password" name="mot_de_passe" placeholder="Mot de passe">
                     <input type="submit" name="submit" value="Connexion">

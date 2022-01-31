@@ -9,6 +9,16 @@ class SiteController extends BaseController
         include "views/accueil.view.php";
     }
 
+    public function aPropos()
+    {
+        include "views/aPropos.view.php";
+    }
+
+    public function video()
+    {
+        include "views/video.view.php";
+    }
+
     public function login()
     {
         include "views/login.view.php";
@@ -42,11 +52,6 @@ class SiteController extends BaseController
     public function admin()
     {
         include "views/admin.view.php";
-    }
-
-    public function aPropos()
-    {
-        include "views/aPropos.view.php";
     }
 
     public function infolettre()

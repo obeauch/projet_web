@@ -77,7 +77,7 @@
                         </div>
 
                     </div>
-                    <a href="admin" class="boutons bouton-play">▶</a>
+                    <a href="video" class="boutons bouton-play">▶</a>
                 </div>
             </div>
         </main>

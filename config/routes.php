@@ -9,6 +9,7 @@ url => méthode du controlleur
 $routes = [
     "accueil" => "accueil",
     "a-propos" => "aPropos",
+    "video" => "video",
     "infolettre" => "infolettre",
     "login" => "login",
     "login-submit" => "loginSubmit",
