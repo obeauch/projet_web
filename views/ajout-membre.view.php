@@ -16,16 +16,16 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="admin" class="boutons bouton-gauche1">Épisodes</a>
-                    <a href="ajout-utilisateur" class="boutons bouton-gauche2">Utilisateurs</a>
-                    <a href="ajout-membre" class="boutons bouton-gauche3">Membres</a>
+                    <a href="admin" class="boutons">Épisodes</a>
+                    <a href="ajout-utilisateur" class="boutons">Utilisateurs</a>
+                    <a href="ajout-membre" class="bouton-actif-admin">Membres</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
                 </div>
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <a href="accueil" class="boutons bouton-droit1">déconnexion</a>
+                    <a href="accueil" class="boutons">déconnexion</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -35,42 +35,53 @@
             <h1>Membres</h1>
             <h2>Ajouter un membre à l'équipe</h2>
             <div class="login ajout-form">
-                <form action="#" method="POST">
+                <form action="ajout-membre-submit" method="POST"  enctype="multipart/form-data">
                     <input type="text" name="prenom" placeholder="Prénom">
                     <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="courriel" placeholder="Courriel">
-                    <input type="text" name="mot_de_passe" placeholder="Mot de passe">
-                    <input type="submit" name="submit" value="Inscription">
+                    <input type="text" name="poste" placeholder="Poste">
+                    <textarea type="text" name="description" placeholder="Courte description du nouveau membre"></textarea>
+                    <input type="file" name="photo" placeholder="Photo">
+                    <input type="submit" name="submit" value="Ajouter">
+
+                    <?php if (isset($_GET['erreur'])) {?>
+                        <div>
+                            <p>
+                                Une erreur est survenue.
+                            </p>
+                        </div>
+                    <?php }?>
                 </form>
             </div>
 
             <div class="section-bas">
                 <h2>Membres de l’équipe de production</h2>
-                <div class="encadres">
-                    <div class="image">
-                        <img src="public/images/episode1.jpg" alt="">
-                    </div>
-                    <div class="nom-titre">
-                        <div class="nom-membres">
-                            <h3>Alain Thériault</h3>
+                <?php foreach ($posts as $post) {?>
+                    <div class="encadres">
+                        <div class="image">
+                            <img src="<?=$post["photo"]?>" alt="">
                         </div>
-                        <div class="titre-membres">
-                            <p>Producteur / Réalisateur</p>
+                        <div class="nom-titre">
+                            <div class="nom-membres">
+                                <h3><?=$post["prenom"]?> <?=$post["nom"]?></h3>
+                            </div>
+                            <div class="titre-membres">
+                                <p><?=$post["poste"]?></p>
+                            </div>
+                        </div>
+                        <div class="description-membres">
+                            <p><?=$post["description"]?></p>
+                        </div>
+                        <div class="boutons-encadres">
+                            <a href="#" class="boutons bouton-modifier">Modifier</a>
+                            <a href="#" class="boutons bouton-supprimer">Supprimer</a>
                         </div>
                     </div>
-                    <div class="description-membres">
-                        <p>Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
-                    </div>
-                    <div class="boutons-encadres">
-                        <a href="#" class="boutons bouton-modifier">Modifier</a>
-                        <a href="#" class="boutons bouton-supprimer">Supprimer</a>
-                    </div>
-                </div>
+                <?php }?>
 
             </div>
         </main>
 
-        <footer>
+        <!-- <footer>
             <div class="logos-commanditaires">
                 <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
                 <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
@@ -83,6 +94,6 @@
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
                 <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
             </div>
-        </footer>
+        </footer> -->
     </body>
 </html>

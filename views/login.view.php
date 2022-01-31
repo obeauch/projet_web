@@ -16,8 +16,9 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="accueil" class="boutons bouton-gauche1">Accueil</a>
-                    <a href="a-propos" class="boutons bouton-gauche2">À propos</a>
+                    <a href="accueil" class="boutons">Accueil</a>
+                    <a href="video" class="boutons">Vidéos</a>
+                    <a href="a-propos" class="boutons">À propos</a>
                 </div>
 
                 <div class="logo-nav">
@@ -26,7 +27,7 @@
 
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <a href="infolettre" class="boutons bouton-droit1">Infolettre</a>
+                    <a href="infolettre" class="boutons">Infolettre</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -35,11 +36,20 @@
         <main class="conteneur">
             <h1>Connectez-vous à votre compte administrateur</h1>
             <div class="login login-form">
-                <form action="admin" method="POST">
-                    <input type="text" name="courriel" placeholder="Courriel">
-                    <input type="password" name="mot_de_passe" placeholder="Mot de passe">
+                <form action="login-submit" method="POST">
+                    <input type="text" name="courriel" placeholder="Courriel" required>
+                    <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
                     <input type="submit" name="submit" value="Connexion">
+
+                    <?php if (isset($_GET['erreur'])) {?>
+                        <div class="erreur">
+                            <p>
+                                Les information de connexion fournis, sont inexactes.
+                            </p>
+                        </div>
+                    <?php }?>
                 </form>
+
             </div>
         </main>
 
@@ -50,7 +60,7 @@
                 <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
             </div>
             <div class="bouton-admin">
-                <a href="login">Connexion Admin</a>
+                <a href="login" class="bouton-actif-admin-footer">Connexion Admin</a>
             </div>
             <div class="logos-reseaux">
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>

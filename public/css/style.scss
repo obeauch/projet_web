@@ -81,6 +81,38 @@ body {
         transform: translateY(-2px);
     }
 
+    //bouton sur page active du côté client
+    .bouton-actif-client {
+        background-color: $jaune;
+        border-radius: 3px;
+        box-shadow: 0px 0px 0px $bleu-fonce;
+        color: $bleu-noir;
+        max-height: 40px;
+        margin: 20px 30px;
+        max-width: 250px;
+        min-width: 100px;
+        padding: 3px;
+        text-align: center;
+        transform: translateY(-2px);
+        width: 200px;
+    }
+
+    //bouton sur page active du côté admin
+    .bouton-actif-admin {
+        background-color: $bleu-noir;
+        border-radius: 3px;
+        box-shadow: 0px 0px 0px $bleu-fonce;
+        color: $verdatre-pale;
+        max-height: 40px;
+        margin: 20px 30px;
+        max-width: 250px;
+        min-width: 100px;
+        padding: 3px;
+        text-align: center;
+        transform: translateY(-2px);
+        width: 200px;
+    }
+
     //header style principal et général
     header {
         
@@ -172,6 +204,7 @@ body {
         }
     }
 
+    //conteneur général de chaque page
     .conteneur {
         align-items: left;
         display: flex;
@@ -200,8 +233,25 @@ body {
         overflow: auto;
     }
 
+    //box shadow des encadrés de formulaires
     form {
         box-shadow: 10px 10px 30px #050e11;
+    }
+
+    .erreur {
+        p {
+            color: $orange;
+            font-family: $font-noticia;
+            font-weight: bold;
+        }
+    }
+
+    .reussi {
+        p {
+            color: $gris-blanc;
+            font-family: $font-noticia;
+            font-weight: bold;
+        }
     }
 
     // page accueil.view et admin.view
@@ -513,13 +563,14 @@ body {
             }
 
             h2 {
-                margin: 30px auto;
+                margin: 0px auto;
+                margin-top: 80px;
                 text-align: center;
             }
 
             .encadres {
                 align-items: start;
-                margin-bottom: 100px;
+                // margin-bottom: 100px;
 
                 .image {
                     margin: 0px 40px;
@@ -891,7 +942,7 @@ body {
             // flex-direction: column;
             height: 100%;
             // margin: 0px auto;
-            padding-bottom: 100px;
+            // padding-bottom: 100px;
             // width: 100%;
 
             h1 {
@@ -1008,25 +1059,33 @@ body {
         }
     
         .bouton-admin {
-            background-color: $gris-bleu;
-            border-radius: 5px;
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
+            margin: 8px;
+            padding: 5px;
     
             a {
+                background-color: $gris-bleu;
+                border-radius: 5px;
                 color: $bleu-noir;
                 font-family: $font-anton;
                 font-size: 24px;
                 letter-spacing: 2px;   
-                padding-top: 5px;
+                padding: 5px 15px;
                 text-decoration: none;
-                width: 80%;
+                text-align: center;
                 transition: all 0.3s;
             }
     
             a:hover {
+                background-color: $bleu-noir;
                 color: $gris-blanc;
+            }
+
+            .bouton-actif-admin-footer {
+                background-color: $bleu-noir;
+                border-radius: 3px;
+                box-shadow: 0px 0px 0px $bleu-fonce;
+                color: $gris-blanc;
+                text-align: center;
             }
         }
     

@@ -16,8 +16,9 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="accueil" class="boutons bouton-gauche1">Accueil</a>
-                    <a href="a-propos" class="boutons bouton-gauche2">À propos</a>
+                    <a href="accueil" class="boutons">Accueil</a>
+                    <a href="video" class="boutons">Vidéos</a>
+                    <a href="a-propos" class="bouton-actif-client">À propos</a>
                 </div>
 
                 <div class="logo-nav">
@@ -26,7 +27,7 @@
 
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <a href="infolettre" class="boutons bouton-droit1">Infolettre</a>
+                    <a href="infolettre" class="boutons">Infolettre</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -49,22 +50,25 @@
 
             <h2>Membres de l’équipe de production</h2>
 
-            <div class="encadres">
-                <div class="image">
-                    <img src="public/images/episode1.jpg" alt="">
-                </div>
-                <div class="nom-titre">
-                    <div class="nom-membres">
-                        <h3>Alain Thériault</h3>
+            <?php foreach ($posts as $post) {?>
+                <div class="encadres">
+                    <div class="image">
+                        <img src="<?=$post["photo"]?>" alt="">
                     </div>
-                    <div class="titre-membres">
-                        <p>Producteur / Réalisateur</p>
+                    <div class="nom-titre">
+                        <div class="nom-membres">
+                            <h3><?=$post["prenom"]?> <?=$post["nom"]?></h3>
+                        </div>
+                        <div class="titre-membres">
+                            <p><?=$post["poste"]?></p>
+                        </div>
+                    </div>
+                    <div class="description-membres">
+                        <p><?=$post["description"]?></p>
                     </div>
                 </div>
-                <div class="description-membres">
-                    <p>Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
-                </div>
-            </div>
+            <?php }?>
+
         </main>
 
         <footer>

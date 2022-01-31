@@ -16,16 +16,16 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="admin" class="boutons bouton-gauche1">Épisodes</a>
-                    <a href="ajout-utilisateur" class="boutons bouton-gauche2">Utilisateurs</a>
-                    <a href="ajout-membre" class="boutons bouton-gauche3">Membres</a>
+                    <a href="admin" class="boutons">Épisodes</a>
+                    <a href="ajout-utilisateur" class="bouton-actif-admin">Utilisateurs</a>
+                    <a href="ajout-membre" class="boutons">Membres</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
                 </div>
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <a href="accueil" class="boutons bouton-droit1">déconnexion</a>
+                    <a href="accueil" class="boutons">déconnexion</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -63,7 +63,7 @@
             </div>
         </main>
 
-        <footer>
+        <!-- <footer>
             <div class="logos-commanditaires">
                 <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
                 <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
@@ -76,6 +76,6 @@
                 <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
                 <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
             </div>
-        </footer>
+        </footer> -->
     </body>
 </html>

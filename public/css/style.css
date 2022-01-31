@@ -72,6 +72,40 @@ body .boutons:hover {
           transform: translateY(-2px);
 }
 
+body .bouton-actif-client {
+  background-color: #e4b363;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 0px #124559;
+          box-shadow: 0px 0px 0px #124559;
+  color: #01161e;
+  max-height: 40px;
+  margin: 20px 30px;
+  max-width: 250px;
+  min-width: 100px;
+  padding: 3px;
+  text-align: center;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  width: 200px;
+}
+
+body .bouton-actif-admin {
+  background-color: #01161e;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 0px #124559;
+          box-shadow: 0px 0px 0px #124559;
+  color: #aec3b0;
+  max-height: 40px;
+  margin: 20px 30px;
+  max-width: 250px;
+  min-width: 100px;
+  padding: 3px;
+  text-align: center;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  width: 200px;
+}
+
 body header {
   position: relative;
   width: 100%;
@@ -220,6 +254,18 @@ body .encadres {
 body form {
   -webkit-box-shadow: 10px 10px 30px #050e11;
           box-shadow: 10px 10px 30px #050e11;
+}
+
+body .erreur p {
+  color: #ef8354;
+  font-family: "Noticia Text", serif;
+  font-weight: bold;
+}
+
+body .reussi p {
+  color: #eff6e0;
+  font-family: "Noticia Text", serif;
+  font-weight: bold;
 }
 
 body.accueil {
@@ -568,7 +614,8 @@ body.a-propos .conteneur h1 {
 }
 
 body.a-propos .conteneur h2 {
-  margin: 30px auto;
+  margin: 0px auto;
+  margin-top: 80px;
   text-align: center;
 }
 
@@ -576,7 +623,6 @@ body.a-propos .conteneur .encadres {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
-  margin-bottom: 100px;
 }
 
 body.a-propos .conteneur .encadres .image {
@@ -973,7 +1019,6 @@ body.formulaire-admin .conteneur {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  padding-bottom: 100px;
 }
 
 body.formulaire-admin .conteneur h1 {
@@ -1120,27 +1165,36 @@ body footer .logos-commanditaires img {
 }
 
 body footer .bouton-admin {
-  background-color: #598392;
-  border-radius: 5px;
-  margin: 10px;
-  padding: 10px;
-  text-align: center;
+  margin: 8px;
+  padding: 5px;
 }
 
 body footer .bouton-admin a {
+  background-color: #598392;
+  border-radius: 5px;
   color: #01161e;
   font-family: "Anton", sans-serif;
   font-size: 24px;
   letter-spacing: 2px;
-  padding-top: 5px;
+  padding: 5px 15px;
   text-decoration: none;
-  width: 80%;
+  text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 body footer .bouton-admin a:hover {
+  background-color: #01161e;
   color: #eff6e0;
+}
+
+body footer .bouton-admin .bouton-actif-admin-footer {
+  background-color: #01161e;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 0px #124559;
+          box-shadow: 0px 0px 0px #124559;
+  color: #eff6e0;
+  text-align: center;
 }
 
 body footer .logos-reseaux {

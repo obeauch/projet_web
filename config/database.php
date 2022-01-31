@@ -2,5 +2,5 @@
 
 $username = "root";
 $password = "";
-$database = "REMPLACER ICI LE NOM DE LA BDD";
+$database = "projet_web1";
 $server = "localhost";

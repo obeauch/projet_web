@@ -16,8 +16,9 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="accueil" class="boutons bouton-gauche1">Accueil</a>
-                    <a href="a-propos" class="boutons bouton-gauche2">À propos</a>
+                    <a href="accueil" class="bouton-actif-client">Accueil</a>
+                    <a href="video" class="boutons">Vidéos</a>
+                    <a href="a-propos" class="boutons">À propos</a>
                 </div>
 
                 <div class="logo-nav">
@@ -26,7 +27,7 @@
 
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <a href="infolettre" class="boutons bouton-droit1">Infolettre</a>
+                    <a href="infolettre" class="boutons">Infolettre</a>
                 </div>
                 <div class="gradient"></div>
             </nav>

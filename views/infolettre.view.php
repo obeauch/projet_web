@@ -16,8 +16,9 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="accueil" class="boutons bouton-gauche1">Accueil</a>
-                    <a href="a-propos" class="boutons bouton-gauche2">À propos</a>
+                    <a href="accueil" class="boutons">Accueil</a>
+                    <a href="video" class="boutons">Vidéos</a>
+                    <a href="a-propos" class="boutons">À propos</a>
                 </div>
 
                 <div class="logo-nav">
@@ -26,7 +27,7 @@
 
                 <div class="boutons-droit">
                     <div class="bouton-transparent"></div>
-                    <a href="infolettre" class="boutons bouton-droit1">Infolettre</a>
+                    <a href="infolettre" class="bouton-actif-client">Infolettre</a>
                 </div>
                 <div class="gradient"></div>
             </nav>
@@ -35,11 +36,26 @@
         <main class="conteneur">
             <h1>Inscrivez-vous à notre infolettre</h1>
             <div class="login login-form">
-                <form action="#" method="POST">
-                    <input type="text" name="prenom" placeholder="Prénom">
-                    <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="courriel" placeholder="Courriel">
+                <form action="ajout-infolettre-submit" method="POST">
+                    <input type="text" name="prenom" placeholder="Prénom" required>
+                    <input type="text" name="nom" placeholder="Nom" required>
+                    <input type="email" name="courriel" placeholder="Courriel"required>
                     <input type="submit" name="submit" value="Inscription">
+
+                    <?php if (isset($_GET['erreur'])) {?>
+                        <div>
+                            <p>
+                                Une erreur est survenue.
+                            </p>
+                        </div>
+                    <?php }?>
+                    <?php if (isset($_GET['reussi'])) {?>
+                        <div>
+                            <p>
+                                Bravo, votre inscription à l'infolettre à réussie!
+                            </p>
+                        </div>
+                    <?php }?>
                 </form>
             </div>
         </main>
