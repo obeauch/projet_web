@@ -17,7 +17,7 @@
             <nav>
                 <div class="boutons-gauche">
                     <a href="accueil" class="bouton-actif-client">Accueil</a>
-                    <a href="video" class="boutons">Vidéos</a>
+                    <a href="videos" class="boutons">Vidéos</a>
                     <a href="a-propos" class="boutons">À propos</a>
                 </div>
 
@@ -60,7 +60,29 @@
             </div>
 
             <div class="section-bas">
-                <div class="encadres">
+                <h2>Les épisodes</h2>
+                <?php foreach ($episodes as $episode) {?>
+                    <div class="encadres">
+                        <div class="image">
+                            <img src="<?=$episode["image"]?>" alt="image/épisode<?=$episode["numero_episode"]?>">
+                        </div>
+                        <div class="details-episodes">
+                            <div class="titre-episode">
+                                <h2><?=$episode["titre"]?></h2>
+                            </div>
+                            <div class="chaque-episode">
+                                <div class="numero-episode">Épisode <?=$episode["numero_episode"]?></div>
+                                <div class="date-episode"><?=$episode["date_parution"]?></div>
+                                <div class="temps-episode"><?=$episode["temps"]?> mins</div>
+                            </div>
+                            <div class="description-episode">
+                                <p><?=$episode["description"]?></p>
+                            </div>
+                        </div>
+                        <a href="videos" class="boutons bouton-play">▶</a>
+                    </div>
+                <?php }?>
+                <!-- <div class="encadres">
                     <div class="image">
                         <img src="public/images/episode1.jpg" alt="">
                     </div>
@@ -78,8 +100,8 @@
                         </div>
 
                     </div>
-                    <a href="video" class="boutons bouton-play">▶</a>
-                </div>
+
+                </div> -->
             </div>
         </main>
 

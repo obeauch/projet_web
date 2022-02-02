@@ -17,8 +17,8 @@
             <nav>
                 <div class="boutons-gauche">
                     <a href="admin" class="bouton-actif-admin">Épisodes</a>
-                    <a href="ajout-utilisateur" class="boutons">Utilisateurs</a>
-                    <a href="ajout-membre" class="boutons">Membres</a>
+                    <a href="utilisateurs" class="boutons">Utilisateurs</a>
+                    <a href="membres" class="boutons">Membres</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
@@ -35,13 +35,22 @@
             <h1>Épisodes</h1>
             <h2>Ajouter un épisode à la série</h2>
             <div class="login ajout-form">
-                <form action="#" method="POST" enctype="multipart/form-data">
+                <form action="ajout-episode-submit" method="POST" enctype="multipart/form-data">
                     <input type="text" name="titre" placeholder="Titre">
                     <textarea type="text" name="description" placeholder="Courte description"></textarea>
-                    <input type="text" name="numero_episode" placeholder="Numéro d'épisode">
-                    <input type="text" name="date_publication" placeholder="Date de publication">
-                    <input type="text" name="duree_episode" placeholder="Durée de l'épisode">
-                    <input type="file" name="image">
+                    <input type="number" name="numero_episode" min="1" max="200" placeholder="Numéro d'épisode">
+
+                    <span>date de parution</span><input type="date" name="date_parution" placeholder="Date de parution">
+
+                    <input type="number" name="temps" min="1" max="100" placeholder="Durée de l'épisode en minutes">
+
+                        <span>Image démonstrative de l'épisode</span>
+                        <input type="file" name="image">
+
+
+                        <span>Vidéo de l'épisode</span>
+                        <input type="file" name="video" accept="video/*">
+
                     <input type="submit" name="submit" value="Ajouter">
                 </form>
             </div>
@@ -49,41 +58,29 @@
 
             <div class="section-bas">
                 <h2>Liste des épisodes</h2>
-                <div class="encadres">
-                    <div class="image">
-                        <img src="public/images/episode1.jpg" alt="">
+                <?php foreach ($episodes as $episode) {?>
+                    <div class="encadres">
+                        <div class="image">
+                            <img src="<?=$episode["image"]?>" alt="image/épisode<?=$episode["numero_episode"]?>">
+                        </div>
+                        <div class="details-episodes">
+                            <div class="titre-episode">
+                                <h3><?=$episode["titre"]?></h3>
+                            </div>
+                            <div class="chaque-episode">
+                                <div class="numero-episode">Épisode <?=$episode["numero_episode"]?></div>
+                                <div class="date-episode"><?=$episode["date_parution"]?></div>
+                                <div class="temps-episode"><?=$episode["temps"]?> mins</div>
+                            </div>
+                            <div class="description-episode">
+                                <p><?=$episode["description"]?></p>
+                            </div>
+                        </div>
+                        <a href="modifier-episode?id=<?=$episode["id"]?>"  class="boutons bouton-modifier">Modifier</a>
                     </div>
-                    <div class="details-episodes">
-                        <div class="titre-episode">
-                            <h3>Le choc</h3>
-                        </div>
-                        <div class="chaque-episode">
-                            <div class="numero-episode">Épisode 1</div>
-                            <div class="date-episode">7 février 2022</div>
-                            <div class="temps-episode">9 mins</div>
-                        </div>
-                        <div class="description-episode">
-                            <p>Le mariage est ruiné par l’annonce du gouvernement morbi rutrum id enim ac mattis. Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
-                        </div>
-                    </div>
-                    <a href="#" class="boutons bouton-modifier">Modifier</a>
-                </div>
+                <?php }?>
             </div>
         </main>
 
-        <!-- <footer>
-            <div class="logos-commanditaires">
-                <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
-            </div>
-            <div class="bouton-admin">
-                <a href="login">Connexion Admin</a>
-            </div>
-            <div class="logos-reseaux">
-                <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
-                <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
-            </div>
-        </footer> -->
     </body>
 </html>

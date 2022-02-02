@@ -32,14 +32,15 @@ class Administrateurs extends BaseModel
             if ($mot_passe_ok) {
                 // sauvegarde seulement le id de celui qui est connecté
                 $_SESSION["administrateur_id"] = $entree["id"];
+                // return $mot_passe_ok;
+                return true;
+            } else {
+                return false;
             }
-            //Retourner true ou false
-            return $mot_passe_ok;
+            //Le email n'existe pas dans la bdd
         } else {
             return false;
         }
 
-        var_dump($entree);
-        exit();
     }
 }

@@ -20,7 +20,7 @@ body {
     h1 {
         color: $gris-blanc;
         font-family: $font-anton;
-        font-size: 32px;
+        font-size: 40px;
         letter-spacing: 2px;
         width: 60%;
     }
@@ -29,7 +29,7 @@ body {
     h2 {
         color: $gris-blanc;
         font-family: $font-anton;
-        font-size: 24px;
+        font-size: 32px;
         letter-spacing: 2px;
         margin: 30px auto;
         width: 60%;
@@ -227,7 +227,7 @@ body {
         margin: 40px auto;
         max-height: 250px;
         min-width: 800px;
-        max-width: 1300px;
+        max-width: 1400px;
         padding: 20px;
         width: 70%;
         overflow: auto;
@@ -263,8 +263,9 @@ body {
         min-height: 100vh;
         
         .conteneur {
-
+            
             .section-haut {
+                height: 65vh;
                 background-image: url("../images/image-accueil-projet-web.jpg");
                 background-position: 70% 100%;
                 background-repeat: no-repeat;
@@ -322,8 +323,12 @@ body {
 
             .section-bas {
                 margin-bottom: 60px;
-                margin-top: 150px;
+                margin-top: 60px;
                 width: 100%;
+
+                h2 {
+                    width: 50%;
+                }
 
                 .encadres {
 
@@ -342,7 +347,7 @@ body {
                         justify-content: space-between;
                         text-align: justify;
                         width: 70%;
-                        max-width: 700px;
+                        max-width: 800px;
                         min-width: 250px;
                         height: 100%;
                         max-height: 200px;
@@ -473,17 +478,17 @@ body {
                     padding: 20px;
                     width: 100%;
                     
+                    span {
+                        color: $jaune;
+                        display: inline-block;
+                        font-size: 18px;
+                        width: 100px;
+                    }
                     
                     label {
                         display: block;
                         margin: 5px;
                         
-                        span {
-                            color: $jaune;
-                            display: inline-block;
-                            font-size: 18px;
-                            width: 100px;
-                        }
                     }
                 }
             }
@@ -653,13 +658,10 @@ body {
         
         .conteneur {
             align-items: start;
-            // display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-around;
-            // margin: 0px auto;
-            // margin-bottom: 60px;
-            width: 85%;
+            justify-content: space-evenly;
+            width: 100%;
 
             .details-episodes {
                 display: flex;
@@ -719,47 +721,55 @@ body {
             }
 
             .section-gauche {
-                width: 75%;
 
                 .chaque-episode {
                     flex-direction: row;
                 }
             }
 
+            .ligne-verticale {
+                background-color: $jaune;
+                width: 3px;
+                height: 600px;
+            }
+
             .section-droite {
-                width: 25%;
-                height: 900px;
                 overflow: auto;
 
+                .boutons:hover {
+                    background-color: $gris-bleu;
+                    box-shadow: 0px 0px 0px $bleu-fonce;
+                    transform: translateY(-2px);
+                }
+
+                
                 .encadres {
                     align-items: start;
-                    margin-left: 40px;
                     min-width: 400px;
                     padding: 10px;
-                    // width: 100%;
-
+                    
                     .image {
                         margin: 10px;
-
+                        
                         img {
-                            // min-height: 145px;
                             max-height: 120px;
                         }
                     }
-
+                    
                     .details-episodes {
                         margin: 10px;
                         width: 100%;
-
+                        
                         .titre-episode {
-                            h2 {
+                            h3 {
                                 color: $gris-blanc;
-                                font-size: 24px;
+                                font-size: 20px;
                                 letter-spacing: 2px;
                                 margin: 0px;
+                                text-align: left;
                             }
                         }
-
+                        
                         .chaque-episode {
                             flex-direction: column;
 
@@ -979,17 +989,19 @@ body {
                     padding: 20px;
                     width: 100%;
                     
+                    span {
+                        color: $verdatre-pale;
+                        font-family: $font-noticia;
+                        display: inline-block;
+                        font-size: 18px;
+                        margin-top: 20px;
+                        // width: 100px;
+                    }
                     
                     label {
                         display: block;
                         margin: 5px;
                         
-                        span {
-                            color: $jaune;
-                            display: inline-block;
-                            font-size: 18px;
-                            width: 100px;
-                        }
                     }
                 }
             }

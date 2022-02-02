@@ -17,7 +17,7 @@
             <nav>
                 <div class="boutons-gauche">
                     <a href="accueil" class="boutons">Accueil</a>
-                    <a href="video" class="boutons">Vidéos</a>
+                    <a href="videos" class="boutons">Vidéos</a>
                     <a href="a-propos" class="boutons">À propos</a>
                 </div>
 
