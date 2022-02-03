@@ -41,6 +41,14 @@
                     <input type="text" name="courriel" placeholder="Courriel">
                     <input type="text" name="mot_de_passe" placeholder="Mot de passe">
                     <input type="submit" name="submit" value="Inscription">
+
+                    <?php if (isset($_GET['erreur'])) {?>
+                        <div class="erreur">
+                            <p>
+                                Un erreur s'est produite lors de la création de l'utilisateur.
+                            </p>
+                        </div>
+                    <?php }?>
                 </form>
             </div>
 
@@ -55,11 +63,12 @@
                             </div>
                             <div class="courriel-utilisateur">
                                 <p><?=$user["courriel"]?></p>
+                                <p hidden><?=$user["id"]?></p>
                             </div>
                         </div>
                         <div class="boutons-encadres">
                             <a href="#" class="boutons bouton-modifier">Modifier</a>
-                            <a href="#" class="boutons bouton-supprimer">Supprimer</a>
+                            <a href="supprimer-utilisateur?id=<?=$user["id"]?>" class="boutons bouton-supprimer">Supprimer</a>
                         </div>
                     </div>
                 <?php }?>

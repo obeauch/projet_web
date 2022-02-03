@@ -7,7 +7,8 @@ class Administrateurs extends BaseModel
 
     protected $table = "administrateurs";
 
-    public function verifierConnexion($courriel, $mdp)
+    //Vérifie la connexion de l'administrateur
+    public function verifierConnexionAdmin($courriel, $mdp)
     {
         // Lire le mot de passe du user avec le courriel
         $sql = "
@@ -43,4 +44,5 @@ class Administrateurs extends BaseModel
         }
 
     }
+
 }

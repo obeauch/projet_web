@@ -1097,6 +1097,10 @@ body.formulaire-admin .conteneur .ajout-form form span {
   margin-top: 20px;
 }
 
+body.formulaire-admin .conteneur .ajout-form form span strong {
+  color: #eff6e0;
+}
+
 body.formulaire-admin .conteneur .ajout-form form label {
   display: block;
   margin: 5px;

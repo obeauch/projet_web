@@ -20,7 +20,7 @@
                         <a href="utilisateurs">Utilisateurs</a>
                     </div>
                     <div class="boutons bouton-gauche2">
-                        <a href="membres">Membres</a>
+                        <a href="membres">Équipe</a>
                     </div>
                     <div class="boutons bouton-gauche3">
                         <a href="ajout-episode">Épisodes</a>

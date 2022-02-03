@@ -7,7 +7,8 @@ class Utilisateurs extends BaseModel
 
     protected $table = "utilisateurs";
 
-    public function creer($prenom, $nom, $courriel, $mot_de_passe)
+    //Crée un nouvel utilisateur qui a accès à tout ce qui est admin
+    public function creerUser($prenom, $nom, $courriel, $mot_de_passe)
     {
         $sql = "
             INSERT INTO $this->table (prenom, nom, courriel, mot_de_passe)
@@ -21,12 +22,14 @@ class Utilisateurs extends BaseModel
             ":nom" => $nom,
             ":courriel" => $courriel,
             ":mot_de_passe" => $mot_de_passe,
+
         ]);
 
         return $success;
     }
 
-    public function verifierConnexion($courriel, $mdp)
+    //Vérifie la connexion d'un utilisateur
+    public function verifierConnexionUser($courriel, $mdp)
     {
         // Lire le mot de passe du user avec le courriel
         $sql = "
@@ -62,4 +65,20 @@ class Utilisateurs extends BaseModel
         }
 
     }
+
+    //Supprimer un utilisateur
+    public function deleteUtilisateur($id)
+    {
+        $sql = "DELETE FROM $this->table
+                WHERE id = :id
+                ";
+
+        $stmt = $this->pdo()->prepare($sql);
+        $stmt->execute([
+            ":id" => $id,
+        ]);
+
+        return $stmt;
+    }
+
 }

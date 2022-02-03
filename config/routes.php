@@ -20,7 +20,8 @@ $routes = [
     "episodes" => "episodes",
     "ajout-episode-submit" => "ajoutEpisodeSubmit",
     "modifier-episode" => "modifierEpisode",
-    "supprimer-episode" => "supprimerEpisode",
+    "modifier-episode-submit" => "modifierEpisodeSubmit",
     "utilisateurs" => "utilisateurs",
     "ajout-utilisateur-submit" => "ajoutUtilisateurSubmit",
+    "supprimer-utilisateur" => "supprimerUtilisateur",
 ];

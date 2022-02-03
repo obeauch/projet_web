@@ -79,29 +79,10 @@
                                 <p><?=$episode["description"]?></p>
                             </div>
                         </div>
-                        <a href="videos" class="boutons bouton-play">▶</a>
+                        <a href="videos?episode_id=<?=$episode["id"]?>" class="boutons bouton-play">▶</a>
                     </div>
                 <?php }?>
-                <!-- <div class="encadres">
-                    <div class="image">
-                        <img src="public/images/episode1.jpg" alt="">
-                    </div>
-                    <div class="details-episodes">
-                        <div class="titre-episode">
-                            <h2>Le choc</h2>
-                        </div>
-                        <div class="chaque-episode">
-                            <div class="numero-episode">Épisode 1</div>
-                            <div class="date-episode">7 février 2022</div>
-                            <div class="temps-episode">9 mins</div>
-                        </div>
-                        <div class="description-episode">
-                            <p>Le mariage est ruiné par l’annonce du gouvernement morbi rutrum id enim ac mattis. Etiam id ante a nibh viverra imperdiet. Phasellus sed finibus erat. Donec sagittis viverra libero, ultrices facilisis augue fringilla id. Curabitur euismod euismod sem, nec commodo mauris euismod at. Nullam quis consequat nulla.</p>
-                        </div>
 
-                    </div>
-
-                </div> -->
             </div>
         </main>
 

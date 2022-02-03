@@ -38,17 +38,17 @@
             <div class="section-gauche">
                 <div class="details-episodes">
                     <div class="titre-episode">
-                        <h2>Le choc</h2>
+                        <h2><?=$mon_video["titre"]?></h2>
                     </div>
                     <div class="chaque-episode">
-                        <div class="numero-episode">Épisode 1</div>
-                        <div class="date-episode">7 février 2022</div>
-                        <div class="temps-episode">9 mins</div>
+                        <div class="numero-episode">Épisode <?=$mon_video["numero_episode"]?></div>
+                        <div class="date-episode"><?=$mon_video["date_parution"]?></div>
+                        <div class="temps-episode"><?=$mon_video["temps"]?> mins</div>
                     </div>
                 </div>
 
                 <video controls>
-                    <source src="public/videos/placeholder-video.mp4" type="video/mp4">
+                    <source src="<?=$mon_video["video"]?>" type="video/mp4">
                 </video>
             </div>
 
@@ -57,7 +57,7 @@
             <div class="section-droite">
                 <h2>Les épisodes</h2>
 
-                <?php foreach ($episodes as $episode) {?>
+                <?php foreach ($un_episode as $episode) {?>
 
                     <a href="<?=$episode["video"]?>" class="boutons encadres">
                         <div class="image">

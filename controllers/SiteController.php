@@ -14,6 +14,12 @@ class SiteController extends BaseController
     //Affiche la page accueil
     public function accueil()
     {
+        // $d = "2022-01-14";
+        // $d_chiffre = strtotime($d);
+
+        // echo date("j", $d_chiffre);
+        // n avec tableau [janvier, février, mars,...]
+        // exit();
         $les_episodes = new Episodes();
         $episodes = $les_episodes->ordreEpisodes();
 
@@ -32,8 +38,14 @@ class SiteController extends BaseController
     //Affiche la page des vidéos
     public function videos()
     {
+
         $les_episodes = new Episodes();
-        $episodes = $les_episodes->ordreEpisodes();
+        $un_episode = $les_episodes->ordreEpisodes();
+
+        $id = $_GET["episode_id"];
+
+        $episodes_model = new Episodes();
+        $mon_video = $episodes_model->parId($id);
 
         include "views/videos.view.php";
     }
@@ -44,6 +56,7 @@ class SiteController extends BaseController
         include "views/login.view.php";
     }
 
+    //Connexion admin et Utilisateurs
     public function loginSubmit()
     {
         $estEnvoye = isset($_POST["submit"]);
@@ -53,7 +66,8 @@ class SiteController extends BaseController
             $mot_de_passe = $_POST["mot_de_passe"];
 
             $administrateur = new Administrateurs();
-            $success = $administrateur->verifierConnexion($courriel, $mot_de_passe);
+            $utilisateur = new Utilisateurs();
+            $success = $administrateur->verifierConnexionAdmin($courriel, $mot_de_passe) || $utilisateur->verifierConnexionUser($courriel, $mot_de_passe);
 
             if ($success) {
                 // redirigé vers feed
@@ -67,9 +81,10 @@ class SiteController extends BaseController
             header("location:login?erreur=1");
             exit();
         }
+
     }
 
-    //Affiche page admin(episodes) avec les épisodes ajoutées
+    //Affiche page admin(episodes) avec les épisodes ajoutées en ordre d'épisodes
     public function admin()
     {
         $les_episodes = new Episodes();
@@ -119,7 +134,7 @@ class SiteController extends BaseController
         exit();
     }
 
-    //affiche page membres
+    //affiche page membres, permet d'afficher tout ce qui est dans table membres (bdd)
     public function membres()
     {
         $membres_model = new Membres();
@@ -169,6 +184,7 @@ class SiteController extends BaseController
 
     public function episode()
     {
+
         include "views/admin.view.php";
     }
 
@@ -212,15 +228,58 @@ class SiteController extends BaseController
             header("location:admin?erreur=1");
             exit();
         }
-        // include "views/ajout-episode.view.php";
     }
 
     public function modifierEpisode()
     {
+        $id = $_GET["episode_id"];
+
+        $les_episodes = new Episodes();
+        $mon_episode = $les_episodes->parId($id);
 
         include "views/modifierEpisode.view.php";
     }
 
+    public function modifierEpisodeSubmit()
+    {
+        // Si le form est envoyé
+        if (isset($_POST["submit"])) {
+            $id = $_POST["id"];
+            $titre = $_POST["titre"];
+            $numero_episode = $_POST["numero_episode"];
+            $date_parution = $_POST["date_parution"];
+            $temps = $_POST["temps"];
+            $description = $_POST["description"];
+
+            // Déplace le fichier uploader et retourne le chemin
+            $upload_image = new Upload("image");
+            $image = $upload_image->placerDans("public/uploads/images");
+
+            // Déplace le fichier uploader et retourne le chemin
+            $upload_video = new Upload("video");
+            $video = $upload_video->placerDans("public/uploads/videos");
+
+            // Fait la modification à l'aide du model
+            $episode = new Episodes();
+            $success = $episode->modificationEpisode($id, $titre, $numero_episode, $date_parution, $temps, $description, $image, $video);
+
+            // Si le insert a fonctionné, retourne vers la page admin
+            if ($success) {
+                header("location:admin");
+                exit();
+            } else {
+                // Sinon, retourne quand même vers la page admin, mais avec le paramètre GET erreur
+                header("location:admin?erreur=1");
+                exit();
+            }
+            // } else {
+            //     // Si le form n'a pas été envoyé correctement, retourne sur admin avec une erreur
+            //     header("location:admin?erreur=1");
+            //     exit();
+        }
+    }
+
+    //Page utilisateur, permet d'afficher les détails de la bdd
     public function utilisateurs()
     {
         $utilisateurs_model = new Utilisateurs();
@@ -246,7 +305,7 @@ class SiteController extends BaseController
 
             // Fait le insert à l'aide du model
             $utilisateur = new Utilisateurs();
-            $success = $utilisateur->creer($prenom, $nom, $courriel, $mot_de_passe);
+            $success = $utilisateur->creerUser($prenom, $nom, $courriel, $mot_de_passe);
 
             // Si le insert s'est bien passé, retourne vers l'accueil (connexion)
             if ($success) {
@@ -264,5 +323,22 @@ class SiteController extends BaseController
             exit();
         }
 
+    }
+
+    /**
+     * Supprime un ou plusieurs utilisateurs
+     * À partir de route supprimer-utilisateur
+     */
+    public function supprimerUtilisateur()
+    {
+
+        // Id de l'utilisateur à supprimer
+        $id = $_GET['id'];
+
+        $utilisateurs = new Utilisateurs();
+        $utilisateur = $utilisateurs->deleteUtilisateur($id);
+
+        header("location:utilisateurs");
+        exit();
     }
 }

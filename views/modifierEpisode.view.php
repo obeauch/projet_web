@@ -18,7 +18,7 @@
                 <div class="boutons-gauche">
                     <a href="admin" class="bouton-actif-admin">Épisodes</a>
                     <a href="utilisateurs" class="boutons">Utilisateurs</a>
-                    <a href="membres" class="boutons">Membres</a>
+                    <a href="membres" class="boutons">Équipe</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
@@ -33,27 +33,30 @@
 
         <main class="conteneur">
             <h1>Épisodes</h1>
-            <h2>Ajouter un épisode à la série</h2>
-            <div class="login ajout-form">
-                <form action="ajout-episode-submit" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="titre" placeholder="Titre">
-                    <textarea type="text" name="description" placeholder="Courte description"></textarea>
-                    <input type="number" name="numero_episode" min="1" max="200" placeholder="Numéro d'épisode">
+            <h2>Modifier l'épisode <?=$mon_episode["titre"]?></h2>
 
-                    <span>date de parution</span><input type="date" name="date_parution" placeholder="Date de parution">
+                <div class="login ajout-form">
+                    <form action="modifier-episode-submit" method="POST" enctype="multipart/form-data">
+                        <span>Titre</span><input type="text" name="titre" value="<?=$mon_episode["titre"]?>">
+                        <span>Courte description</span><textarea type="text" name="description"><?=$mon_episode["description"]?>"</textarea>
+                        <span>Numéro d'épisode</span><input type="number" name="numero_episode" min="1" max="200" value="<?=$mon_episode["numero_episode"]?>">
 
-                    <input type="number" name="temps" min="1" max="100" placeholder="Durée de l'épisode en minutes">
+                        <span>Date de parution</span><input type="date" name="date_parution" value="<?=$mon_episode["date_parution"]?>">
 
-                        <span>Image démonstrative de l'épisode</span>
-                        <input type="file" name="image">
+                        <span>Durée en minutes</span><input type="number" name="temps" min="1" max="100" value="<?=$mon_episode["temps"]?>">
 
+                        <span>Image démonstrative de l'épisode <strong>(choisir à nouveau)</strong></span>
+                        <input type="file" name="image" required>
 
-                        <span>Vidéo de l'épisode</span>
-                        <input type="file" name="video" accept="video/*">
+                        <span>Vidéo de l'épisode <strong>(choisir à nouveau)</strong></span>
+                        <input type="file" name="video" accept="video/*" required>
 
-                    <input type="submit" name="submit" value="Ajouter">
-                </form>
-            </div>
+                        <input type="hidden" name="id" value="<?=$mon_episode["id"]?>">
+
+                        <input type="submit" name="submit" value="Modifier">
+
+                    </form>
+                </div>
 
         </main>
 

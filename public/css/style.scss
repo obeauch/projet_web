@@ -995,7 +995,10 @@ body {
                         display: inline-block;
                         font-size: 18px;
                         margin-top: 20px;
-                        // width: 100px;
+                        
+                        strong {
+                            color: $gris-blanc;
+                        }
                     }
                     
                     label {

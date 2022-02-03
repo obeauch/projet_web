@@ -18,7 +18,7 @@
                 <div class="boutons-gauche">
                     <a href="admin" class="bouton-actif-admin">Épisodes</a>
                     <a href="utilisateurs" class="boutons">Utilisateurs</a>
-                    <a href="membres" class="boutons">Membres</a>
+                    <a href="membres" class="boutons">Équipe</a>
                 </div>
                 <div class="logo-nav">
                     <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
@@ -76,7 +76,7 @@
                                 <p><?=$episode["description"]?></p>
                             </div>
                         </div>
-                        <a href="modifier-episode?id=<?=$episode["id"]?>"  class="boutons bouton-modifier">Modifier</a>
+                        <a href="modifier-episode?episode_id=<?=$episode["id"]?>"  class="boutons bouton-modifier">Modifier</a>
                     </div>
                 <?php }?>
             </div>
