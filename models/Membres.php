@@ -12,8 +12,8 @@ class Membres extends BaseModel
     {
 
         $sql = "
-           INSERT INTO $this->table (prenom, nom, poste, description, photo, fk_membre_admin_id)
-           VALUES (:prenom, :nom, :poste, :description, :photo, :fk_membre_admin_id);
+           INSERT INTO $this->table (prenom, nom, poste, description, photo)
+           VALUES (:prenom, :nom, :poste, :description, :photo);
            ";
 
         $stmt = $this->pdo()->prepare($sql);
@@ -24,10 +24,25 @@ class Membres extends BaseModel
             ":poste" => $poste,
             ":description" => $description,
             ":photo" => $photo,
-            ":fk_membre_admin_id" => $_SESSION["administrateur_id"],
+
         ]);
 
         return $success;
 
+    }
+
+    public function deleteMembre($id)
+    {
+
+        $sql = "DELETE FROM $this->table
+                WHERE id = :id
+                ";
+
+        $stmt = $this->pdo()->prepare($sql);
+        $stmt->execute([
+            ":id" => $id,
+        ]);
+
+        return $stmt;
     }
 }

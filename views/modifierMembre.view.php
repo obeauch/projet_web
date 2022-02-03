@@ -73,7 +73,7 @@
                             <p hidden><?=$post["id"]?></p>
                         </div>
                         <div class="boutons-encadres">
-                            <a href="modifier-membre?id=<?=$post["id"]?>" class="boutons bouton-modifier">Modifier</a>
+                            <a href="#" class="boutons bouton-modifier">Modifier</a>
                             <a href="supprimer-membre?id=<?=$post["id"]?>" class="boutons bouton-supprimer">Supprimer</a>
                         </div>
                     </div>

@@ -79,7 +79,7 @@
                                 <p><?=$episode["description"]?></p>
                             </div>
                         </div>
-                        <a href="videos?episode_id=<?=$episode["id"]?>" class="boutons bouton-play">▶</a>
+                        <a href="videos-accueil?episode_id=<?=$episode["id"]?>" class="boutons bouton-play">▶</a>
                     </div>
                 <?php }?>
 

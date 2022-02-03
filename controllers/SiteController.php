@@ -38,6 +38,15 @@ class SiteController extends BaseController
     //Affiche la page des vidéos
     public function videos()
     {
+        $les_episodes = new Episodes();
+        $un_episode = $les_episodes->ordreEpisodes();
+
+        include "views/videos.view.php";
+
+    }
+
+    public function videosAccueil()
+    {
 
         $les_episodes = new Episodes();
         $un_episode = $les_episodes->ordreEpisodes();
@@ -47,7 +56,7 @@ class SiteController extends BaseController
         $episodes_model = new Episodes();
         $mon_video = $episodes_model->parId($id);
 
-        include "views/videos.view.php";
+        include "views/videosAccueil.view.php";
     }
 
     //Affiche page de connexion vers admin
@@ -148,6 +157,64 @@ class SiteController extends BaseController
      * Ne sera pas visible
      */
     public function ajoutMembreSubmit()
+    {
+        // Vérifier si c'est envoyé
+        $formEnvoye = isset($_POST["submit"]);
+
+        // Récupère
+        if ($formEnvoye) {
+            $prenom = $_POST["prenom"];
+            $nom = $_POST["nom"];
+            $poste = $_POST["poste"];
+            $description = $_POST["description"];
+
+            $upload = new Upload("photo");
+            $photo = $upload->placerDans("public/uploads/images");
+
+            // Appelle le modèle avec une méthode creer
+            $membre = new Membres();
+            $success = $membre->creer($prenom, $nom, $poste, $description, $photo);
+
+            if ($success) {
+                header("location:membres");
+                exit();
+            } else {
+                header("location:membres?erreur=1");
+                exit();
+            }
+
+        } else {
+            header("location:membres?erreur=1");
+            exit();
+        }
+
+        exit();
+    }
+
+    public function supprimerMembre()
+    {
+
+        // Id de l'utilisateur à supprimer
+        $id = $_GET['id'];
+
+        $membres = new Membres();
+        $membre = $membres->deleteMembre($id);
+
+        header("location:membres");
+        exit();
+    }
+
+    public function modifierMembre()
+    {
+        $id = $_GET["membre_id"];
+
+        $les_membres = new Membres();
+        $membre = $les_membres->parId($id);
+
+        include "views/modifierEpisode.view.php";
+    }
+
+    public function modifierMembreSubmit()
     {
         // Vérifier si c'est envoyé
         $formEnvoye = isset($_POST["submit"]);

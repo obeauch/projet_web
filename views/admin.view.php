@@ -36,20 +36,20 @@
             <h2>Ajouter un épisode à la série</h2>
             <div class="login ajout-form">
                 <form action="ajout-episode-submit" method="POST" enctype="multipart/form-data">
-                    <input type="text" name="titre" placeholder="Titre">
-                    <textarea type="text" name="description" placeholder="Courte description"></textarea>
-                    <input type="number" name="numero_episode" min="1" max="200" placeholder="Numéro d'épisode">
+                    <input type="text" name="titre" placeholder="Titre" required>
+                    <textarea type="text" name="description" placeholder="Courte description" required></textarea>
+                    <input type="number" name="numero_episode" min="1" max="200" placeholder="Numéro d'épisode" required>
 
-                    <span>date de parution</span><input type="date" name="date_parution" placeholder="Date de parution">
+                    <span>date de parution</span><input type="date" name="date_parution" placeholder="Date de parution" required>
 
-                    <input type="number" name="temps" min="1" max="100" placeholder="Durée de l'épisode en minutes">
+                    <input type="number" name="temps" min="1" max="100" placeholder="Durée de l'épisode en minutes" required>
 
                         <span>Image démonstrative de l'épisode</span>
-                        <input type="file" name="image">
+                        <input type="file" name="image" required>
 
 
                         <span>Vidéo de l'épisode</span>
-                        <input type="file" name="video" accept="video/*">
+                        <input type="file" name="video" accept="video/*" required>
 
                     <input type="submit" name="submit" value="Ajouter">
                 </form>
