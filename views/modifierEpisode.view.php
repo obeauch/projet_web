@@ -16,7 +16,7 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="admin" class="bouton-actif-admin">Épisodes</a>
+                    <a href="episodes" class="bouton-actif-admin">Épisodes</a>
                     <a href="utilisateurs" class="boutons">Utilisateurs</a>
                     <a href="membres" class="boutons">Équipe</a>
                 </div>
@@ -32,6 +32,7 @@
         </header>
 
         <main class="conteneur">
+
             <h1>Épisodes</h1>
             <h2>Modifier l'épisode <?=$mon_episode["titre"]?></h2>
 
@@ -54,6 +55,15 @@
                         <input type="hidden" name="id" value="<?=$mon_episode["id"]?>">
 
                         <input type="submit" name="submit" value="Modifier">
+
+
+                        <?php if (isset($_GET['erreur'])) {?>
+                            <div class="erreur">
+                                <p>
+                                    Un erreur s'est produite lors de la modification de l'épisode.
+                                </p>
+                            </div>
+                        <?php }?>
 
                     </form>
                 </div>

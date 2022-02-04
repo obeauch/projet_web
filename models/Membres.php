@@ -45,4 +45,29 @@ class Membres extends BaseModel
 
         return $stmt;
     }
+
+    public function modificationMembre($id, $prenom, $nom, $poste, $description, $photo)
+    {
+
+        $sql = "
+            UPDATE $this->table
+            SET prenom = :prenom, nom = :nom, poste = :poste, description = :description, photo = :photo
+
+            WHERE id = :id;
+            ";
+
+        $stmt = $this->pdo()->prepare($sql);
+
+        $success = $stmt->execute([
+            ":id" => $id,
+            ":prenom" => $prenom,
+            ":nom" => $nom,
+            ":poste" => $poste,
+            ":description" => $description,
+            ":photo" => $photo,
+        ]);
+
+        // exit();
+        return $success;
+    }
 }

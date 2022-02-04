@@ -53,7 +53,7 @@ class Utilisateurs extends BaseModel
 
             if ($mot_passe_ok) {
                 // sauvegarde seulement le id de celui qui est connecté
-                $_SESSION["utilisateur_id"] = $entree["id"];
+                $_SESSION["useradmin_id"] = $entree["id"];
                 // return $mot_passe_ok;
                 return true;
             } else {
@@ -64,6 +64,29 @@ class Utilisateurs extends BaseModel
             return false;
         }
 
+    }
+
+    public function modificationUtilisateur($id, $prenom, $nom, $courriel, $mot_de_passe)
+    {
+        $sql = "
+        UPDATE $this->table
+        SET prenom = :prenom, nom = :nom, courriel = :courriel, mot_de_passe = :mot_de_passe
+
+        WHERE id = :id;
+        ";
+
+        $stmt = $this->pdo()->prepare($sql);
+
+        $success = $stmt->execute([
+            ":id" => $id,
+            ":prenom" => $prenom,
+            ":nom" => $nom,
+            ":courriel" => $courriel,
+            ":mot_de_passe" => $mot_de_passe,
+        ]);
+
+        // exit();
+        return $success;
     }
 
     //Supprimer un utilisateur

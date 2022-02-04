@@ -16,7 +16,7 @@
         <header>
             <nav>
                 <div class="boutons-gauche">
-                    <a href="admin" class="boutons">Épisodes</a>
+                    <a href="episodes" class="boutons">Épisodes</a>
                     <a href="utilisateurs" class="boutons">Utilisateurs</a>
                     <a href="membres" class="bouton-actif-admin">Équipe</a>
                 </div>
@@ -73,8 +73,8 @@
                             <p hidden><?=$post["id"]?></p>
                         </div>
                         <div class="boutons-encadres">
-                            <a href="modifier-membre?id=<?=$post["id"]?>" class="boutons bouton-modifier">Modifier</a>
-                            <a href="supprimer-membre?id=<?=$post["id"]?>" class="boutons bouton-supprimer">Supprimer</a>
+                            <a href="modifier-membre?membre_id=<?=$post["id"]?>" class="boutons bouton-modifier">Modifier</a>
+                            <a href="supprimer-membre?membre_id=<?=$post["id"]?>" class="boutons bouton-supprimer">Supprimer</a>
                         </div>
                     </div>
                 <?php }?>

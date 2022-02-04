@@ -12,8 +12,8 @@ class Episodes extends BaseModel
     {
 
         $sql = "
-            INSERT INTO $this->table (titre, numero_episode, date_parution, temps, description, image, video, fk_episode_admin_id, fk_episode_utilisateur_id)
-            VALUES (:titre, :numero_episode, :date_parution, :temps, :description, :image, :video, :fk_episode_admin_id, :fk_episode_utilisateur_id);
+            INSERT INTO $this->table (titre, numero_episode, date_parution, temps, description, image, video)
+            VALUES (:titre, :numero_episode, :date_parution, :temps, :description, :image, :video);
             ";
 
         $stmt = $this->pdo()->prepare($sql);
@@ -26,8 +26,6 @@ class Episodes extends BaseModel
             ":description" => $description,
             ":image" => $image,
             ":video" => $video,
-            ":fk_episode_admin_id" => $_SESSION["administrateur_id"],
-            ":fk_episode_utilisateur_id" => $_SESSION["utilisateur_id"],
         ]);
         return $success;
     }

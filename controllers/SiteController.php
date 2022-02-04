@@ -80,7 +80,7 @@ class SiteController extends BaseController
 
             if ($success) {
                 // redirigé vers feed
-                header("location:admin");
+                header("location:episodes");
             } else {
                 header("location:login?erreur=1");
                 exit();
@@ -91,15 +91,6 @@ class SiteController extends BaseController
             exit();
         }
 
-    }
-
-    //Affiche page admin(episodes) avec les épisodes ajoutées en ordre d'épisodes
-    public function admin()
-    {
-        $les_episodes = new Episodes();
-        $episodes = $les_episodes->ordreEpisodes();
-
-        include "views/admin.view.php";
     }
 
     //Affiche la page d'inscription à l'infolettre
@@ -195,7 +186,7 @@ class SiteController extends BaseController
     {
 
         // Id de l'utilisateur à supprimer
-        $id = $_GET['id'];
+        $id = $_GET['membre_id'];
 
         $membres = new Membres();
         $membre = $membres->deleteMembre($id);
@@ -211,16 +202,15 @@ class SiteController extends BaseController
         $les_membres = new Membres();
         $membre = $les_membres->parId($id);
 
-        include "views/modifierEpisode.view.php";
+        include "views/modifierMembre.view.php";
     }
 
     public function modifierMembreSubmit()
     {
-        // Vérifier si c'est envoyé
-        $formEnvoye = isset($_POST["submit"]);
 
         // Récupère
-        if ($formEnvoye) {
+        if (isset($_POST["submit"])) {
+            $id = $_POST["id"];
             $prenom = $_POST["prenom"];
             $nom = $_POST["nom"];
             $poste = $_POST["poste"];
@@ -231,28 +221,31 @@ class SiteController extends BaseController
 
             // Appelle le modèle avec une méthode creer
             $membre = new Membres();
-            $success = $membre->creer($prenom, $nom, $poste, $description, $photo);
+            $success = $membre->modificationMembre($id, $prenom, $nom, $poste, $description, $photo);
 
             if ($success) {
                 header("location:membres");
                 exit();
             } else {
-                header("location:membres?erreur=1");
+                header("location:modifierMembre?erreur=1");
                 exit();
             }
 
         } else {
-            header("location:membres?erreur=1");
+            header("location:modifierMembre?erreur=1");
             exit();
         }
 
         exit();
     }
 
-    public function episode()
+    //Affiche page admin(episodes) avec les épisodes ajoutées en ordre d'épisodes
+    public function episodes()
     {
+        $les_episodes = new Episodes();
+        $episodes = $les_episodes->ordreEpisodes();
 
-        include "views/admin.view.php";
+        include "views/episodes.view.php";
     }
 
     /**
@@ -281,18 +274,18 @@ class SiteController extends BaseController
             $episode = new Episodes();
             $success = $episode->creer($titre, $numero_episode, $date_parution, $temps, $description, $image, $video);
 
-            // Si le insert a fonctionné, retourne vers la page admin
+            // Si le insert a fonctionné, retourne vers la page episodes
             if ($success) {
-                header("location:admin");
+                header("location:episodes");
                 exit();
             } else {
-                // Sinon, retourne quand même vers la page admin, mais avec le paramètre GET erreur
-                header("location:admin?erreur=1");
+                // Sinon, retourne vers la page modifierEpisodes, mais avec le paramètre GET erreur
+                header("location:episodes?erreur=1");
                 exit();
             }
         } else {
             // Si le form n'a pas été envoyé correctement, retourne sur admin avec une erreur
-            header("location:admin?erreur=1");
+            header("location:episodes?erreur=1");
             exit();
         }
     }
@@ -332,27 +325,35 @@ class SiteController extends BaseController
 
             // Si le insert a fonctionné, retourne vers la page admin
             if ($success) {
-                header("location:admin");
+                header("location:episodes");
                 exit();
             } else {
-                // Sinon, retourne quand même vers la page admin, mais avec le paramètre GET erreur
-                header("location:admin?erreur=1");
+                // Sinon, retourne vers la page modifierEpisode, mais avec le paramètre GET erreur
+                header("location:modifierEpisode?erreur=1");
                 exit();
             }
-            // } else {
-            //     // Si le form n'a pas été envoyé correctement, retourne sur admin avec une erreur
-            //     header("location:admin?erreur=1");
-            //     exit();
+
+        } else {
+            // Si le form n'a pas été envoyé correctement, retourne sur admin avec une erreur
+            header("location:modifierEpisode?erreur=1");
+            exit();
         }
     }
 
     //Page utilisateur, permet d'afficher les détails de la bdd
     public function utilisateurs()
     {
-        $utilisateurs_model = new Utilisateurs();
-        $users = $utilisateurs_model->tous();
+        if (isset($_POST["submit"])) {
+            $utilisateurs_model = new Utilisateurs();
+            $users = $utilisateurs_model->tous();
 
-        include "views/utilisateurs.view.php";
+            include "views/utilisateurs.view.php";
+        } else {
+            // Si le form n'a pas été envoyé, on retourne vers le form d'inscription
+            header("location:accueil?erreur=1");
+            exit();
+        }
+
     }
 
     /**
@@ -374,7 +375,7 @@ class SiteController extends BaseController
             $utilisateur = new Utilisateurs();
             $success = $utilisateur->creerUser($prenom, $nom, $courriel, $mot_de_passe);
 
-            // Si le insert s'est bien passé, retourne vers l'accueil (connexion)
+            // Si le insert s'est bien passé, retourne vers la page utilisateurs
             if ($success) {
                 header("location:utilisateurs");
                 exit();
@@ -392,6 +393,50 @@ class SiteController extends BaseController
 
     }
 
+    public function modifierUtilisateur()
+    {
+        $id = $_GET["utilisateur_id"];
+
+        $les_utilisateurs = new Utilisateurs();
+        $mon_utilisateur = $les_utilisateurs->parId($id);
+
+        include "views/modifierUtilisateur.view.php";
+
+    }
+
+    public function modifierUtilisateurSubmit()
+    {
+        // Si le form est envoyé
+        if (isset($_POST["submit"])) {
+            $id = $_POST["id"];
+            $prenom = $_POST["prenom"];
+            $nom = $_POST["nom"];
+            $courriel = $_POST["courriel"];
+
+            // Le mot de passe est encrypter ici avec password_hash
+            $mot_de_passe = password_hash($_POST["mot_de_passe"], PASSWORD_DEFAULT);
+
+            // Fait la modification à l'aide du model
+            $utilisateur = new Utilisateurs();
+            $success = $utilisateur->modificationUtilisateur($id, $prenom, $nom, $courriel, $mot_de_passe);
+
+            // Si le insert a fonctionné, retourne vers la page utilisateur
+            if ($success) {
+                header("location:utilisateurs");
+                exit();
+            } else {
+                // Sinon, retourne vers la page modifierUtilisateur, mais avec le paramètre GET erreur
+                header("location:modifierUtilisateur?erreur=1");
+                exit();
+            }
+
+        } else {
+            // Sinon, retourne vers la page modifierUtilisateur, mais avec le paramètre GET erreur
+            header("location:modifierUtilisateur?erreur=1");
+            exit();
+        }
+    }
+
     /**
      * Supprime un ou plusieurs utilisateurs
      * À partir de route supprimer-utilisateur
@@ -400,7 +445,7 @@ class SiteController extends BaseController
     {
 
         // Id de l'utilisateur à supprimer
-        $id = $_GET['id'];
+        $id = $_GET['utilisateur_id'];
 
         $utilisateurs = new Utilisateurs();
         $utilisateur = $utilisateurs->deleteUtilisateur($id);

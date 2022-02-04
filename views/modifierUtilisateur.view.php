@@ -33,14 +33,21 @@
 
         <main class="conteneur">
             <h1>Utilisateurs</h1>
-            <h2>Ajouter un utilisateur</h2>
+            <h2>Modifier les informations de <?=$mon_utilisateur["prenom"]?></h2>
             <div class="login ajout-form">
                 <form action="ajout-utilisateur-submit" method="POST">
-                    <input type="text" name="prenom" placeholder="Prénom">
-                    <input type="text" name="nom" placeholder="Nom">
-                    <input type="text" name="courriel" placeholder="Courriel">
-                    <input type="text" name="mot_de_passe" placeholder="Mot de passe">
-                    <input type="submit" name="submit" value="Ajouter">
+                    <span>Prénom</span>
+                    <input type="text" name="prenom" value="<?=$mon_utilisateur["prenom"]?>" required>
+
+                    <span>Nom</span>
+                    <input type="text" name="nom" value="<?=$mon_utilisateur["nom"]?>" required>
+
+                    <span>Courriel</span>
+                    <input type="text" name="courriel" value="<?=$mon_utilisateur["courriel"]?>" required>
+
+                    <span>Mot de passe <strong>(choisir à nouveau)</strong></span>
+                    <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
+                    <input type="submit" name="submit" value="Modifier">
 
                     <?php if (isset($_GET['erreur'])) {?>
                         <div class="erreur">
@@ -50,28 +57,6 @@
                         </div>
                     <?php }?>
                 </form>
-            </div>
-
-            <div class="section-bas">
-                <h2>Liste des utilisateurs</h2>
-
-                <?php foreach ($users as $user) {?>
-                    <div class="encadres">
-                        <div class="utilisateur">
-                            <div class="nom-utilisateur">
-                                <h3><?=$user["prenom"]?> <?=$user["nom"]?></h3>
-                            </div>
-                            <div class="courriel-utilisateur">
-                                <p><?=$user["courriel"]?></p>
-                                <p hidden><?=$user["id"]?></p>
-                            </div>
-                        </div>
-                        <div class="boutons-encadres">
-                            <a href="modifier-utilisateur?utilisateur_id=<?=$user["id"]?>" class="boutons bouton-modifier">Modifier</a>
-                            <a href="supprimer-utilisateur?utilisateur_id=<?=$user["id"]?>" class="boutons bouton-supprimer">Supprimer</a>
-                        </div>
-                    </div>
-                <?php }?>
             </div>
 
         </main>
