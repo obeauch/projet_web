@@ -28,22 +28,6 @@ class Membres extends BaseModel
         ]);
 
         return $success;
-
-    }
-
-    public function deleteMembre($id)
-    {
-
-        $sql = "DELETE FROM $this->table
-                WHERE id = :id
-                ";
-
-        $stmt = $this->pdo()->prepare($sql);
-        $stmt->execute([
-            ":id" => $id,
-        ]);
-
-        return $stmt;
     }
 
     public function modificationMembre($id, $prenom, $nom, $poste, $description, $photo)
@@ -67,7 +51,6 @@ class Membres extends BaseModel
             ":photo" => $photo,
         ]);
 
-        // exit();
         return $success;
     }
 }

@@ -41,7 +41,23 @@ class Episodes extends BaseModel
 
         $stmt = $this->pdo()->prepare($sql);
         $stmt->execute([]);
+
         return $stmt->fetchAll();
+    }
+
+    //place les episodes en ordre de numéro d'épisode
+    public function video1()
+    {
+        $sql = "
+        SELECT $this->table.*
+        FROM $this->table
+        WHERE numero_episode = 1
+        ";
+
+        $stmt = $this->pdo()->prepare($sql);
+        $stmt->execute([]);
+
+        return $stmt->fetch();
     }
 
     //Modifie tout ce qui est dans la table épisode en fonction du id
@@ -50,7 +66,13 @@ class Episodes extends BaseModel
 
         $sql = "
             UPDATE $this->table
-            SET titre = :titre, numero_episode = :numero_episode, date_parution = :date_parution, temps = :temps, description = :description, image = :image, video = :video
+            SET titre = :titre,
+                numero_episode = :numero_episode,
+                date_parution = :date_parution,
+                temps = :temps,
+                description = :description,
+                image = :image,
+                video = :video
 
             WHERE id = :id;
             ";

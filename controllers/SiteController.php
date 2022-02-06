@@ -14,6 +14,7 @@ class SiteController extends BaseController
     //Affiche la page accueil
     public function accueil()
     {
+        session_destroy();
         // $d = "2022-01-14";
         // $d_chiffre = strtotime($d);
 
@@ -23,7 +24,14 @@ class SiteController extends BaseController
         $les_episodes = new Episodes();
         $episodes = $les_episodes->ordreEpisodes();
 
+        $les_videos = new Episodes();
+        $video = $les_videos->tous();
+
+        // var_dump($_SESSION);
+        // exit();
+
         include "views/accueil.view.php";
+
     }
 
     //Affiche la page apropos avec les membres provenants de bdd
@@ -38,6 +46,9 @@ class SiteController extends BaseController
     //Affiche la page des vidéos
     public function videos()
     {
+        $premier_video = new Episodes();
+        $video = $premier_video->video1();
+
         $les_episodes = new Episodes();
         $un_episode = $les_episodes->ordreEpisodes();
 
@@ -137,10 +148,22 @@ class SiteController extends BaseController
     //affiche page membres, permet d'afficher tout ce qui est dans table membres (bdd)
     public function membres()
     {
-        $membres_model = new Membres();
-        $posts = $membres_model->tous();
+        //Si useradmin ou administrateur est connecté (session), accède à la page
+        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        include "views/membres.view.php";
+        if ($connect) {
+
+            $membres_model = new Membres();
+            $posts = $membres_model->tous();
+
+            include "views/membres.view.php";
+            exit();
+
+            // Sinon redirige vers page accueil avec erreur
+        } else {
+            header("location:accueil?erreur=1");
+            exit();
+        }
     }
 
     /**
@@ -189,7 +212,7 @@ class SiteController extends BaseController
         $id = $_GET['membre_id'];
 
         $membres = new Membres();
-        $membre = $membres->deleteMembre($id);
+        $membre = $membres->delete($id);
 
         header("location:membres");
         exit();
@@ -197,12 +220,22 @@ class SiteController extends BaseController
 
     public function modifierMembre()
     {
-        $id = $_GET["membre_id"];
+        //Si useradmin ou administrateur est connecté (session), accède à la page
+        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        $les_membres = new Membres();
-        $membre = $les_membres->parId($id);
+        if ($connect) {
+            $id = $_GET["membre_id"];
 
-        include "views/modifierMembre.view.php";
+            $les_membres = new Membres();
+            $membre = $les_membres->parId($id);
+
+            include "views/modifierMembre.view.php";
+
+            // Sinon redirige vers page accueil avec erreur
+        } else {
+            header("location:accueil?erreur=1");
+            exit();
+        }
     }
 
     public function modifierMembreSubmit()
@@ -242,10 +275,22 @@ class SiteController extends BaseController
     //Affiche page admin(episodes) avec les épisodes ajoutées en ordre d'épisodes
     public function episodes()
     {
-        $les_episodes = new Episodes();
-        $episodes = $les_episodes->ordreEpisodes();
+        //Si useradmin ou administrateur est connecté (session), accède à la page
+        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        include "views/episodes.view.php";
+        if ($connect) {
+
+            $les_episodes = new Episodes();
+            $episodes = $les_episodes->ordreEpisodes();
+
+            include "views/episodes.view.php";
+
+            // Sinon redirige vers page accueil avec erreur
+        } else {
+            header("location:accueil?erreur=1");
+            exit();
+        }
+
     }
 
     /**
@@ -279,12 +324,12 @@ class SiteController extends BaseController
                 header("location:episodes");
                 exit();
             } else {
-                // Sinon, retourne vers la page modifierEpisodes, mais avec le paramètre GET erreur
+                // Sinon, retourne vers la page episodes, mais avec le paramètre GET erreur
                 header("location:episodes?erreur=1");
                 exit();
             }
         } else {
-            // Si le form n'a pas été envoyé correctement, retourne sur admin avec une erreur
+            // Si le form n'a pas été envoyé correctement, retourne sur episodes avec une erreur
             header("location:episodes?erreur=1");
             exit();
         }
@@ -292,12 +337,23 @@ class SiteController extends BaseController
 
     public function modifierEpisode()
     {
-        $id = $_GET["episode_id"];
+        //Si useradmin ou administrateur est connecté (session), accède à la page
+        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        $les_episodes = new Episodes();
-        $mon_episode = $les_episodes->parId($id);
+        if ($connect) {
 
-        include "views/modifierEpisode.view.php";
+            $id = $_GET["episode_id"];
+
+            $les_episodes = new Episodes();
+            $mon_episode = $les_episodes->parId($id);
+
+            include "views/modifierEpisode.view.php";
+
+            // Sinon redirige vers page accueil
+        } else {
+            header("location:accueil?erreur=1");
+            exit();
+        }
     }
 
     public function modifierEpisodeSubmit()
@@ -343,13 +399,18 @@ class SiteController extends BaseController
     //Page utilisateur, permet d'afficher les détails de la bdd
     public function utilisateurs()
     {
-        if (isset($_POST["submit"])) {
+        //Si useradmin ou administrateur est connecté (session), accède à la page
+        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
+
+        if ($connect) {
+
             $utilisateurs_model = new Utilisateurs();
             $users = $utilisateurs_model->tous();
 
             include "views/utilisateurs.view.php";
+
+            // Sinon redirige vers page accueil avec erreur
         } else {
-            // Si le form n'a pas été envoyé, on retourne vers le form d'inscription
             header("location:accueil?erreur=1");
             exit();
         }
@@ -395,12 +456,24 @@ class SiteController extends BaseController
 
     public function modifierUtilisateur()
     {
-        $id = $_GET["utilisateur_id"];
 
-        $les_utilisateurs = new Utilisateurs();
-        $mon_utilisateur = $les_utilisateurs->parId($id);
+        //Si useradmin ou administrateur est connecté (session), accède à la page
+        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        include "views/modifierUtilisateur.view.php";
+        if ($connect) {
+
+            $id = $_GET["utilisateur_id"];
+
+            $les_utilisateurs = new Utilisateurs();
+            $mon_utilisateur = $les_utilisateurs->parId($id);
+
+            include "views/modifierUtilisateur.view.php";
+
+            // Sinon redirige vers page accueil avec erreur
+        } else {
+            header("location:accueil?erreur=1");
+            exit();
+        }
 
     }
 
@@ -448,7 +521,7 @@ class SiteController extends BaseController
         $id = $_GET['utilisateur_id'];
 
         $utilisateurs = new Utilisateurs();
-        $utilisateur = $utilisateurs->deleteUtilisateur($id);
+        $utilisateur = $utilisateurs->delete($id);
 
         header("location:utilisateurs");
         exit();

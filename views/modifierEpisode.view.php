@@ -4,31 +4,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Noticia+Text&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="<?=BASE?>/public/css/style.css">
         <title>Accueil-admin</title>
+        <?php include "parts/head.php"?>
     </head>
     <body class="accueil admin formulaire-admin">
 
         <header>
-            <nav>
-                <div class="boutons-gauche">
-                    <a href="episodes" class="bouton-actif-admin">Épisodes</a>
-                    <a href="utilisateurs" class="boutons">Utilisateurs</a>
-                    <a href="membres" class="boutons">Équipe</a>
-                </div>
-                <div class="logo-nav">
-                    <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
-                </div>
-                <div class="boutons-droit">
-                    <div class="bouton-transparent"></div>
-                    <a href="accueil" class="boutons">déconnexion</a>
-                </div>
-                <div class="gradient"></div>
-            </nav>
+            <?php include "parts/nav_admin.php"?>
         </header>
 
         <main class="conteneur">

@@ -45,6 +45,20 @@ class BaseModel
         return $stmt->fetch();
     }
 
+    public function delete($id)
+    {
+        $sql = "DELETE FROM $this->table
+                WHERE id = :id
+                ";
+
+        $stmt = $this->pdo()->prepare($sql);
+        $stmt->execute([
+            ":id" => $id,
+        ]);
+
+        return $stmt;
+    }
+
     /**
      * Retourne la connexion à PDO et se connecte au besoin
      * @return PDO Instance de PDO

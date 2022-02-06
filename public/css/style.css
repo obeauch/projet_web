@@ -284,7 +284,6 @@ body.accueil {
 }
 
 body.accueil .conteneur .section-haut {
-  height: 65vh;
   background-image: url("../images/image-accueil-projet-web.jpg");
   background-position: 70% 100%;
   background-repeat: no-repeat;

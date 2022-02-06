@@ -88,20 +88,4 @@ class Utilisateurs extends BaseModel
         // exit();
         return $success;
     }
-
-    //Supprimer un utilisateur
-    public function deleteUtilisateur($id)
-    {
-        $sql = "DELETE FROM $this->table
-                WHERE id = :id
-                ";
-
-        $stmt = $this->pdo()->prepare($sql);
-        $stmt->execute([
-            ":id" => $id,
-        ]);
-
-        return $stmt;
-    }
-
 }
