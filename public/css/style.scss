@@ -38,7 +38,8 @@ body {
     p {
         color: $gris-blanc;
         font-family: $font-noticia;
-        font-size: 20px;
+        font-size: 16px;
+        padding-right: 10px;
     }
 
     a {
@@ -238,6 +239,7 @@ body {
         box-shadow: 10px 10px 30px #050e11;
     }
 
+    //message erreur sur chaque page
     .erreur {
         p {
             color: $orange;
@@ -246,6 +248,7 @@ body {
         }
     }
 
+    //message de réussite
     .reussi {
         p {
             color: $gris-blanc;
@@ -265,7 +268,6 @@ body {
         .conteneur {
             
             .section-haut {
-                // height: 65vh;
                 background-image: url("../images/image-accueil-projet-web.jpg");
                 background-position: 70% 100%;
                 background-repeat: no-repeat;
@@ -318,12 +320,11 @@ body {
                         margin: 30px 60px 0px 0px;
                     }
                 }
-
             }
 
             .section-bas {
                 margin-bottom: 60px;
-                margin-top: 60px;
+                margin-top: 100px;
                 width: 100%;
 
                 h2 {
@@ -545,8 +546,7 @@ body {
         flex-direction: column;
         min-height: 100vh;
         justify-content: space-between;
-
-        
+   
         header {
             height: 110px;
         }
@@ -635,10 +635,12 @@ body {
       
             .texte-a-propos {
                 max-height: 600px;
-
+                
                 p {
-                    text-align: justify;
+                    font-size: 22px;
                     margin: 0px 40px;
+                    padding: 20px;
+                    text-align: justify;
                 }
             }
         }
@@ -866,6 +868,7 @@ body {
         
                     // page admin.view.php
                     .details-episodes {
+                        padding-right: 30px;
         
                         .chaque-episode {
          
@@ -905,6 +908,7 @@ body {
                             p {
                                 font-family: $font-anton;
                                 color: $verdatre-pale;
+                                font-size: 20px;
                             }
                         }   
                     }
@@ -913,8 +917,9 @@ body {
                         margin: 0px 40px;
                         max-height: 200px;
                         min-width: 200px;
-                        max-width: 400px;
+                        max-width: 500px;
                         overflow: auto;
+
                     }
 
                 }
@@ -1106,10 +1111,12 @@ body {
     
         .logos-reseaux {
             margin-right: 30px;
+
             img {
                 height: 40px;
                 margin: 10px 15px;
             }
+            
         }
     }
 }

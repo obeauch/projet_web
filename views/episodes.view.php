@@ -60,14 +60,17 @@
                             </div>
                             <div class="chaque-episode">
                                 <div class="numero-episode">Épisode <?=$episode["numero_episode"]?></div>
-                                <div class="date-episode"><?=$episode["date_parution"]?></div>
+                                <div class="date-episode"><?=$this->dates($episode["date_parution"])?></div>
                                 <div class="temps-episode"><?=$episode["temps"]?> mins</div>
                             </div>
                             <div class="description-episode">
                                 <p><?=$episode["description"]?></p>
                             </div>
                         </div>
-                        <a href="modifier-episode?episode_id=<?=$episode["id"]?>"  class="boutons bouton-modifier">Modifier</a>
+                        <div class="boutons-encadres">
+                            <a href="modifier-episode?episode_id=<?=$episode["id"]?>"  class="boutons bouton-modifier">Modifier</a>
+                            <a href="supprimer-episode?episode_id=<?=$episode["id"]?>"  class="boutons bouton-supprimer">Supprimer</a>
+                        </div>
                     </div>
                 <?php }?>
             </div>

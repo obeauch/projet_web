@@ -45,6 +45,31 @@ class BaseModel
         return $stmt->fetch();
     }
 
+    /**
+     * Récupère UNE entrée dans la table selon le numero_episode
+     * @param int $numero
+     * @return array Array associatif de l'entrée
+     */
+    public function parNumeroEpisode($numero)
+    {
+        $sql = "
+            SELECT *
+            FROM $this->table
+            WHERE numero_episode = :numero_episode
+        ";
+
+        $stmt = $this->pdo()->prepare($sql);
+        $stmt->execute([
+            ":numero_episode" => $numero,
+        ]);
+
+        return $stmt->fetch();
+    }
+
+    /**
+     * Supprime UNE entrée dans la table selon le id
+     * @param int $id
+     */
     public function delete($id)
     {
         $sql = "DELETE FROM $this->table

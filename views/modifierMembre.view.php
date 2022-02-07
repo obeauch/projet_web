@@ -10,7 +10,22 @@
     <body class="accueil admin formulaire-admin">
 
         <header>
-            <?php include "parts/nav_admin.php"?>
+            <nav>
+                <div class="boutons-gauche">
+                    <a href="episodes" class="boutons">Épisodes</a>
+                    <a href="utilisateurs" class="boutons">Utilisateurs</a>
+                    <a href="membres" class="bouton-actif-admin">Équipe</a>
+                </div>
+                <div class="logo-nav">
+                    <a href="#"><img src="public/images/logo-cinema-fait-maison-bleu.svg" alt=""></a>
+                </div>
+                <div class="boutons-droit">
+                    <div class="bouton-transparent"></div>
+                    <a href="accueil" class="boutons">déconnexion</a>
+                </div>
+                <div class="gradient"></div>
+            </nav>
+
         </header>
 
         <main class="conteneur">
@@ -49,19 +64,5 @@
 
         </main>
 
-        <footer>
-            <!-- <div class="logos-commanditaires">
-                <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
-            </div>
-            <div class="bouton-admin">
-                <a href="login">Connexion Admin</a>
-            </div>
-            <div class="logos-reseaux">
-                <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
-                <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
-            </div> -->
-        </footer>
     </body>
 </html>

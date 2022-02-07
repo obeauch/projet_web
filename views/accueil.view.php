@@ -11,6 +11,7 @@
 
         <header>
             <?php include "parts/nav.php"?>
+
             <div class="montagne2">
                 <img src="public/images/montagne-pale.png" alt="">
             </div>
@@ -52,34 +53,21 @@
                             </div>
                             <div class="chaque-episode">
                                 <div class="numero-episode">Épisode <?=$episode["numero_episode"]?></div>
-                                <div class="date-episode"><?=$episode["date_parution"]?></div>
+                                <div class="date-episode"><?=$this->dates($episode["date_parution"])?></div>
                                 <div class="temps-episode"><?=$episode["temps"]?> mins</div>
                             </div>
                             <div class="description-episode">
                                 <p><?=$episode["description"]?></p>
                             </div>
                         </div>
-                        <a href="videos-accueil?episode_id=<?=$episode["id"]?>" class="boutons bouton-play">▶</a>
+                        <a href="videos?numero_episode=<?=$episode["numero_episode"]?>" class="boutons bouton-play">▶</a>
                     </div>
                 <?php }?>
 
             </div>
         </main>
 
-        <footer>
-            <div class="logos-commanditaires">
-                <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
-            </div>
-            <div class="bouton-admin">
-                <a href="login">Connexion Admin</a>
-            </div>
-            <div class="logos-reseaux">
-                <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
-                <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
-            </div>
-        </footer>
+        <?php include "parts/footer.php"?>
 
         <script src="public/parallax.js"></script>
     </body>

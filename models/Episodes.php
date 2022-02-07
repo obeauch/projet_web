@@ -45,21 +45,6 @@ class Episodes extends BaseModel
         return $stmt->fetchAll();
     }
 
-    //place les episodes en ordre de numéro d'épisode
-    public function video1()
-    {
-        $sql = "
-        SELECT $this->table.*
-        FROM $this->table
-        WHERE numero_episode = 1
-        ";
-
-        $stmt = $this->pdo()->prepare($sql);
-        $stmt->execute([]);
-
-        return $stmt->fetch();
-    }
-
     //Modifie tout ce qui est dans la table épisode en fonction du id
     public function modificationEpisode($id, $titre, $numero_episode, $date_parution, $temps, $description, $image, $video)
     {
@@ -90,7 +75,6 @@ class Episodes extends BaseModel
             ":video" => $video,
         ]);
 
-        // exit();
         return $success;
     }
 

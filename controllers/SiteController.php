@@ -11,27 +11,37 @@ require_once "utils/Upload.php";
 class SiteController extends BaseController
 {
 
-    //Affiche la page accueil
+    //Affiche la page accueil détruit la session lorsqu'on y accède
     public function accueil()
     {
         session_destroy();
-        // $d = "2022-01-14";
-        // $d_chiffre = strtotime($d);
+        session_start(); //
 
-        // echo date("j", $d_chiffre);
-        // n avec tableau [janvier, février, mars,...]
-        // exit();
+        //Les épisodes en ordre de numero_episode
         $les_episodes = new Episodes();
         $episodes = $les_episodes->ordreEpisodes();
 
         $les_videos = new Episodes();
         $video = $les_videos->tous();
 
-        // var_dump($_SESSION);
-        // exit();
-
         include "views/accueil.view.php";
 
+    }
+
+    // Fonction qui réécrie les dates en français
+    public function dates($d)
+    {
+
+        $d_chiffre = strtotime($d);
+        $mois_francais = ["Janvier ", "Février ", "Mars ", "Avril ", "Mai ", "Juin ", "Juillet ", "Août ", "Septembre ", "Octobre ", "Novembre ", "Décembre "];
+
+        $jour = date("j ", $d_chiffre);
+        $mois = $mois_francais[date("n ", $d_chiffre) - 1];
+        $annee = date("Y ", $d_chiffre);
+
+        $date = $jour . " " . $mois . " " . $annee;
+
+        return $date;
     }
 
     //Affiche la page apropos avec les membres provenants de bdd
@@ -43,31 +53,18 @@ class SiteController extends BaseController
         include "views/aPropos.view.php";
     }
 
-    //Affiche la page des vidéos
     public function videos()
     {
-        $premier_video = new Episodes();
-        $video = $premier_video->video1();
 
         $les_episodes = new Episodes();
         $un_episode = $les_episodes->ordreEpisodes();
 
-        include "views/videos.view.php";
-
-    }
-
-    public function videosAccueil()
-    {
-
-        $les_episodes = new Episodes();
-        $un_episode = $les_episodes->ordreEpisodes();
-
-        $id = $_GET["episode_id"];
+        $numero = $_GET["numero_episode"];
 
         $episodes_model = new Episodes();
-        $mon_video = $episodes_model->parId($id);
+        $mon_video = $episodes_model->parNumeroEpisode($numero);
 
-        include "views/videosAccueil.view.php";
+        include "views/videos.view.php";
     }
 
     //Affiche page de connexion vers admin
@@ -145,25 +142,29 @@ class SiteController extends BaseController
         exit();
     }
 
-    //affiche page membres, permet d'afficher tout ce qui est dans table membres (bdd)
-    public function membres()
+    // Vérifie si un admin ou useradmin est connecté
+    public function estConnecte()
     {
         //Si useradmin ou administrateur est connecté (session), accède à la page
         $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        if ($connect) {
-
-            $membres_model = new Membres();
-            $posts = $membres_model->tous();
-
-            include "views/membres.view.php";
-            exit();
-
-            // Sinon redirige vers page accueil avec erreur
-        } else {
+        // Si pas connecté, redirige vers page accueil avec erreur donc session vidé du même coup
+        if (!$connect) {
             header("location:accueil?erreur=1");
             exit();
         }
+    }
+
+    //affiche page membres, permet d'afficher tout ce qui est dans table membres (bdd)
+    public function membres()
+    {
+        //Vérifie si connecté avec fonction plus haut du controller
+        $this->estConnecte();
+
+        $membres_model = new Membres();
+        $posts = $membres_model->tous();
+
+        include "views/membres.view.php";
     }
 
     /**
@@ -220,22 +221,15 @@ class SiteController extends BaseController
 
     public function modifierMembre()
     {
-        //Si useradmin ou administrateur est connecté (session), accède à la page
-        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
+        //Vérifie si connecté avec fonction plus haut du controller
+        $this->estConnecte();
 
-        if ($connect) {
-            $id = $_GET["membre_id"];
+        $id = $_GET["membre_id"];
 
-            $les_membres = new Membres();
-            $membre = $les_membres->parId($id);
+        $les_membres = new Membres();
+        $membre = $les_membres->parId($id);
 
-            include "views/modifierMembre.view.php";
-
-            // Sinon redirige vers page accueil avec erreur
-        } else {
-            header("location:accueil?erreur=1");
-            exit();
-        }
+        include "views/modifierMembre.view.php";
     }
 
     public function modifierMembreSubmit()
@@ -275,22 +269,13 @@ class SiteController extends BaseController
     //Affiche page admin(episodes) avec les épisodes ajoutées en ordre d'épisodes
     public function episodes()
     {
-        //Si useradmin ou administrateur est connecté (session), accède à la page
-        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
+        //Vérifie si connecté avec fonction plus haut du controller
+        $this->estConnecte();
 
-        if ($connect) {
+        $les_episodes = new Episodes();
+        $episodes = $les_episodes->ordreEpisodes();
 
-            $les_episodes = new Episodes();
-            $episodes = $les_episodes->ordreEpisodes();
-
-            include "views/episodes.view.php";
-
-            // Sinon redirige vers page accueil avec erreur
-        } else {
-            header("location:accueil?erreur=1");
-            exit();
-        }
-
+        include "views/episodes.view.php";
     }
 
     /**
@@ -337,23 +322,16 @@ class SiteController extends BaseController
 
     public function modifierEpisode()
     {
-        //Si useradmin ou administrateur est connecté (session), accède à la page
-        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
 
-        if ($connect) {
+        //Vérifie si connecté avec fonction plus haut du controller
+        $this->estConnecte();
 
-            $id = $_GET["episode_id"];
+        $id = $_GET["episode_id"];
 
-            $les_episodes = new Episodes();
-            $mon_episode = $les_episodes->parId($id);
+        $les_episodes = new Episodes();
+        $mon_episode = $les_episodes->parId($id);
 
-            include "views/modifierEpisode.view.php";
-
-            // Sinon redirige vers page accueil
-        } else {
-            header("location:accueil?erreur=1");
-            exit();
-        }
+        include "views/modifierEpisode.view.php";
     }
 
     public function modifierEpisodeSubmit()
@@ -396,24 +374,33 @@ class SiteController extends BaseController
         }
     }
 
+    /**
+     * Supprime un ou plusieurs utilisateurs
+     * À partir de route supprimer-utilisateur
+     */
+    public function supprimerEpisode()
+    {
+
+        // Id de l'utilisateur à supprimer
+        $id = $_GET['episode_id'];
+
+        $episodes = new Episodes();
+        $episode = $episodes->delete($id);
+
+        header("location:episodes");
+        exit();
+    }
+
     //Page utilisateur, permet d'afficher les détails de la bdd
     public function utilisateurs()
     {
-        //Si useradmin ou administrateur est connecté (session), accède à la page
-        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
+        //Vérifie si connecté avec fonction plus haut du controller
+        $this->estConnecte();
 
-        if ($connect) {
+        $utilisateurs_model = new Utilisateurs();
+        $users = $utilisateurs_model->tous();
 
-            $utilisateurs_model = new Utilisateurs();
-            $users = $utilisateurs_model->tous();
-
-            include "views/utilisateurs.view.php";
-
-            // Sinon redirige vers page accueil avec erreur
-        } else {
-            header("location:accueil?erreur=1");
-            exit();
-        }
+        include "views/utilisateurs.view.php";
 
     }
 
@@ -457,23 +444,15 @@ class SiteController extends BaseController
     public function modifierUtilisateur()
     {
 
-        //Si useradmin ou administrateur est connecté (session), accède à la page
-        $connect = isset($_SESSION["administrateur_id"]) || isset($_SESSION["useradmin_id"]);
+        //Vérifie si connecté avec fonction plus haut du controller
+        $this->estConnecte();
 
-        if ($connect) {
+        $id = $_GET["utilisateur_id"];
 
-            $id = $_GET["utilisateur_id"];
+        $les_utilisateurs = new Utilisateurs();
+        $mon_utilisateur = $les_utilisateurs->parId($id);
 
-            $les_utilisateurs = new Utilisateurs();
-            $mon_utilisateur = $les_utilisateurs->parId($id);
-
-            include "views/modifierUtilisateur.view.php";
-
-            // Sinon redirige vers page accueil avec erreur
-        } else {
-            header("location:accueil?erreur=1");
-            exit();
-        }
+        include "views/modifierUtilisateur.view.php";
 
     }
 

@@ -1,7 +1,7 @@
 <nav>
     <div class="boutons-gauche">
         <a href="accueil" class="bouton-actif-client">Accueil</a>
-        <a href="videos" class="boutons">Vidéos</a>
+        <a href="videos?numero_episode=1" class="boutons">Vidéos</a>
         <a href="a-propos" class="boutons">À propos</a>
     </div>
 
