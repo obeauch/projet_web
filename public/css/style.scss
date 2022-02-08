@@ -5,7 +5,9 @@ $verdatre-pale: #aec3b0;
 $gris-bleu: #598392;
 $bleu-fonce: #124559;
 $bleu-noir: #01161e;
-$font-anton: 'Anton', sans-serif;
+// $font-anton: 'Anton', sans-serif;
+// $font-anton: 'Bebas Neue', cursive;
+$font-anton: 'Bakbak One', cursive;
 $font-noticia: 'Noticia Text', serif;
 
 
@@ -45,8 +47,8 @@ body {
     a {
         color: $gris-blanc;
         font-family: $font-anton;
-        font-size: 20px;
-        letter-spacing: 1px;   
+        font-size: 22px;
+        letter-spacing: 1px;
         text-align: center;
         text-decoration: none;
         transition: all 0.3s;
@@ -368,8 +370,8 @@ body {
                             .numero-episode {
                                 color: $jaune;
                                 font-family: $font-anton;
-                                font-size: 16px;
-                                letter-spacing: 2px;
+                                font-size: 18px;
+                                letter-spacing: 1px;
                                 margin-right: 20px;
                             }
 
@@ -678,7 +680,7 @@ body {
                         color: $jaune;
                         font-family: $font-anton;
                         font-size: 16px;
-                        letter-spacing: 2px;
+                        letter-spacing: 1px;
                         margin-right: 20px;
                     }
 
@@ -714,6 +716,10 @@ body {
 
                 .chaque-episode {
                     flex-direction: row;
+                    
+                    .numero-episode {
+                        font-size: 20px;
+                    }
                 }
             }
 
@@ -1070,7 +1076,7 @@ body {
                 color: $bleu-noir;
                 font-family: $font-anton;
                 font-size: 24px;
-                letter-spacing: 2px;   
+                letter-spacing: 1px;   
                 padding: 5px 15px;
                 text-decoration: none;
                 text-align: center;
