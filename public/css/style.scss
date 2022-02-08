@@ -675,6 +675,7 @@ body {
                         font-size: 40px;
                         letter-spacing: 2px;
                         margin: 0px;
+                        margin-top: 30px;
                     }
                 }
 
@@ -736,7 +737,12 @@ body {
             }
 
             .section-droite {
-                overflow: auto;
+                
+                .liens-videos {
+                    
+                    height: 70vh;
+                    overflow: auto;
+                }
 
                 .boutons:hover {
                     background-color: $gris-bleu;

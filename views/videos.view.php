@@ -53,25 +53,28 @@
             <div class="section-droite">
                 <h2>Les épisodes</h2>
 
-                <?php foreach ($un_episode as $episode) {?>
+                <div class="liens-videos">
+                    <?php foreach ($un_episode as $episode) {?>
 
-                    <a href="videos?numero_episode=<?=$episode["numero_episode"]?>" class="boutons encadres">
-                        <div class="image">
-                            <img src="<?=$episode["image"]?>" alt="image/épisode<?=$episode["numero_episode"]?>">
-                        </div>
-                        <div class="details-episodes">
-                            <div class="titre-episode">
-                                <h3><?=$episode["titre"]?></h3>
+                        <a href="videos?numero_episode=<?=$episode["numero_episode"]?>" class="boutons encadres">
+                            <div class="image">
+                                <img src="<?=$episode["image"]?>" alt="image/épisode<?=$episode["numero_episode"]?>">
                             </div>
-                            <div class="chaque-episode">
-                                <div class="numero-episode">Épisode <?=$episode["numero_episode"]?></div>
-                                <div class="date-episode"><?=$this->dates($episode["date_parution"])?></div>
-                                <div class="temps-episode"><?=$episode["temps"]?> mins</div>
+                            <div class="details-episodes">
+                                <div class="titre-episode">
+                                    <h3><?=$episode["titre"]?></h3>
+                                </div>
+                                <div class="chaque-episode">
+                                    <div class="numero-episode">Épisode <?=$episode["numero_episode"]?></div>
+                                    <div class="date-episode"><?=$this->dates($episode["date_parution"])?></div>
+                                    <div class="temps-episode"><?=$episode["temps"]?> mins</div>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
-                <?php }?>
+                    <?php }?>
+
+                </div>
 
             </div>
 
