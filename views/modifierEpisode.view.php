@@ -21,7 +21,7 @@
                 <div class="login ajout-form">
                     <form action="modifier-episode-submit" method="POST" enctype="multipart/form-data">
                         <span>Titre</span><input type="text" name="titre" value="<?=$mon_episode["titre"]?>">
-                        <span>Courte description</span><textarea type="text" name="description"><?=$mon_episode["description"]?>"</textarea>
+                        <span>Courte description</span><textarea type="text" name="description"><?=$mon_episode["description"]?></textarea>
                         <span>Numéro d'épisode</span><input type="number" name="numero_episode" min="1" max="200" value="<?=$mon_episode["numero_episode"]?>">
 
                         <span>Date de parution</span><input type="date" name="date_parution" value="<?=$mon_episode["date_parution"]?>">
