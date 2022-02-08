@@ -5,9 +5,9 @@ $verdatre-pale: #aec3b0;
 $gris-bleu: #598392;
 $bleu-fonce: #124559;
 $bleu-noir: #01161e;
-// $font-anton: 'Anton', sans-serif;
+$font-anton: 'Anton', sans-serif;
 // $font-anton: 'Bebas Neue', cursive;
-$font-anton: 'Bakbak One', cursive;
+// $font-anton: 'Bakbak One', cursive;
 $font-noticia: 'Noticia Text', serif;
 
 
@@ -47,7 +47,7 @@ body {
     a {
         color: $gris-blanc;
         font-family: $font-anton;
-        font-size: 22px;
+        font-size: 20px;
         letter-spacing: 1px;
         text-align: center;
         text-decoration: none;
