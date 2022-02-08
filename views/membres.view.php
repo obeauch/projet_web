@@ -40,10 +40,10 @@
                     <input type="file" name="photo" placeholder="Photo">
                     <input type="submit" name="submit" value="Ajouter">
 
-                    <?php if (isset($_GET['erreur'])) {?>
+                    <?php if (isset($_GET["erreur"])) {?>
                         <div>
                             <p>
-                                Une erreur est survenue.
+                                Une erreur est survenue lors de la création du membre.
                             </p>
                         </div>
                     <?php }?>
@@ -79,19 +79,5 @@
             </div>
         </main>
 
-        <!-- <footer>
-            <div class="logos-commanditaires">
-                <a href="#"><img src="public/images/logo-ssr-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-banque-bleu.svg" alt=""></a>
-                <a href="#"><img src="public/images/logo-home-bleu.svg" alt=""></a>
-            </div>
-            <div class="bouton-admin">
-                <a href="login">Connexion Admin</a>
-            </div>
-            <div class="logos-reseaux">
-                <a href="https://fr-ca.facebook.com/"><img src="public/images/logo-facebook-bleu.svg" alt=""></a>
-                <a href="https://fr.linkedin.com/"><img src="public/images/logo-linked-bleu.svg" alt=""></a>
-            </div>
-        </footer> -->
     </body>
 </html>

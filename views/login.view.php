@@ -40,7 +40,7 @@
                     <?php if (isset($_GET['erreur'])) {?>
                         <div class="erreur">
                             <p>
-                                Les information de connexion fournis, sont inexactes.
+                                Les informations de connexion fournis, sont inexactes.
                             </p>
                         </div>
                     <?php }?>

@@ -48,8 +48,6 @@
                 </video>
             </div>
 
-            <!-- <div class="ligne-verticale"></div> -->
-
             <div class="section-droite">
                 <h2>Les épisodes</h2>
 

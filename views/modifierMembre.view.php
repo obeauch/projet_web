@@ -55,7 +55,7 @@
                         <?php if (isset($_GET["erreur"])) {?>
                             <div>
                                 <p>
-                                    Une erreur est survenue.
+                                    Une erreur est survenue lors de la modification du membre.
                                 </p>
                             </div>
                         <?php }?>

@@ -69,8 +69,6 @@ body {
         margin: 20px 30px;
         padding: 3px;
         transition: all 0.2s;
-        max-width: 250px;
-        min-width: 100px;
         width: 200px;
         text-align: center;
     }
@@ -114,7 +112,7 @@ body {
         width: 200px;
     }
 
-    //header style principal et général
+    //header style général avec nav
     header {
         
         position: relative;
@@ -127,7 +125,6 @@ body {
             top: 0px;
             left: 0px;
             display: flex;
-            // flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
             height: 90px; 
@@ -136,7 +133,6 @@ body {
 
             .boutons-gauche {
                 display: flex;
-                // flex-wrap: wrap;
                 justify-content: start;
                 z-index: 10;
             }
@@ -200,7 +196,6 @@ body {
                 object-fit: cover;
                 height: 35%;
                 width: 110%;
-                // max-width: 2300px;
             }
         }
     }
@@ -257,7 +252,7 @@ body {
         }
     }
 
-    // page accueil.view et admin.view
+    // page accueil.view
     &.accueil {
         background-color: $bleu-noir;
         display: flex;
@@ -274,7 +269,6 @@ body {
                 background-size: contain;
                 margin-left: 15vw;
                 
-
                 .titre {
     
                     h1 {
@@ -357,7 +351,7 @@ body {
                             h2 {
                                 color: $gris-blanc;
                                 font-family: $font-anton;
-                                font-size: 40px;
+                                font-size: 30px;
                                 letter-spacing: 2px;
                                 margin: 0px;
                             }
@@ -429,7 +423,7 @@ body {
     }
     
     //page avec formulaire section client
-    //infolettre.view, login.view, etc
+    //infolettre.view, login.view
     &.formulaire {
         background-color: $bleu-noir;
         display: flex;
@@ -443,13 +437,8 @@ body {
 
         .conteneur {
             align-items: center;
-            // display: flex;
-            // flex-direction: column;
             height: 100%;
-            // justify-content: start;
-            // margin: 0px auto;
             padding-bottom: 100px;
-            // width: 100%;
 
             h1 {
                 margin: 30px auto;
@@ -575,7 +564,6 @@ body {
 
             .encadres {
                 align-items: start;
-                // margin-bottom: 100px;
 
                 .image {
                     margin: 0px 40px;
@@ -592,7 +580,7 @@ body {
                     flex-direction: column;
                     justify-content: start;
                     margin: 0px;
-                    width: 100%;
+                    width: 40%;
 
                     .nom-membres {
 
@@ -615,19 +603,17 @@ body {
                             letter-spacing: 1px;
                         }
                     }
-    
                 }
 
                 .description-membres {
 
                     max-height: 200px;
+                    width: 100%;
                     overflow: auto;
-                    // width: 50%;
                     
                     p {
                         font-size: 18px;
                         margin: 0px 40px;
-                        // text-align: justify;
                     }
                 }
     
@@ -647,6 +633,7 @@ body {
 
     }
 
+    //page videos.view
     &.video {
         background-color: $bleu-noir;
         display: flex;
@@ -780,7 +767,6 @@ body {
                         
                         .chaque-episode {
                             flex-direction: column;
-
                         }
                     }
 
@@ -793,7 +779,6 @@ body {
                         min-width: 60px;   
                         font-size: 44px;
                         padding: 0px 25px;
-                    
                     }
 
                     .bouton-play:hover {
@@ -846,8 +831,8 @@ body {
 
         .conteneur {
             justify-content: space-between;
+
             .section-bas {
-                // margin-top: 40px;
     
                 .encadres {
                     border: 2px solid $verdatre-pale;
@@ -867,9 +852,6 @@ body {
                         flex-direction: column;
                         justify-content: space-between;
                         margin: 10px 0px;
-                        
-
-
                     }
         
                     // page admin.view.php
@@ -945,7 +927,7 @@ body {
     }
 
     //page avec formulaire section admin
-    //ajout-membre.view, , etc
+    //membres.view, modifierMembres.view, episodes.view, modifierEpisode.view, utilisateurs.view, modifierUtilisateur.view
     &.formulaire-admin {
         background-color: $bleu-noir;
         display: flex;
@@ -959,12 +941,7 @@ body {
 
         .conteneur {
             align-items: center;
-            // display: flex;
-            // flex-direction: column;
             height: 100%;
-            // margin: 0px auto;
-            // padding-bottom: 100px;
-            // width: 100%;
 
             h1 {
                 margin: 30px auto;
@@ -1020,7 +997,6 @@ body {
                 }
             }
             .login{
-                // margin: 40px;
     
                 input,
                 select,

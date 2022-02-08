@@ -49,7 +49,7 @@
                     <?php if (isset($_GET['erreur'])) {?>
                         <div class="erreur">
                             <p>
-                                Un erreur s'est produite lors de la création de l'utilisateur.
+                                Une erreur s'est produite lors de la modification de l'utilisateur.
                             </p>
                         </div>
                     <?php }?>

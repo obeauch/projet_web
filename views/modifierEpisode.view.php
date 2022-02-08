@@ -42,7 +42,7 @@
                         <?php if (isset($_GET['erreur'])) {?>
                             <div class="erreur">
                                 <p>
-                                    Un erreur s'est produite lors de la modification de l'épisode.
+                                    Une erreur s'est produite lors de la modification de l'épisode.
                                 </p>
                             </div>
                         <?php }?>

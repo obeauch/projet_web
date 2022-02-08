@@ -59,8 +59,6 @@ body .boutons {
   padding: 3px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  max-width: 250px;
-  min-width: 100px;
   width: 200px;
   text-align: center;
 }
@@ -368,7 +366,7 @@ body.accueil .conteneur .section-bas .encadres .details-episodes {
 body.accueil .conteneur .section-bas .encadres .details-episodes .titre-episode h2 {
   color: #eff6e0;
   font-family: "Anton", sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   letter-spacing: 2px;
   margin: 0px;
 }
@@ -651,7 +649,7 @@ body.a-propos .conteneur .encadres .nom-titre {
       -ms-flex-pack: start;
           justify-content: start;
   margin: 0px;
-  width: 100%;
+  width: 40%;
 }
 
 body.a-propos .conteneur .encadres .nom-titre .nom-membres h3 {
@@ -675,6 +673,7 @@ body.a-propos .conteneur .encadres .nom-titre .titre-membres p {
 
 body.a-propos .conteneur .encadres .description-membres {
   max-height: 200px;
+  width: 100%;
   overflow: auto;
 }
 
